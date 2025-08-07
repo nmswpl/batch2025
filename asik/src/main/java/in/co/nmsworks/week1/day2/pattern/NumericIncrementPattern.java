@@ -15,10 +15,10 @@ public class NumericIncrementPattern
     public static void main(String[] args)
     {
         int n = 7;
-        patternPrint(n);
+        printPattern(n);
     }
 
-    public static void patternPrint(int n)
+    public static void printPattern(int n)
     {
         for(int i = 1; i <= n; i++)
         {
