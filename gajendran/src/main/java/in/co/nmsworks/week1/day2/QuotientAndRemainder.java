@@ -19,7 +19,7 @@ public class QuotientAndRemainder {
         System.out.println("quotient =" + quotient + " remainder = " + remainder);
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         int dividend = 10, divisor = 5;
 
         findQuotientAndRemainder(dividend, divisor);
