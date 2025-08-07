@@ -10,7 +10,7 @@ public class Remainder {
     public static void FindRemainderQuotient(int a, int b){
         int quotient=a/b;
         int remainder=a%b;
-        System.out.println("Quotient :"+quotient);
-        System.out.println("Remainder :"+remainder);
+        System.out.println("Quotient : "+quotient);
+        System.out.println("Remainder : "+remainder);
     }
 }
