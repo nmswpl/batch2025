@@ -15,18 +15,21 @@ G G G G G G G
 public class AlphabetPattern {
 
     public static void main(String[] args) {
-
-        printAlphabetPattern();
+        int n = 7;
+        printAlphabetPattern(n);
     }
-    public static void printAlphabetPattern() {
+    public static void printAlphabetPattern(int n) {
 
-        for(int i = 65; i <= 71; i++)
+        int ascii=65;
+        for(int i = 1; i <= n; i++)
         {
-            for(int j = 65; j <= i; j++)
+            for(int j = 1; j <= i; j++)
             {
-                char a = (char) i;
-                System.out.print( a + " ");
+
+                System.out.print(" " + (char)ascii);
+
             }
+            ascii++;
             System.out.println();
         }
     }

@@ -12,17 +12,19 @@ package in.co.nmsworks.week1.day2.pattern;
 
  */
 
-public class NumericPattern2 {
+public class NumericPatternDecrement {
 
     public static void main(String[] args) {
 
         printPattern();
     }
-    public static void printPattern(){
+    public static void printPattern() {
 
-        for(int i = 1; i <= 7; i++){
+        for(int i = 1; i <= 7; i++)
+        {
 
-            for(int j = i; j <= 7; j++){
+            for(int j = i; j <= 7; j++)
+            {
 
                 System.out.print(i + " ");
             }

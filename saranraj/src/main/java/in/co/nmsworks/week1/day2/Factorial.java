@@ -21,5 +21,6 @@ public class Factorial {
         {
             return n*findFact(n - 1);
         }
+
     }
 }
