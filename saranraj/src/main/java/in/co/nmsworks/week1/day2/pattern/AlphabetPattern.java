@@ -13,14 +13,19 @@ G G G G G G G
  */
 
 public class AlphabetPattern {
+
     public static void main(String[] args) {
+
         printAlphabetPattern();
     }
-    public static void printAlphabetPattern(){
-        for(int i=65;i<=71;i++){
-            for(int j=65;j<=i;j++){
-                char a=(char) i;
-                System.out.print(a+" ");
+    public static void printAlphabetPattern() {
+
+        for(int i = 65; i <= 71; i++)
+        {
+            for(int j = 65; j <= i; j++)
+            {
+                char a = (char) i;
+                System.out.print( a + " ");
             }
             System.out.println();
         }

@@ -8,12 +8,12 @@ public class LargerNumber {
 
     }
     public static void findLarge(int a,int b,int c){
-        if(a>b && a>c){
-            System.out.println("A is Greater and Value : "+a);
-        }else if(b>a && b>c){
-            System.out.println("B is Greater and Value : "+b);
+        if( a > b && a > c ){
+            System.out.println("A is Greater and Value : " + a);
+        }else if( b > a && b > c ){
+            System.out.println("B is Greater and Value : " + b);
         }else{
-            System.out.println("C is Greater and Value : "+c);
+            System.out.println("C is Greater and Value : " + c);
         }
     }
 
