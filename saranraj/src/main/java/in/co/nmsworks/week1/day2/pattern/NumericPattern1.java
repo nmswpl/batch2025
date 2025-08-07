@@ -12,7 +12,7 @@ package in.co.nmsworks.week1.day2.pattern;
 
  */
 
-public class NumericPattern1 {
+public class NumericPattern1{
     public static void main(String[] args) {
         printNumericPattern();
     }
