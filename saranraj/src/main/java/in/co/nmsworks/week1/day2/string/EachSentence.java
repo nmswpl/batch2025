@@ -10,7 +10,7 @@ public class EachSentence {
 
     private static void printEachSentence(String str)
     {
-        String [] sentences = str.split("\\.");
+        String[] sentences = str.split("\\.");
         for(String sentence : sentences){
             System.out.println(sentence);
         }

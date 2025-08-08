@@ -4,7 +4,7 @@ public class CheckPalindrome {
 
      public static void main(String[] args) {
          String word = "dad";
-          checkWordsPalindrome(word);
+         checkWordsPalindrome(word);
     }
 
     private static void checkWordsPalindrome(String word)
