@@ -16,7 +16,7 @@ class RemoveDuplicateCharacters {
         {
             if(!uniqueChars.contains(str.substring(i, i+1)))
             {
-                uniqueChars = uniqueChars + str.charAt(i);
+                uniqueChars += str.substring(i, i+1);
             }
         }
         System.out.println(uniqueChars);
