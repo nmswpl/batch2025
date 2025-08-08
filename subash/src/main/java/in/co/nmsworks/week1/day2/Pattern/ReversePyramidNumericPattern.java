@@ -1,6 +1,6 @@
 package in.co.nmsworks.week1.day2.Pattern;
 
-public class Numericpattern1 {
+public class ReversePyramidNumericPattern {
 
     public static void main(String[] args)
     {
