@@ -1,4 +1,4 @@
-package in.co.nmsworks.week1.day2.Pattern;
+package in.co.nmsworks.week1.day2.pattern;
 
 
 public class PatternFour {
