@@ -1,6 +1,8 @@
 package in.co.nmsworks.week1.day3;
 
-private class Candidate {
+import java.util.Objects;
+
+public class Candidate {
 
     private int id;
     private String name;
@@ -10,7 +12,7 @@ private class Candidate {
     public Candidate() {
     }
 
-    public Candidate(int id, String name, String email, String department) {
+    private Candidate(int id, String name, String email, String department) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -46,6 +48,28 @@ private class Candidate {
 
     public void setDepartment(String department) {
         this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Candidate candidate = (Candidate) o;
+        return id == candidate.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 
     public String  getDepartment() {
