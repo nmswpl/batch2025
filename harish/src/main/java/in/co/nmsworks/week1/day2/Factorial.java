@@ -6,10 +6,10 @@ package in.co.nmsworks.week1.day2;
 public class Factorial {
     public static void main(String[] args) {
         int number = 5;
-        gEtFactorial(number);
+        getFactorial(number);
     }
 
-    public static void gEtFactorial(int factorialNum){
+    public static void getFactorial(int factorialNum){
         int result = 1;
         for(int i = 1; i <= factorialNum; i++){
             result = result*i;
