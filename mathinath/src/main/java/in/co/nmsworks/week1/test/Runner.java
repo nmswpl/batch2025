@@ -5,6 +5,12 @@ public class Runner {
         Book b1=new Book();
         b1.setTitle("harrypotter");
         b1.setAuthor("mathi");
-        b1.setPublicationyear(2000);
+        b1.setPublicationYear(2000);
+        b1.setNoOfBooks(4);
+        b1.checkOut();
+        b1.checkOut();
+        b1.checkOut();
+        b1.checkOut();
+        b1.checkOut();
     }
 }

@@ -17,8 +17,9 @@ public class IndexOutput {
         new IndexOutput().splitsStringLimits("apple;banana;cherry;date");
         new IndexOutput().printIndex("programming","g");
         new IndexOutput().printIndexStart("welcome to the world","the",10);
-
-
+        new IndexOutput().printLowerCase("Java Programming");
+        new IndexOutput().printUpperCase("welcome to Java");
+        new IndexOutput().convertIntToString(1234);
 
     }
     public void printString(String str, int num)
@@ -82,7 +83,8 @@ public class IndexOutput {
     }
     public void printStringJoin(String str1,String str2,String str3,String str4)
     {
-        System.out.println(String.join(str1,str2+str3+str4));
+        System.out.print(String.join(str1,str2,str3,str4));
+        System.out.println();
     }
     public void printStringIgnoreCase(String str1,String str2)
     {
@@ -108,8 +110,9 @@ public class IndexOutput {
         String[] arr=str.split(";",3);
         for(int i=0;i< arr.length;i++)
         {
-            System.out.println(arr[i]);
+            System.out.print(arr[i]+" ");
         }
+        System.out.println();
     }
     public void printIndex(String str1,String str2)
     {
@@ -118,7 +121,19 @@ public class IndexOutput {
     }
     public void printIndexStart(String str1,String str2,int num)
     {
-        int index=str1.indexOf(str2);
-        System.out.println(str1.indexOf(str2,index));
+        System.out.println(str1.indexOf(str2,num));
+    }
+    public void printLowerCase(String str)
+    {
+        System.out.println(str.toLowerCase());
+    }
+    public void printUpperCase(String str)
+    {
+        System.out.println(str.toUpperCase());
+    }
+    public void convertIntToString(int num)
+    {
+        String str=String.valueOf(num);
+        System.out.println(str);
     }
 }

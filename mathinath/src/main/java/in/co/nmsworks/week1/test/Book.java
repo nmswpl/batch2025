@@ -3,7 +3,8 @@ package in.co.nmsworks.week1.test;
 public class Book {
     private String title;
     private String author;
-    private int publicationyear;
+    private int publicationYear;
+    private int noOfBooks;
     public Book()
     {
 
@@ -24,12 +25,34 @@ public class Book {
     {
         return author;
     }
-    public void setPublicationyear(int publicationyear)
+    public void setPublicationYear(int publicationYear)
     {
-        this.publicationyear=publicationyear;
+        this.publicationYear = publicationYear;
     }
-    public int getPublicationyear()
+    public int getPublicationYear()
     {
-        return publicationyear;
+        return publicationYear;
+    }
+
+    public int getNoOfBooks()
+    {
+        return noOfBooks;
+    }
+
+    public void setNoOfBooks(int noOfBooks) {
+        this.noOfBooks = noOfBooks;
+    }
+
+    public void checkOut()
+    {
+        if(noOfBooks > 0)
+        {
+            noOfBooks--;
+            System.out.println("Book Available");
+        }
+        else
+        {
+            System.out.println("Book Not Available");
+        }
     }
 }
