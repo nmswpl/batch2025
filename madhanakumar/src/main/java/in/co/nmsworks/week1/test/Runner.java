@@ -14,6 +14,7 @@ public class Runner {
         b2.setPublicationYear(1972);
         b2.setNoOfCopies(0);
 
-
+        b1.checkOut();
+        b2.checkOut();
     }
 }

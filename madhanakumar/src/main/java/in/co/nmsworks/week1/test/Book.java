@@ -5,6 +5,7 @@ public class Book {
     String author;
     int publicationYear;
     int noOfCopies;
+    int availbility;
 
     public void setTitle(String title) {
         this.title = title;
@@ -38,5 +39,16 @@ public class Book {
         this.noOfCopies = noOfCopies;
     }
 
+    public void checkOut(){
+        int noOfCopies = getNoOfCopies();
+        if(noOfCopies > 0){
+            System.out.println("Available");
+            noOfCopies--;
+            System.out.println("Current Availability : " + noOfCopies);
+        }
+        else {
+            System.out.println("Not Available");
+        }
 
+    }
 }

@@ -3,11 +3,12 @@ package in.co.nmsworks.week1.test;
 public class FindWordInASentence {
     public void isWordPresent(String s, String word){
         String[] s1 = s.split(" ");
-        char[] ch = s.toCharArray();
-        char[] ch1 = word.toCharArray();
         for (int i = 0; i < s1.length; i++) {
-            if (s1[i].equals(word.toLowerCase())){
-
+            String s2 = s1[i];
+            if (s2.equalsIgnoreCase(word)){
+                System.out.println("Word Found at the index of : "+s.indexOf(s2));
+                System.out.println("First Character : "+word.charAt(0));
+                System.out.println("Last Character : "+word.charAt(word.length()-1));
             }
         }
     }
