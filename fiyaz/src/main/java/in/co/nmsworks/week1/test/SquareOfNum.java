@@ -1,4 +1,4 @@
-package in.co.nmsworks.week1.Test;
+package in.co.nmsworks.week1.test;
 
 public class SquareOfNum {
     public static void main(String[] args) {

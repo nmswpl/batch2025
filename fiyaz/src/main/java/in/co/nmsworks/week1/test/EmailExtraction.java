@@ -1,7 +1,5 @@
 
-package in.co.nmsworks.week1.Test;
-
-import java.util.Arrays;
+package in.co.nmsworks.week1.test;
 
 public class EmailExtraction {
     public static void main(String[] args) {
