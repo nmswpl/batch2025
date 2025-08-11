@@ -10,12 +10,12 @@ public class Runner {
         Maths.printDetails(Maths);
         Social.printDetails(Social);
 
-        English.checkOut(English);
-        Maths.checkOut(Maths);
-        Social.checkOut(Social);
+        English.checkOut();
+        Maths.checkOut();
+        Social.checkOut();
 
-        Maths.checkOut(Maths);
-        Maths.checkOut(Maths);
+        Maths.checkOut();
+        Maths.checkOut();
 
     }
 }

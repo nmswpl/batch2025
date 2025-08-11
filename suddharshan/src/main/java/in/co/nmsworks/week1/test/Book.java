@@ -55,14 +55,14 @@ public class Book {
         System.out.println("Book Copies: " + book.noOfCopies);
     }
 
-    public void checkOut(Book book){
-        if(book.noOfCopies == 0){
-            System.out.println(book.title + " Book is not available");
+    public void checkOut(){
+        if(this.noOfCopies == 0){
+            System.out.println(this.title + " Book is not available");
         }
         else{
-            book.noOfCopies = book.noOfCopies - 1;
-            System.out.println(book.title + " book is available");
-            System.out.println(book.title + " no. of copies available: " + book.noOfCopies);
+            this.noOfCopies = this.noOfCopies - 1;
+            System.out.println(this.title + " book is available");
+            System.out.println(this.title + " no. of copies available: " + this.noOfCopies);
         }
     }
 }
