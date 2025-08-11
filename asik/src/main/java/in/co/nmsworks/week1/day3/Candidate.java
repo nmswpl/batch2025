@@ -1,6 +1,6 @@
 package in.co.nmsworks.week1.day3;
 
-public class Candidate
+private class Candidate
 {
     private int id;
     private String name;
