@@ -147,6 +147,7 @@ public class Runner {
         pluto.setSize(1473);
         pluto.setColor("Brown and white");
         pluto.setNumberOfMoons(5);
+
         printPlanetInfo(mercury);
         printPlanetInfo(venus);
         printPlanetInfo(earth);
