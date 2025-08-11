@@ -26,6 +26,9 @@ public class StringPrograms {
         String substringword="Prog";
 //        findSubstring(word3,substringword);
 
+
+        stringJoin("," , "Apple","Banana","Cherry");
+
         String word7 = "hello";
         String word7one = "Hello";
 //        compareTwoString(word7,word7one);
@@ -53,7 +56,20 @@ public class StringPrograms {
 
         String word14="programming";
         String word14one="g";
-        findOccurence(word14,word14one);
+//        findOccurence(word14,word14one);
+
+        String word15="welcome to the world";
+        String word15one="the";
+//        findOccerenceFromSubstring(word15,word15one);
+
+        String word16="Welcome To Java";
+//        toConvertLower(word16);
+
+        String word17="Welcome To Java";
+//        toConvertUpper(word17);
+
+        int number=18;
+//        convertIntToAString(number);
 
 
     }
@@ -143,6 +159,29 @@ public class StringPrograms {
 
         System.out.println(word14.indexOf(word14one));
     }
+    public static void findOccerenceFromSubstring(String word15,String word15one)
+    {
+        System.out.println(word15.indexOf(word15one,10));
+    }
 
+    public static void toConvertLower(String word16)
+    {
+        System.out.println(word16.toLowerCase());
+    }
+
+    public static void toConvertUpper(String word17)
+    {
+        System.out.println(word17.toUpperCase());
+    }
+
+    public static void convertIntToAString(int number)
+    {
+        System.out.println(String.valueOf(number));
+    }
+
+    public static void stringJoin(String str1,String str2,String str3,String str4)
+    {
+        System.out.println(String.join(str1,str2,str3,str4));
+    }
 
 }
