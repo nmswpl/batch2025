@@ -34,15 +34,15 @@ public class StringPrograms {
     }
 
     public static void isStringEqualInIgnoringCase(String str1, String str2){
-        System.out.println(str1.toLowerCase().equals(str2.toLowerCase()));
+        System.out.println(str1.equalsIgnoreCase(str2));
     }
 
-    public static void printConcatGivenString(String str1,char  oldLetter, char newLetter){
+    public static void printReplacesAllOccurrences(String str1,char  oldLetter, char newLetter){
         System.out.println(str1.replace(oldLetter,newLetter));
     }
 
-    public static void printReplacesAllOccurrences(String str1, String str2){
-
+    public static void printConcatGivenString(String str1, String str2){
+        System.out.println(str1.concat(str2));
     }
 
     public static void printEmptyString (String word){
@@ -115,9 +115,9 @@ public class StringPrograms {
     printStringInLowerCase("Java Programming");
     printStringInUpperCase("welcome to Java");
     printConvertsOfIntToString(1234);
-
-
-
+    printEmptyString(" ");
+    printReplacesAllOccurrences("banana",'a','o');
+    printConcatGivenString("Hello","World");
 
 
 
