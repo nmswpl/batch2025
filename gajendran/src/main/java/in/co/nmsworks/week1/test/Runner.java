@@ -26,6 +26,7 @@ public class Runner {
 
         TablesBetweenParticularNumber firstTableToPrint = new TablesBetweenParticularNumber();
         firstTableToPrint.printTableBetweenParticularNumber(table,start,end);
+        firstTableToPrint.printTableBetweenParticularNumber();
 
     }
 
@@ -60,6 +61,7 @@ public class Runner {
 
         ExtractTheDomainName et = new ExtractTheDomainName();
         System.out.println(et.getDomainName("gajendran@gmail.com"));
+
     }
 
 
