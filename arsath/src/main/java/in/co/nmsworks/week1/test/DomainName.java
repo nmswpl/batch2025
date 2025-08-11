@@ -1,11 +1,10 @@
-package in.co.nmsworks.test;
-
-import java.util.Arrays;
+package in.co.nmsworks.week1.test;
 
 public class DomainName {
     public static void extractDomainName(String input){
-       // input = inp;
-        //System.out.println(Arrays.toString(arr));
+       String[] input1 = input.split("@");
+        System.out.println(input1[1]);
+
 
     }
     public static void main(String[] args) {

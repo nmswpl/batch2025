@@ -1,4 +1,4 @@
-package in.co.nmsworks.test;
+package in.co.nmsworks.week1.test;
 
 public class HunderedthPositionInWords {
     public static void printHunderedthPositionInWords(int number, String[] numbers){

@@ -1,4 +1,4 @@
-package in.co.nmsworks.test;
+package in.co.nmsworks.week1.test;
 
 public class DivisibleByThree {
     public static void main(String[] args) {
