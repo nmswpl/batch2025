@@ -51,6 +51,9 @@ public class StringPrograms {
 
         int givennumber = 1234;
         integerToString(givennumber);
+
+        String str9 = "welcome to the world";
+        subStringIndex(str9);
     }
     public  static void characterAtTheString(String name, int index){
         System.out.println("The character at index "+name.charAt(index));
@@ -126,7 +129,7 @@ public class StringPrograms {
     }
 
     public static void subStringIndex(String str1){
-        System.out.println(str1.substring(10,11));
+        System.out.println(str1.indexOf(str1.substring(10)));
     }
 
     public static void stringUpperCase(String str1){
