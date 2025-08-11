@@ -12,9 +12,13 @@ public class StringProgram {
        concateTwoStrings("Hello" ,"World");
        replaceCharacter("banana");
        checkTwoStringsEqual("hello","HELLO");
-       splitString("one,two,three");
+       printEachSubstring("one,two,three");
        splitStringIntoArray("apple;banana;cherry;date" , 3);
        printFirstOccurenceIndex("programming", 'g');
+        printSpecifiedFirstOccurence("welcome to the world","the",10);
+       convertStringToLowerCase("Java Programming");
+       convertStringToUpperCase("welcome to Java");
+       convertIntegerToString(1234);
 
 
     }
@@ -40,14 +44,14 @@ starting at a specified index. What will be the result if the input string is "J
 the beginIndex is 5? */
 
     public static void printSubstringIndex(String input, int n){
-        System.out.println(input.substring(5));
+        System.out.println(input.substring(n));
     }
 
     /* Write a Java program that extracts and prints a substring from a given string
 starting from `beginIndex` and ending at `endIndex`. What will be the result if the input string is
 "Welcome to Java" and the indices are 11 and 15? */
     public static void printSubstring(String input, int n , int m){
-        System.out.println(input.substring(11 , 15));
+        System.out.println(input.substring(n,m));
     }
 
     /* Write a Java program that checks if a given string contains a specific substring.
@@ -126,7 +130,7 @@ prints whether they are equal. What will be the result if the strings are "hello
       /* Write a Java program that splits a string into an array of substrings based on a
 specified delimiter and prints each substring. What will be the output if the input string is
 "one,two,three" and the delimiter is ","? */
-    public static void splitString(String input){
+    public static void printEachSubstring(String input){
         String[] substring = input.split(",");
         for(int i=0 ;i< substring.length ; i++){
             System.out.print(substring[i]+" ");
@@ -139,7 +143,10 @@ specified limit on the number of substrings. What will be the result if the inpu
 "apple;banana;cherry;date" with a limit of 3? */
 
     public static void splitStringIntoArray(String input,int limit){
-
+            String[] array = input.split(";" , limit);
+            for(int i=0; i< array.length ; i++){
+                System.out.println(array[i]+ " ");
+            }
     }
 
     /* * Write a Java program that finds and prints the index of the first occurrence of a
@@ -153,8 +160,30 @@ character is 'g'? */
 substring, starting the search from a specified index. What will be the result if the input string is
 "welcome to the world" and the substring is "the", starting from index 10? */
 
-    public static void printSpecifiedFirstOccurence(String input , String substring){
-        System.out.println();
+    public static void printSpecifiedFirstOccurence(String input , String subString, int n){
+        System.out.println(input.indexOf(subString,n));
+    }
+
+    /* Write a Java program that converts a given string to lowercase and prints the
+result. What will be the output if the input string is "Java Programming"? */
+
+    public static void convertStringToLowerCase(String input){
+        System.out.println(input.toLowerCase());
+    }
+
+    /* * Write a Java program that converts a given string to uppercase and prints the
+result. What will be the output if the input string is "welcome to Java"? */
+
+    public static void convertStringToUpperCase(String input){
+        System.out.println(input.toUpperCase());
+    }
+
+    /* Write a Java program that converts an integer to a string using `String.valueOf`
+and prints the result. What will be the output if the integer value is 1234? */
+
+    public static void convertIntegerToString(int number){
+        System.out.println(String.valueOf(number));
+
     }
 
 
