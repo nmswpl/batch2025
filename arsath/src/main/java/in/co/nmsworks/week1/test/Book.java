@@ -1,10 +1,10 @@
-package in.co.nmsworks.test;
+package in.co.nmsworks.week1.test;
 
 public class Book {
     private String title;
     private String author;
     private int publicationYear;
-    private int noOfCopies;
+    private static int noOfCopies;
 
     public Book(){
 
@@ -42,6 +42,17 @@ public class Book {
         return noOfCopies;
     }
 
+    public void checkOut(){
+        if(noOfCopies>0){
+            noOfCopies = noOfCopies-1;
+            System.out.println("Avaialable");
+            System.out.println("No of copies after the book issued:" + noOfCopies);
+        }
+        else{
+            System.out.println("Not Available");
+        }
+
+    }
 
 }
 
