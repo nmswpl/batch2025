@@ -2,7 +2,7 @@ package in.co.nmsworks.week1.test;
 
 public class Launch {
     public static void main(String[] args) {
-        Book book=new Book("Life of Pi","Yann Martek",2001,23);
+        Book book=new Book("Life of Pi","Yann Martel",2001,23);
         Book sewell=new Book("Black Beauty","Anna Sewell",1946,0);
         checkout(book);
         checkout(sewell);

@@ -16,7 +16,7 @@ public class LargestOfThree {
             System.out.println("b is greater");
 
         } else {
-            System.out.println("c is graeater");
+            System.out.println("c is greater");
         }
     }
 }
