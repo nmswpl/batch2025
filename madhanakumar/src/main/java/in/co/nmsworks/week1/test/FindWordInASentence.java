@@ -2,14 +2,15 @@ package in.co.nmsworks.week1.test;
 
 public class FindWordInASentence {
     public void isWordPresent(String s, String word){
-        String[] s1 = s.split(" ");
-        for (int i = 0; i < s1.length; i++) {
-            String s2 = s1[i];
-            if (s2.equalsIgnoreCase(word)){
-                System.out.println("Word Found at the index of : "+s.indexOf(s2));
-                System.out.println("First Character : "+word.charAt(0));
-                System.out.println("Last Character : "+word.charAt(word.length()-1));
-            }
+        String str1 = s.toLowerCase();
+        String str2 = word.toLowerCase();
+        int index = str1.indexOf(str2);
+        if (index != -1) {
+            System.out.println("Word found at index: " + index);
+            System.out.println("First character of the word: " + word.charAt(0));
+            System.out.println("Last character of the word: " + word.charAt(word.length() - 1));
+        } else {
+            System.out.println("Word not found in the sentence.");
         }
     }
 
