@@ -43,7 +43,12 @@ public class Book
 
     public void checkoutBooks()
     {
-
+        if(noofcopies>0) {
+            noofcopies--;
+            System.out.println("Available");
+        }
+        else
+            System.out.println("Not Available");
     }
 
 
