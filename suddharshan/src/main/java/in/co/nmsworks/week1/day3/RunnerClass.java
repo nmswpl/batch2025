@@ -7,7 +7,7 @@ public class RunnerClass {
         Candidate Logeswari = new Candidate(3, "Logeswari", "logeswari@nmsworks.co.in", "Developer");
         Candidate AnusyaDevi = new Candidate(4, "AnusyaDevi", "anusyadevi@nmsworks.co.in", "Developer");
         Candidate Kavi = new Candidate(5, "Kavi", "kavi@nmsworks.co.in", "Developer");
-
+        Candidate c1 = new Candidate();
         Candidate SaranRaj = new Candidate();
         SaranRaj.setId(6);
         SaranRaj.setName("SaranRaj");
