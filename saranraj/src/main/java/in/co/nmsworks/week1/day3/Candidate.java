@@ -1,10 +1,13 @@
 package in.co.nmsworks.week1.day3;
 
+import java.util.Objects;
+
 public class Candidate {
     private int id;
     private String name;
     private String email;
     private String department;
+
 
     public Candidate()
     {
@@ -26,11 +29,11 @@ public class Candidate {
         this.id = id;
     }
 
-    public String getName()
+    protected String getName()
     {
         return name;
     }
-    public void setName(String name)
+    protected void setName(String name)
     {
         this.name = name;
     }
@@ -51,5 +54,27 @@ public class Candidate {
     {
         this.department = department;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Candidate candidate = (Candidate) o;
+        return id == candidate.id;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+}
 
