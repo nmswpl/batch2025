@@ -6,9 +6,8 @@ public class HundredthPositionValue {
         getHundredthValue(num);
     }
     public static void getHundredthValue(int val){
-        int rem;
+
         for(int i = 0; i < 2; i++){
-            rem = val % 10;
             val = val /10;
         }
         String arr[] = new String[]{"Zero", "One","Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"};

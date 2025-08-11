@@ -38,7 +38,8 @@ public class RunnerClass {
         Mahalakshmi.setName("Mahalakshmi");
         Mahalakshmi.setEmail("mahalakshmi@nmsworks.co.in");
         Mahalakshmi.setDept("Developer");
-
+        System.out.println(TharunKumar.equals(Mahalakshmi));
+        System.out.println(TharunKumar.toString());
         MohamedAsik.printCandidateInfo(MohamedAsik);
         Suddharshan.printCandidateInfo(Suddharshan);
         Logeswari.printCandidateInfo(Logeswari);
@@ -61,5 +62,8 @@ public class RunnerClass {
         Planet Pluto = new Planet("Pluto", 1473, "Brown", 5);
 
         Venus.printPlanetInfo(Venus);
+        System.out.println(Venus.equals(Mercury));
+        System.out.println(Venus.equals(Uranus));
+        System.out.println(Earth.toString());
     }
 }

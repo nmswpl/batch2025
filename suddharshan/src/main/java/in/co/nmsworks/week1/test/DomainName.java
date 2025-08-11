@@ -9,7 +9,7 @@ public class DomainName {
 
     public static String getDomainName(String email){
         int count = 0;
-        for(int i = 0; i < email.length(); i ++){
+        for(int i = 0; i < email.length(); i++){
             if(email.charAt(i) == '@'){
                 break;
             }

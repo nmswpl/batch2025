@@ -1,5 +1,7 @@
 package in.co.nmsworks.week1.day3;
 
+import java.util.Objects;
+
 public class Planet {
     private String planet;
     private int size;
@@ -54,5 +56,27 @@ public class Planet {
         System.out.println("Size: "+ planet.getSize());
         System.out.println("Color: " + planet.getColor());
         System.out.println("No. of Moons: " + planet.getNumberOfMoons());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Planet planet = (Planet) o;
+        return numberOfMoons == planet.numberOfMoons;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(numberOfMoons);
+    }
+
+    @Override
+    public String toString() {
+        return "Planet{" +
+                "planet='" + planet + '\'' +
+                ", size=" + size +
+                ", color='" + color + '\'' +
+                ", numberOfMoons=" + numberOfMoons +
+                '}';
     }
 }
