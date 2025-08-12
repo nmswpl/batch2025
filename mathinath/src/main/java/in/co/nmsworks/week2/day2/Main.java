@@ -7,6 +7,8 @@ public class Main {
         c1.setYear(2025);
         c1.setNoOfDoors(4);
         System.out.println(c1.display());
+
+
         Bike b1 = new Bike();
         b1.setModel("BMW");
         b1.setYear(2025);

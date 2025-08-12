@@ -4,6 +4,7 @@ public class Teacher {
     private int id;
     private String name;
 
+
     public int getId() {
         return id;
     }
@@ -35,5 +36,6 @@ public class Teacher {
     public Teacher(int id, String name) {
         this.id = id;
         this.name = name;
+
     }
 }
