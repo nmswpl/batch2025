@@ -7,6 +7,8 @@ import in.co.nmsworks.week2.day2.Employee;
 import in.co.nmsworks.week2.day2.FullTimeEmployee;
 import in.co.nmsworks.week2.day2.PartTimeEmployee;
 
+import java.security.DigestException;
+
 public class Runner {
     public static void main(String[] args) {
         Teacher teacher1 = new Teacher(1,"sanjeevsir");
@@ -49,6 +51,9 @@ public class Runner {
         employee3.setEmployeeId(5);
         employee3.setEmployeeName("Parthiban");
         System.out.println("The employee name is " + employee3.getEmployeeName() + "\t AND employee id is " + employee3.getEmployeeId() + "\t AND employee salary is"+employee3.getSalary(30));
+
+        /// runner
+
 
     }
 
