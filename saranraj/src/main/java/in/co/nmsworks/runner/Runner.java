@@ -2,6 +2,7 @@ package in.co.nmsworks.runner;
 
 import in.co.nmsworks.week2.day1.Subject;
 import in.co.nmsworks.week2.day1.Teacher;
+import in.co.nmsworks.week2.day2.*;
 
 public class Runner {
 
@@ -26,6 +27,29 @@ public class Runner {
         science.setTeacher(t2);
         System.out.println(science);
         printTeacher(science);
+        //====================================
+
+
+        FullTime fullTime = new FullTime(10,8,30);
+        PartTime partTime = new PartTime(5,4,30);
+        ContractTime contractTime = new ContractTime(3,7);
+
+        System.out.println("===============================");
+        fullTime.Calculatesalary();
+        partTime.Calculatesalary();
+        contractTime.Calculatesalary();
+        System.out.println("===============================");
+
+
+        Dog dog=new Dog();
+        dog.makeSound();
+
+
+
+
+
+
+
 
     }
     public static void printTeacher(Subject science){
