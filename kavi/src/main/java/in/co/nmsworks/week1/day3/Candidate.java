@@ -1,5 +1,7 @@
 package in.co.nmsworks.week1.day3;
 
+import java.util.Objects;
+
 public class Candidate {
     private int id;
     private String name;
@@ -50,17 +52,16 @@ public class Candidate {
         this.department = department;
     }
 
-    public void printCandidateInfo(){
+    public void printCandidateInfo() {
 
     }
 
-    public String toString()
-    {
+    public String toString() {
         return "Candidate{" +
                 "id=" + id +
                 ", name='" + name +
                 ", email='" + email +
-                ", department='" + department  +
+                ", department='" + department +
                 '}';
     }
 }

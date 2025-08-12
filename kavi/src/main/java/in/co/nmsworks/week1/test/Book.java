@@ -50,7 +50,7 @@ public class Book {
     }
 
     public static void main(String[] args) {
-       Book book=new Book();
+        Book book=new Book();
         book.setAuthor("kavi");
         book.setTitle("psy");
         book.setPublictionYear(15);

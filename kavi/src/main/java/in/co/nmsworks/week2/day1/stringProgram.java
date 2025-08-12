@@ -19,6 +19,7 @@ public class stringProgram {
        convertStringLower();
        convertStringUpper17();
        printconvertInteger();
+       printStringConcate();
 
 
 
@@ -74,22 +75,30 @@ public class stringProgram {
                 }
     }
 
-   public static void printStringCompare(){
-               String str1 = "hello";
-               String str2 = "Hello";
-               if (str1.equals(str2)) {
-                   System.out.println("Strings are equal (case-sensitive).");
-               } else {
-                   System.out.println("Strings are not equal (case-sensitive).");
-               }
+    /* Write a Java program that uses `String.join` to concatenate a list of strings with a
+specified delimiter. What will be the output if the elements are "apple", "banana", and "cherry" and
+the delimiter is ", "?*/
+    public static void  printStringConcate(){
+        String[] str = {"apple", "banana", "kivi"};
+        String.join(",",str);
+    }
 
-               if (str1.equalsIgnoreCase(str2)) {
-                   System.out.println("Strings are equal (case-insensitive).");
-               } else {
-                   System.out.println("Strings are not equal (case-insensitive).");
-               }
+   public static void printStringCompare() {
+       String str1 = "hello";
+       String str2 = "Hello";
+       if (str1.equals(str2)) {
+           System.out.println("Strings are equal (case-sensitive).");
+       } else {
+           System.out.println("Strings are not equal (case-sensitive).");
+       }
+
+       if (str1.equalsIgnoreCase(str2)) {
+           System.out.println("Strings are equal (case-insensitive).");
+       } else {
+           System.out.println("Strings are not equal (case-insensitive).");
 
        }
+   }
 
    public static void compareTwoString(){
 
@@ -100,16 +109,16 @@ public class stringProgram {
                checkAndPrint(str1);
                checkAndPrint(str2);
                checkAndPrint(str3);
-           }
+    }
 
-           public static void checkAndPrint(String s) {
+    public static void checkAndPrint(String s) {
                if (s.isEmpty()) {
                    System.out.println("Empty");
                } else {
                    System.out.println("Not Empty");
                }
-           }
     }
+
     public static void concatenateString() {
 
         String s1="hello";
@@ -130,11 +139,6 @@ public class stringProgram {
                 System.out.println("Modified String: " + modifiedString);
     }
 
-    public static void concatenateListOfString() {
-
-
-
-    }
 
     public static void compareString() {
 
@@ -146,9 +150,9 @@ public class stringProgram {
                 } else {
                     System.out.println("The strings are not equal (ignoring case).");
                 }
-            }
-
     }
+
+
     public static void printsplitscreen(){
 
                 String inputString = "one,two,three";
@@ -225,11 +229,11 @@ public class stringProgram {
         String strNumber = String.valueOf(number);
         System.out.println("The integer converted to a string is: " + strNumber);
     }
-
-
-
-
-
-
 }
+
+
+
+
+
+
 

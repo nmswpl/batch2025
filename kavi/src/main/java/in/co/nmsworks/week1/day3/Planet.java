@@ -14,7 +14,6 @@ public class Planet {
 
     }
     public String getPlanet(){
-
         return planet;
     }
     public void setSize(int Size){
@@ -35,11 +34,11 @@ public class Planet {
 
         this.numberOfMoon=numberOfMoon;
     }
-    public int getNumberOfMoon(){
+    public int getNumberOfMoon() {
 
         return numberOfMoon;
+
+
     }
-
-
 
 }

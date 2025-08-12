@@ -7,6 +7,7 @@ public class HundedDigit {
         }
         public static void printHundredDigit(){
             int number = 542;
+            String[] arr={"one","two","three","four","five","six","seven","eight","nine"};
             int hundredsDigit = number / 100;
             System.out.print(hundredsDigit);
         }
