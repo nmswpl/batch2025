@@ -8,7 +8,6 @@ public class Vehicle {
 
     }
 
-
     public String getModel() {
         return model;
     }
@@ -64,11 +63,11 @@ class Bike extends Vehicle {
 
 class Main{
     public static void main(String[] args) {
-        Car car = new Car();
+        Vehicle car = new Car();
         car.setModel("i20");
         car.setYearOfMake(2021);
 
-        Bike bike = new Bike();
+        Vehicle bike = new Bike();
         bike.setModel("Splendor");
         bike.setYearOfMake(2015);
 

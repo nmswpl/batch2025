@@ -17,6 +17,16 @@ public class Candidate {
         this.department = department;
     }
 
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
     public void setId(int id){
         this.id = id;
     }
