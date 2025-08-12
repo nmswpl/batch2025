@@ -14,6 +14,10 @@ public class StringPrograms {
         printingSeperator();
         printingLoerCase();
         printingLastChar();
+        printingJoining();
+        printingIndexOfThe();
+        printingUpperCase();
+        printingConvertNumber();
 
     }
 
@@ -141,4 +145,33 @@ public class StringPrograms {
 //
 //    }
     }
+
+    public static void printingJoining() {
+        String result= String.join(",","apple","banana","cherry");
+
+        System.out.println(result);
+
+    }
+
+    public static void printingIndexOfThe() {
+
+        String str="welcome to the world";
+        String sub="the";
+        int index=str.indexOf(sub,10);
+        System.out.println(index);
+
+    }
+    public static void printingUpperCase() {
+        String input ="welcome to Java" ;
+        System.out.println(input);
+
+    }
+    public static void printingConvertNumber() {
+        int num=1234;
+        String output =String.valueOf(num);
+        System.out.println(output);
+
+    }
+
+
 }
