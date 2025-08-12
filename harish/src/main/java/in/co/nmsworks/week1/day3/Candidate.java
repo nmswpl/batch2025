@@ -11,7 +11,17 @@ public class Candidate {
     public Candidate(){
     }
 
-    public Candidate(int id, String name, String email,String department){
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
+    public Candidate(int id, String name, String email, String department){
         this.id = id;
         this.name=name;
         this.email=email;

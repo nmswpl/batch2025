@@ -32,6 +32,9 @@ public class Runner {
         printTeacherName(science);
 
 
+        Subject[] subjectList = new Subject[10];
+        subjectList[0] = new Subject();
+
 
 
         //NEW FUNCTIONS
