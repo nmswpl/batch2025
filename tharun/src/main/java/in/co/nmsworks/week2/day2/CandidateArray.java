@@ -32,7 +32,7 @@ public class CandidateArray {
 
         for(int i=0;i<candidates.length;i++){
             //System.out.println(candidates[i].getId());
-            if(candidates[i].getDepartment()=="QA"){
+            if(candidates[i].getDepartment().equals("QA")){
                 System.out.println(candidates[i].getName());
             }
         }
