@@ -13,7 +13,7 @@ public class Candidate {
     {
 
     }
-    Candidate(int id,String name,String email,String department)
+    public Candidate(int id, String name, String email, String department)
     {
         this.id = id;
         this.name = name;
@@ -29,7 +29,7 @@ public class Candidate {
         this.id = id;
     }
 
-    protected String getName()
+    public String getName()
     {
         return name;
     }
