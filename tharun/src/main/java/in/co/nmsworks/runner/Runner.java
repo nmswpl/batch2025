@@ -3,6 +3,7 @@ package in.co.nmsworks.runner;
 import in.co.nmsworks.week2.day1.Subject;
 import in.co.nmsworks.week2.day1.Teacher;
 import in.co.nmsworks.week2.day2.Contractor;
+import in.co.nmsworks.week2.day2.Dog;
 import in.co.nmsworks.week2.day2.FullTImeEmployee;
 import in.co.nmsworks.week2.day2.PartTimeEmployee;
 
@@ -55,6 +56,10 @@ public class Runner {
 
         PartTimeEmployee partTimeEmployee = new PartTimeEmployee(5,4);
         partTimeEmployee.calculateSalary();
+
+
+       // Dog doberMan = new Dog();
+       // doberMan.makeSound();
 
 
 
