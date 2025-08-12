@@ -43,9 +43,10 @@ public class Vehicle {
       }
 
       public void display(Vehicle v) {
-          System.out.println(super.getModel());
-          System.out.println(super.getYearOfmake());
-          System.out.println(noOfdoor);
+          System.out.println("Model : " + super.getModel());
+          System.out.println("Year : " + super.getYearOfmake());
+          System.out.println("No of Door : " + noOfdoor);
+          System.out.println();
       }
 
 
@@ -71,9 +72,10 @@ public class Vehicle {
       }
 
       public void display(Vehicle v) {
-          System.out.println(super.getModel());
-          System.out.println(super.getYearOfmake());
-          System.out.println(getHand());
+          System.out.println("Model : " + super.getModel());
+          System.out.println("Year : " + super.getYearOfmake());
+          System.out.println("Handle Bar : " + getHand());
+          System.out.println();
       }
 
   }
