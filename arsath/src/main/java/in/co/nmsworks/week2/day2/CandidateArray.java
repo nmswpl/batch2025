@@ -56,7 +56,7 @@ public class CandidateArray {
         }
 
         for(int i=0; i<= candidates.length-1;i++){
-            if(candidates[i].getDepartment()=="QA"){
+            if(candidates[i].getDepartment().equals("QA")){
                 System.out.println(candidates[i].getName());
             }
         }
