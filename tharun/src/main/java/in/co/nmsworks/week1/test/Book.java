@@ -10,6 +10,13 @@ public class Book {
         return name;
     }
 
+    public Book(String name, String author, int publicationYear, int noOfCopies) {
+        this.name = name;
+        this.author = author;
+        this.publicationYear = publicationYear;
+        this.noOfCopies = noOfCopies;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -28,5 +35,15 @@ public class Book {
 
     public void setPublicationYear(int publicationYear) {
         this.publicationYear = publicationYear;
+    }
+
+    void checkout(){
+        noOfCopies--;
+        if(noOfCopies>0){
+            System.out.println("Book Available");
+        }
+        else {
+            System.out.println("Book Unavailable");
+        }
     }
 }
