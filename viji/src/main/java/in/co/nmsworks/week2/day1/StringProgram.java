@@ -15,7 +15,7 @@ public class StringProgram {
        printEachSubstring("one,two,three");
        splitStringIntoArray("apple;banana;cherry;date" , 3);
        printFirstOccurenceIndex("programming", 'g');
-        printSpecifiedFirstOccurence("welcome to the world","the",10);
+       printSpecifiedFirstOccurence("welcome to the world","the",10);
        convertStringToLowerCase("Java Programming");
        convertStringToUpperCase("welcome to Java");
        convertIntegerToString(1234);
