@@ -26,25 +26,17 @@ public class Runner {
 
         TablesBetweenParticularNumber firstTableToPrint = new TablesBetweenParticularNumber();
         firstTableToPrint.printTableBetweenParticularNumber(table,start,end);
-        firstTableToPrint.printTableBetweenParticularNumber();
 
     }
 
     public static void printMail(String mail) {
 
-    }
-
-
-/*
-
-    public static void printDomainName(String email){
-
-        ExtractTheDomainName splittingFirstDomainName = new ExtractTheDomainName();
+        ExtractTheDomainName et = new ExtractTheDomainName();
+        System.out.println(et.getDomainName(mail));
 
     }
-    public static void print(String mail)
 
-*/
+    //public void printWordeExistsInSentence(String )
 
     public static void main(String[] args) {
 
@@ -59,8 +51,28 @@ public class Runner {
 
         printTableBetweenParticularNumber(3,300,400);
 
-        ExtractTheDomainName et = new ExtractTheDomainName();
-        System.out.println(et.getDomainName("gajendran@gmail.com"));
+        System.out.println("\n Extract Domain Name");
+        printMail("Gajendran@gmail.com");
+
+
+        IndexOfWordInSentence splitting1 = new IndexOfWordInSentence();
+        splitting1.printIndexOfWordInSentence("Java is a popular programming language.","Popular");
+
+
+        Books b1 = new Books();
+        b1.setAuthor("gaja");
+        b1.setNumberOfCopies(3);                //count are reduce after check out
+        b1.setPublicationYear("2025");
+        b1.checkOut();
+        b1.getNumberOfCopies();
+        b1.checkOut();
+        b1.getNumberOfCopies();
+        b1.checkOut();
+        b1.getNumberOfCopies();
+        b1.checkOut();
+        b1.getNumberOfCopies();
+
+
 
     }
 
