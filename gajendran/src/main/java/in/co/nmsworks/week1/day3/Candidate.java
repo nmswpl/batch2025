@@ -10,6 +10,24 @@ public class Candidate {
 
     public Candidate(){}
 
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", dept='" + dept + '\'' +
+                '}';
+    }
+
+    public  void setCandidateDetails(int id, String name, String email, String Dept){
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.dept = dept;
+
+    }
+
     public Candidate(int id, String name, String email, String dept){
         this.id = id;
         this.name = name;
