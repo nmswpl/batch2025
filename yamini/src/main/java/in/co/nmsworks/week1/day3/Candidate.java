@@ -32,7 +32,7 @@ public class Candidate {
         this.name = name;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
