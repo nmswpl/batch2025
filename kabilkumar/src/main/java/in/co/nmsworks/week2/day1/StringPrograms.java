@@ -41,6 +41,54 @@ public class StringPrograms
         String givenString = "one,two,three";
         subString(givenString);
 
+        String usingLimit = " apple;banana;graphs,cherry";
+        usingLimtCondition(usingLimit);
+
+        String getSentenseOcc = "programming";
+        firstoccurance(getSentenseOcc);
+
+        String findValue = "Welcome to the word";
+        findValueInSen(findValue);
+
+        String captial = "JAVA PROGRAMING";
+        String small = "java programming";
+        convertToLower(captial , small);
+
+        int num=123;
+        convertIntToStr(num);
+
+    }
+
+    public static void convertIntToStr(int datnum)
+    {
+        System.out.println(String.valueOf(datnum));
+    }
+    public static void convertToLower(String toCaptial,String toSmall)
+    {
+        System.out.println(toCaptial.toLowerCase());
+        System.out.println(toSmall.toUpperCase());
+    }
+
+    public static void findValueInSen(String getFindValue)
+    {
+        System.out.println(getFindValue.indexOf("the" , 10));
+
+    }
+    public static void firstoccurance(String occurance)
+    {
+        System.out.println(occurance.indexOf('g'));
+    }
+
+    public  static void usingLimtCondition(String limit)
+    {
+        System.out.println("split using limit:");
+        String[] wordslimit = limit.split(";",3);
+        for (int i = 0; i < wordslimit.length; i++)
+        {
+            System.out.println(wordslimit[i]);
+
+        }
+
     }
     public  static  void subString(String words)
     {
@@ -74,7 +122,7 @@ public class StringPrograms
 
     public static void indexOfTheString(String data)
     {
-        System.out.println(data.indexOf(5));
+        System.out.println(data.charAt(5));
     }
     public  static void beginingAndEndingIndex(String indexOfstartandend )
     {
