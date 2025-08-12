@@ -7,6 +7,7 @@ public class Candidate {
     private String email;
     private String department;
 
+
     public Candidate(){}
 
     public Candidate(int id,String name,String email,String department)
@@ -49,4 +50,13 @@ public class Candidate {
         return department;
     }
 
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
 }
