@@ -2,6 +2,9 @@ package in.co.nmsworks.runner;
 
 import in.co.nmsworks.week2.day1.Subject;
 import in.co.nmsworks.week2.day1.Teacher;
+import in.co.nmsworks.week2.day2.Contractor;
+import in.co.nmsworks.week2.day2.FullTImeEmployee;
+import in.co.nmsworks.week2.day2.PartTimeEmployee;
 
 public class Runner {
     private static int age;
@@ -17,7 +20,7 @@ public class Runner {
     }
 
     public static void main(String[] args) {
-
+/**
         Teacher teacher1 = new Teacher(1,"Sanjeev");
         Teacher teacher2 = new Teacher(2,"Rajesh");
 
@@ -39,5 +42,23 @@ public class Runner {
         science.setTeacher(teacher2);
         System.out.println(science);
         printTeacher(science);
+
+
+        **/
+
+
+        Contractor contractor = new Contractor(3,2);
+        contractor.calculateSalary();
+
+        FullTImeEmployee fullTImeEmployee = new FullTImeEmployee(10,8);
+        fullTImeEmployee.calculateSalary();
+
+        PartTimeEmployee partTimeEmployee = new PartTimeEmployee(5,4);
+        partTimeEmployee.calculateSalary();
+
+
+
+
+
     }
 }
