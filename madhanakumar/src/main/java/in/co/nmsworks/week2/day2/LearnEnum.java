@@ -17,7 +17,6 @@ public class LearnEnum {
             return numVal;
         }
 
-
     }
 
     public static void main(String[] args) {
