@@ -6,6 +6,16 @@ public class Candidate {
     private String email;
     private String department;
 
+    @Override
+    public String toString() {
+        return
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+
     //default constructor
     public Candidate(){
 
