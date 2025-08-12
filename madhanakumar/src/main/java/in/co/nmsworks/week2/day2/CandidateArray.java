@@ -1,16 +1,15 @@
 package in.co.nmsworks.week2.day2;
 
-public class Candidate {
+import in.co.nmsworks.week1.day3.Candidate;
 
-    public Candidate(int id, String name, String mail, String deparment) {
-    }
-    public Candidate() {
+public class CandidateArray {
+
+    public CandidateArray(){
 
     }
 
     public static void main(String[] args) {
-       Candidate candidate = new Candidate();
-       candidate.arrayExample();
+      new CandidateArray().arrayExample();
     }
 
     public void arrayExample(){
@@ -29,23 +28,27 @@ public class Candidate {
         Candidate c33 = new Candidate(33, "Vinothkumar E","gajendrans@nmsworks.co.in","QA");
         Candidate c34 = new Candidate(34, "Kanagavel N","gajendrans@nmsworks.co.in","Dev");
 
-        Candidate[] candidates = new Candidate[14];
-        candidates[0] = c21;
-        candidates[1] = c22;
-        candidates[2] = c23;
-        candidates[3] = c24;
-        candidates[4] = c25;
-        candidates[5] = c26;
-        candidates[6] = c27;
-        candidates[7] = c28;
-        candidates[8] = c29;
-        candidates[9] = c30;
-        candidates[10] = c31;
-        candidates[11] = c32;
-        candidates[12] = c33;
-        candidates[13] = c34;
+        Candidate[] candidates = new Candidate[]{c21,c22,c23,c24,c25,c26,c27,c28,c29,c30,c31,c32,c33,c34};
 
         System.out.println(candidates.length);
+
+
+        for (int i = 0; i < candidates.length; i++) {
+            System.out.println(candidates[i]);
+        }
+
+        for (Candidate i : candidates){
+            System.out.println(i.getId());
+        }
+
+        for (Candidate i : candidates){
+            String dept = i.getDepartment();
+            if (dept.equalsIgnoreCase("qa")){
+                System.out.println(i.getName());
+            }
+        }
     }
+
+
 }
 
