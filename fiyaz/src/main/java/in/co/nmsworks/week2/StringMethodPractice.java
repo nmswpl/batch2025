@@ -20,8 +20,23 @@ public class StringMethodPractice {
         limetSubstring("apple;banana;cherry;date");
         occurrenceChar("programming");
         findsubstring("welcome to the world", "the", 10);
+        inLowerCase("Java Programming");
+        inUpperCase("welcome to Java");
+        intToString(1234);
 
 
+    }
+
+    private static void intToString(int i) {
+        System.out.println(String.valueOf(i));
+    }
+
+    private static void inUpperCase(String welcomeToJava) {
+        System.out.println(welcomeToJava.toUpperCase());
+    }
+
+    private static void inLowerCase(String javaProgramming) {
+        System.out.println(javaProgramming.toLowerCase());
     }
 
     private static void findsubstring(String w, String t, int i) {
