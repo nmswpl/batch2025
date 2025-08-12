@@ -30,6 +30,16 @@ public class Book {
         return publicationYear;
     }
 
+    public void checkOut(){
+        if (noOfCopies > 0){
+            noOfCopies --;
+            System.out.println("Book Availabale");
+        }
+        else{
+            System.out.println("Book Not Available");
+        }
+    }
+
     public void setNoOfCopies(int noOfCopies){
         this.noOfCopies = noOfCopies;
     }
