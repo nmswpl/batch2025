@@ -6,9 +6,16 @@ public abstract class Animal {
     public abstract String makeSound();
 
 }
-class  Dog extends Animal{
+class Dog extends Animal{
     @Override
     public String makeSound() {
         return "Bark";
     }
 }
+class Cat extends Animal{
+    @Override
+    public String makeSound() {
+        return "Meow";
+    }
+}
+
