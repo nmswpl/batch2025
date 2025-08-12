@@ -139,7 +139,8 @@ public class StringPrograms {
         String input22 = "welcome to java";
         upperCaseOfTheString(input22);
 
-        String input23 = new String("1234");
+        int a = 1234;
+        String input23 = String.valueOf(a);
         autoBox(input23);
 
 
