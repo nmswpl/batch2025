@@ -31,6 +31,14 @@ public class Runner {
         emp3.setHours(10);
         emp3.setBasepay(3);
 
+        Dog dog=new Dog();
+        Animal animal=new Animal() {
+            @Override
+            public String makeSound() {
+                return "";
+            }
+        }
+
 
 
 
