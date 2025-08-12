@@ -25,7 +25,7 @@ public class StringPrograms {
 
     public static void printStringJoin(String[] str){
         String a = "";
-        String.join(",", "apple","banana","cherry", a);
+        a = String.join(",", "apple","banana","cherry");
         System.out.println(a);
     }
 
