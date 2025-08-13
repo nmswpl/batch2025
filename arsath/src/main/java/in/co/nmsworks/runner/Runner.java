@@ -86,9 +86,6 @@ public class Runner {
 
 
 
-
-
-
     }
 
 //    private static void printArea(Square s1){
