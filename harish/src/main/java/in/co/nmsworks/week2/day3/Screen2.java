@@ -7,7 +7,7 @@ public class Screen2 implements Theatre {
 
 
     @Override
-    public String checkAvailability() {
+    public String printTheAvailability() {
 
         if(availablity > 0){
             return  "Ticket Available :" + availablity;
