@@ -2,38 +2,38 @@ package in.co.nmsworks.week1.day3;
 
 public class RunnerClass {
     public static void main(String[] args) {
-        Candidate MohamedAsik = new Candidate(1, "MohammedAsik", "mohammed@nmsworks.co.in", "Developer");
-        Candidate Suddharshan = new Candidate(2, "Suddharshan", "suddharshan@nmsworks.co.in", "Developer");
-        Candidate Logeswari = new Candidate(3, "Logeswari", "logeswari@nmsworks.co.in", "Developer");
-        Candidate AnusyaDevi = new Candidate(4, "AnusyaDevi", "anusyadevi@nmsworks.co.in", "Developer");
-        Candidate Kavi = new Candidate(5, "Kavi", "kavi@nmsworks.co.in", "Developer");
-        Candidate c1 = new Candidate();
-        Candidate SaranRaj = new Candidate();
+        CandidateArray MohamedAsik = new CandidateArray(1, "MohammedAsik", "mohammed@nmsworks.co.in", "Developer");
+        CandidateArray Suddharshan = new CandidateArray(2, "Suddharshan", "suddharshan@nmsworks.co.in", "Developer");
+        CandidateArray Logeswari = new CandidateArray(3, "Logeswari", "logeswari@nmsworks.co.in", "Developer");
+        CandidateArray AnusyaDevi = new CandidateArray(4, "AnusyaDevi", "anusyadevi@nmsworks.co.in", "Developer");
+        CandidateArray Kavi = new CandidateArray(5, "Kavi", "kavi@nmsworks.co.in", "Developer");
+        CandidateArray c1 = new CandidateArray();
+        CandidateArray SaranRaj = new CandidateArray();
         SaranRaj.setId(6);
         SaranRaj.setName("SaranRaj");
         SaranRaj.setEmail("saranraj@nmsworks.co.in");
         SaranRaj.setDept("Developer");
 
 
-        Candidate Yamini = new Candidate();
+        CandidateArray Yamini = new CandidateArray();
         Yamini.setId(7);
         Yamini.setName("Yamini");
         Yamini.setEmail("yamini@nmsworks.co.in");
         Yamini.setDept("Developer");
 
-        Candidate SameeraBanu = new Candidate();
+        CandidateArray SameeraBanu = new CandidateArray();
         SameeraBanu.setId(8);
         SameeraBanu.setName("SameeraBanu");
         SameeraBanu.setEmail("sameerbanu@nmsworks.co.in");
         SameeraBanu.setDept("Developer");
 
-        Candidate TharunKumar = new Candidate();
+        CandidateArray TharunKumar = new CandidateArray();
         TharunKumar.setId(9);
         TharunKumar.setName("TharunKumar");
         TharunKumar.setEmail("tharunkumar@nmsworks.co.in");
         TharunKumar.setDept("Developer");
 
-        Candidate Mahalakshmi = new Candidate();
+        CandidateArray Mahalakshmi = new CandidateArray();
         Mahalakshmi.setId(10);
         Mahalakshmi.setName("Mahalakshmi");
         Mahalakshmi.setEmail("mahalakshmi@nmsworks.co.in");

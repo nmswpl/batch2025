@@ -2,15 +2,15 @@ package in.co.nmsworks.week1.day3;
 
 import java.util.Objects;
 
-public class Candidate {
+public class CandidateArray {
     private int id;
     private String name;
     private String email;
     private String dept;
 
-    public Candidate(){}
+    public CandidateArray(){}
 
-    public Candidate(int id, String name, String email, String dept){
+    public CandidateArray(int id, String name, String email, String dept){
         this.id = id;
         this.name = name;
         this.email = email;
@@ -49,7 +49,7 @@ public class Candidate {
         return "Dept: "+ dept;
     }
 
-    public void printCandidateInfo(Candidate candidate){
+    public void printCandidateInfo(CandidateArray candidate){
         System.out.println("Id: " + candidate.id);
         System.out.println("Name: " + candidate.name);
         System.out.println("Dept: " + candidate.dept);
@@ -59,7 +59,7 @@ public class Candidate {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        Candidate candidate = (Candidate) o;
+        CandidateArray candidate = (CandidateArray) o;
         return Objects.equals(dept, candidate.dept);
     }
 
