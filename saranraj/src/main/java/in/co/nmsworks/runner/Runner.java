@@ -107,9 +107,9 @@ public class Runner {
         s22.setScreenName("Screen02");
         Screen s33 = new Screen(24);
         s33.setScreenName("Screen03");
-        s33.checkAvailability();
+        s33.printAndCheckAvailability();
         s33.bookTicket(13);
-        s33.checkAvailability();
+        s33.printAndCheckAvailability();
 
 
 

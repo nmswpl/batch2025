@@ -39,13 +39,13 @@ public class Screen implements Multiplex {
             totalSeat = totalSeat - count;
         }
         else {
-            checkAvailability();
+            printAndCheckAvailability();
         }
 
     }
 
     @Override
-    public void checkAvailability() {
+    public void printAndCheckAvailability() {
 
         if (isAvailability(totalSeat)){
             System.out.println("Ticket Available on "+ getScreenName()+" : " + totalSeat);
