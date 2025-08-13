@@ -31,9 +31,9 @@ public class CandidateArray {
         System.out.println();
 
 
-        for(int i=0;i<candidate.length;i++){
-            if(candidate[i].getDepartment()=="QA"){
-                System.out.println(candidate[i].getName());
+        for (Candidate value : candidate) {
+            if (value.getDepartment().equals("QA")) {
+                System.out.println(value.getName());
             }
         }
 

@@ -5,6 +5,7 @@ public class EnumPractice {
         SUNDAY("First Day"),MONDAY("Second day"),TUESDAY("Third day"),WEDNESDAY("Fourth day"),THURSDAY("Fifth day"),FRIDAY("Sixth day"),SATURDAY("Seventh day");
         final String description;
         public String getDescription(){
+
             return description;
         }
 
