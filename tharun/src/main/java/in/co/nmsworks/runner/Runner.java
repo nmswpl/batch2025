@@ -1,11 +1,10 @@
 package in.co.nmsworks.runner;
 
 import in.co.nmsworks.week2.day1.Subject;
-import in.co.nmsworks.week2.day1.Teacher;
-import in.co.nmsworks.week2.day2.Contractor;
-import in.co.nmsworks.week2.day2.Dog;
-import in.co.nmsworks.week2.day2.FullTImeEmployee;
-import in.co.nmsworks.week2.day2.PartTimeEmployee;
+import in.co.nmsworks.week2.day3.Rectangle;
+import in.co.nmsworks.week2.day3.Shape;
+import in.co.nmsworks.week2.day3.Square;
+import in.co.nmsworks.week2.day3.Triangle;
 
 public class Runner {
     private static int age;
@@ -21,49 +20,71 @@ public class Runner {
     }
 
     public static void main(String[] args) {
-/**
-        Teacher teacher1 = new Teacher(1,"Sanjeev");
-        Teacher teacher2 = new Teacher(2,"Rajesh");
 
-        System.out.println(teacher1);
-        System.out.println(teacher2);
+        Rectangle r1 = new Rectangle(3,4);
+//        System.out.println("Perimeter of Rectangle : " + r1.perimeter());
+//        System.out.println("Area of Square : " + r1.area());
 
-        Subject maths = new Subject();
-        maths.setCode("MA101");
-        maths.setName("Maths");
-        maths.setTeacher(teacher1);
+        Square s1 = new Square(6);
+//        System.out.println("Perimeter of Square : " + s1.perimeter());
+//        System.out.println("Area of Square : " + s1.area());
 
-        System.out.println(maths);
+        Triangle t1 = new Triangle(4,5);
 
+        System.out.println("--------------------");
 
+        printPerimeter(s1);
 
-        Subject science = new Subject();
-        science.setCode("SE101");
-        science.setName("Science");
-        science.setTeacher(teacher2);
-        System.out.println(science);
-        printTeacher(science);
+        printPerimeter(r1);
 
+        printPerimeter(t1);
 
-        **/
+        printArea(s1);
 
+        printArea(r1);
 
-        Contractor contractor = new Contractor(3,2);
-        contractor.calculateSalary();
+        printArea(t1);
 
-        FullTImeEmployee fullTImeEmployee = new FullTImeEmployee(10,8);
-        fullTImeEmployee.calculateSalary();
+        System.out.println("--------------------");
 
-        PartTimeEmployee partTimeEmployee = new PartTimeEmployee(5,4);
-        partTimeEmployee.calculateSalary();
-
-
-       // Dog doberMan = new Dog();
-       // doberMan.makeSound();
-
-
-
+        printNUmberOfSide(s1);
 
 
     }
+//
+//    private static void printArea(Rectangle r1) {
+//        System.out.println("Area of Rectangle : " + r1.area());
+//    }
+//
+//    private static void printArea(Square s1) {
+//        System.out.println("Area of Square : " + s1.area());
+//    }
+
+    public static void printArea(Shape s){
+        System.out.println("Area : " + s.area());
+        s.printClassName();
+    }
+
+    public static void printPerimeter(Shape s){
+        System.out.println("Perimeter : " + s.area());
+
+    }
+
+    public static void printNUmberOfSide(Shape s){
+        if (s instanceof Square ){
+            Square sq = (Square) s;
+            sq.getDescription();
+            System.out.println(sq.getDescription());
+            System.out.println(4);
+        }
+        else if (s instanceof Rectangle) {
+            System.out.println(4);
+
+        }
+        else if (s instanceof Triangle) {
+            System.out.println(3);
+        }
+    }
+
+
 }
