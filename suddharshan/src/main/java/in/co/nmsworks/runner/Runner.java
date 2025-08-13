@@ -1,14 +1,41 @@
 package in.co.nmsworks.runner;
 
-
-import in.co.nmsworks.week2.day3.Rectangle;
-import in.co.nmsworks.week2.day3.Square;
-import in.co.nmsworks.week2.day3.Shape;
-import in.co.nmsworks.week2.day3.Triangle;
+import in.co.nmsworks.week2.day3.*;
 
 public class Runner {
-
     public static void main(String[] args) {
+        ScreenOne s1 = new ScreenOne(15);
+        s1.checkAvailability();
+        s1.bookTicket(3);
+        s1.bookTicket(3);
+        s1.checkAvailability();
+        s1.bookTicket(3);
+        s1.checkAvailability();
+        ScreenTwo s2 = new ScreenTwo(10);
+        s2.checkAvailability();
+        s2.bookTicket(4);
+        s2.checkAvailability();
+        s2.bookTicket(5);
+        s2.checkAvailability();
+        ScreenThree s3 = new ScreenThree(10);
+        s3.checkAvailability();
+        s3.bookTicket(7);
+        s3.checkAvailability();
+        s3.bookTicket(5);
+        s3.checkAvailability();
+        /*
+        CreditCard c = new CreditCard();
+        c.processPayment(12);
+        UPI u = new UPI();
+        u.processPayment(15);
+        Crypto cy = new Crypto();
+        cy.processPayment(19);
+        Person p1 = new Person("Hari",c);
+        p1.makePayment(14);
+        Person p2 = new Person("Ram", u);
+        p2.makePayment(17);
+        Person p3 = new Person("Gokul", cy);
+        p3.makePayment(22);
         Rectangle r1 = new Rectangle(3,4);
         System.out.println("Perimeter of Rectangle: " + r1.perimeter());
         System.out.println("Area of Rectangle: " + r1.area());
@@ -19,6 +46,10 @@ public class Runner {
         System.out.println("Perimeter of Square: " + s1.perimeter());
         System.out.println("Class Name: " );
         s1.printClassName();
+        CandidateArray c = new CandidateArray(1,"name","abc@cde.com","dp");
+        c.setMyShape(s1);
+        c.setMyShape(new Square(3));
+        System.out.println(c.toString());
         Triangle t1 = new Triangle(4,6);
         System.out.println("Area of Triangle: " + t1.area());
         System.out.println("Perimeter of Triangle: " + t1.perimeter());
@@ -31,6 +62,21 @@ public class Runner {
         printSides(s1);
         printSides(t1);
         printSides(r1);
+        Book English = new Book("English","Peter",2008,5);
+        Book Maths = new Book("Maths","Eistein", 2012, 2);
+        Book Social = new Book("Science", "Rutherford", 2000, 6);
+
+        English.printDetails(English);
+        Maths.printDetails(Maths);
+        Social.printDetails(Social);
+
+        English.checkOut();
+        Maths.checkOut();
+        Social.checkOut();
+
+        Maths.checkOut();
+        Maths.checkOut();
+        */
     }
 
     /*

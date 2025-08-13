@@ -26,4 +26,5 @@ public class Square implements Shape{
     public Square(int side) {
         this.side = side;
     }
+
 }
