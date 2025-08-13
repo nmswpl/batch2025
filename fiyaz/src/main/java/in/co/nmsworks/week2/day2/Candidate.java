@@ -23,7 +23,7 @@ public class Candidate {
         CandidateInfo c33 = new CandidateInfo(33, "Vinothkumar E","gajendrans@nmsworks.co.in","QA");
         CandidateInfo c34 = new CandidateInfo(34, "Kanagavel N","gajendrans@nmsworks.co.in","Dev");
 
-        CandidateInfo[] candidateInfos = new CandidateInfo[]{c21, c22,c23,c24,c25,c26,c26,c27,c28,c29,c30,c31,c32,c33,c34};
+        CandidateInfo[] candidateInfos = new CandidateInfo[]{c21, c22, c23, c24, c25, c26, c26, c27, c28, c29, c30, c31, c32, c33, c34};
 
         for (CandidateInfo c : candidateInfos) {
             if (c.getDepartment().equals("QA")) {
