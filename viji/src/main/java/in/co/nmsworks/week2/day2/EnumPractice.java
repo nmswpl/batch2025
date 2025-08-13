@@ -7,6 +7,7 @@ public class EnumPractice {
         final String DESCRIPTION;
 
         Days(String DESCRIPTION){
+
             this.DESCRIPTION = DESCRIPTION ;
         }
         public String getDESCRIPTION() {

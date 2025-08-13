@@ -1,6 +1,7 @@
 package in.co.nmsworks.week2.day2;
 
 class Vehicle1{
+
    private String model;
    private int yearOfMake;
 
@@ -22,9 +23,7 @@ class Vehicle1{
 
     public void display() {
         System.out.print("Model: " + getModel() + " " + "Year: " +getYearOfMake() + " ");
-
     }
-
 
 }
 

@@ -7,7 +7,7 @@ package in.co.nmsworks.week2.day2;
 class Dog extends Animal {
      @Override
      void makeSound() {
-        System.out.println("Bark");
+        System.out.println("Bark") ;
 
     }
 

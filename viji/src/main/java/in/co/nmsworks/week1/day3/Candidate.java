@@ -9,6 +9,7 @@ public class Candidate {
     private String email;
     private String department;
 
+
     public void setId(int id){
         this.id = id;
     }

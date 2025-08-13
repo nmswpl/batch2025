@@ -18,17 +18,8 @@ public class FindWordExist {
     }
 
     public static void printExistWordPosition(String input, String word){
-         String[] inputArray = input.split(" ");
-
-         for(int i=0 ;  i < inputArray.length ; i++){
-             if(inputArray[i].length() == word.length()) {
-                 String words = inputArray[i];
-                 System.out.println("Word found at index: " );
-                 for (int j = 0; i < words.length(); j++) {
-                     if (words.charAt(j) == word.charAt(j)){
-                         continue;
-                     }
-                 }
+                 int indexOf = input.toLowerCase().indexOf(word.toLowerCase());
+                 System.out.println(indexOf > 0 ? "Word found at index: "+indexOf : " Words not found " );
                  System.out.println("First character of the word: "+word.charAt(0));
                  System.out.println("Last character of the word: "+ word.charAt(word.length()-1));
 
@@ -36,5 +27,5 @@ public class FindWordExist {
          }
 
         
-    }
-}
+
+
