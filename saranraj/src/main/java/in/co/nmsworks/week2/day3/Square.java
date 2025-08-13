@@ -29,6 +29,12 @@ public class Square implements Shape {
         return "This is square";
     }
 
+    @Override
+    public String toString() {
+        return "Square{" +
+                "side=" + side +
+                '}';
+    }
 }
 
 
