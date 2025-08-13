@@ -21,6 +21,13 @@ public class Square implements Shape{
         System.out.println(getClass().getName());
     }
 
+    @Override
+    public String toString() {
+        return "Square{" +
+                "side=" + side +
+                '}';
+    }
+
     public String  getDescription()
     {
         return "this is a square";

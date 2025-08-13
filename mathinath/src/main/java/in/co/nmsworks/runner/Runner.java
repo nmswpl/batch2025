@@ -1,9 +1,7 @@
 package in.co.nmsworks.runner;
 
-import in.co.nmsworks.week2.day3.Rectangle;
-import in.co.nmsworks.week2.day3.Shape;
-import in.co.nmsworks.week2.day3.Square;
-import in.co.nmsworks.week2.day3.Triangle;
+import in.co.nmsworks.week1.day3.Candidate;
+import in.co.nmsworks.week2.day3.*;
 
 public class Runner {
     public static void main(String[] args) {
@@ -17,17 +15,52 @@ public class Runner {
         Square s1 = new Square(6);
 //        System.out.println("Perimeter: "+s1.perimeter());
 //        System.out.println("area: "+s1.area());
-        printArea(s1);
-        printArea(r1);
+//        printArea(s1);
+//        printArea(r1);
 
 
         Triangle t1 = new Triangle(2,3);
 //        System.out.println(t1.perimeter());
 //        System.out.println(t1.area());
-        printArea(t1);
-        printNoOfSidea(s1);
-        printNoOfSidea(r1);
-        printNoOfSidea(t1);
+//        printArea(t1);
+//        printNoOfSidea(s1);
+//        printNoOfSidea(r1);
+//        printNoOfSidea(t1);
+
+//        Candidate c = new Candidate(1,"name","abc@cde.com","dep");
+//        c.setMyShape(s1);
+//        c.setMyShape(new Square(3));
+//        System.out.println( c.getMyShape().perimeter());
+//        System.out.println(c.getMyShape().toString());
+
+
+        CreditCardPayment cp = new CreditCardPayment();
+//        System.out.print(cp.makePayment(200));
+
+        UpiPayment up=new UpiPayment();
+//        System.out.println(up.makePayment(500));
+//
+//
+//
+        CryptoPayment crp=new CryptoPayment();
+//        System.out.println( crp.makePayment(100));
+
+//        Person p1=new Person("mathi",cp);
+//        p1.makePayment(200);
+//
+//        Person p2=new Person("madan",up);
+//        p2.makePayment(500);
+//        Person p3=new Person();
+
+
+        Screen1 sc1 = new Screen1();
+        sc1.bookTicket(5);
+        sc1.checkAvailability();
+
+//        Screen2 sc2=new Screen2();
+//        sc2.bookTicket(3);
+//        sc1.checkAvailability();
+
 
 //        Teacher teacher1=new Teacher(1,"mathi");
 //        Teacher teacher2=new Teacher(2,"madan");
