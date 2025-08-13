@@ -37,4 +37,9 @@ public class Square implements Shape{
     public String getDescription(){
         return "This is Square";
     }
+
+    @Override
+    public String toString() {
+        return "Square class";
+    }
 }
