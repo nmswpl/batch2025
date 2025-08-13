@@ -9,6 +9,11 @@ public class Square implements Shape{
     }
 
     @Override
+    public String toString() {
+        return "Square";
+    }
+
+    @Override
     public void printClassName() {
         System.out.println(getClass().getName());
     }
