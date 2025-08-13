@@ -3,6 +3,11 @@ package in.co.nmsworks.week2.day3;
 public class Square implements Shape{
     private int side;
 
+    @Override
+    public String toString() {
+        return "Square";
+    }
+
     public Square(int side) {
         this.side = side;
     }
