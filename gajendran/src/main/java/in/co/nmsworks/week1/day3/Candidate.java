@@ -1,14 +1,25 @@
 package in.co.nmsworks.week1.day3;
 
+import in.co.nmsworks.week2.day3.Shape;
+
 public class Candidate {
 
     private int id;
     private String name;
     private String email;
     private String dept;
+    private Shape myShape;
 
 
     public Candidate(){}
+
+    public Shape getMyShape() {
+        return myShape;
+    }
+
+    public void setMyShape(Shape myShape) {
+        this.myShape = myShape;
+    }
 
     @Override
     public String toString() {
