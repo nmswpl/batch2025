@@ -25,10 +25,10 @@ public class Screen1 implements MultiPlex{
     }
 
     @Override
-    public boolean checkAvailability() {
-        if(noOfTickets != 0){
-            return true;
+    public boolean checkAvailability(int noOfTicketsWanted) {
+        if(noOfTicketsWanted > noOfTickets){
+            return false;
         }
-        return false;
+        return true;
     }
 }

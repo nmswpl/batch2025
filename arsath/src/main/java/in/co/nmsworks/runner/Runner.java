@@ -72,17 +72,17 @@ public class Runner {
         s1.bookTicket(1);
         s1.bookTicket(2);
         s1.bookTicket(1);
-        System.out.println(s1.checkAvailability());
+        System.out.println(s1.checkAvailability(247));
 
         System.out.println();
 
         s2.bookTicket(1);
-        System.out.println(s2.checkAvailability());
+        System.out.println(s2.checkAvailability(5));
 
         System.out.println();
 
         s3.bookTicket(2);
-        System.out.println(s3.checkAvailability());
+        System.out.println(s3.checkAvailability(249));
 
 
 
