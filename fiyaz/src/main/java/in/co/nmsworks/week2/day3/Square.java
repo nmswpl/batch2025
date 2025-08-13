@@ -9,6 +9,13 @@ public class Square implements Shape {
     }
 
     @Override
+    public String toString() {
+        return "Square{" +
+                "side=" + side +
+                '}';
+    }
+
+    @Override
     public int area() {
         return side * side;
     }
