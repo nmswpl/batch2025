@@ -42,14 +42,14 @@ class Contractor extends Employee {
 class FullTimeEmp extends Employee {
 
     public FullTimeEmp (int noOfDays, int hrsPerDay) {
-        super.setHours(noOfDays * hrsPerDay);
+        setHours(noOfDays * hrsPerDay);
         setBasePay(10);
     }
 }
 
 class PTEmp extends Employee {
     public PTEmp(int noOfDays, int hrsPerDay) {
-        super.setHours(noOfDays * hrsPerDay);
+        setHours(noOfDays * hrsPerDay);
         setBasePay(5);
     }
 }
