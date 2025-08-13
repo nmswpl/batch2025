@@ -4,6 +4,11 @@ public class Square implements Shape{
 
     private int side;
 
+    @Override
+    public String toString() {
+        return "Square";
+    }
+
     public Square(int side) {
         this.side = side;
     }
