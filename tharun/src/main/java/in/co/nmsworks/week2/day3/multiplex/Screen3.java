@@ -1,8 +1,8 @@
 package in.co.nmsworks.week2.day3.multiplex;
 
 public class Screen3 implements Multiplex{
-    private static int totalSeats=10;
-    private static int seatNumber=0;
+    int totalSeats=10;
+    int seatNumber=0;
 
     @Override
     public boolean checkAvailability(int noOfSeats) {
