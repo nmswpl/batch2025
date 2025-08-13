@@ -2,33 +2,77 @@ package in.co.nmsworks.week2.day2;
 
 public class Employee {
 
-    public float calculateSalary(int hours, int basePay){
-        return hours*basePay;
+    private int noOfWorkingHours;
+    int basePay;
+
+    public void setNoOfWorkingHours(int noOfWorkingHours) {
+        this.noOfWorkingHours = noOfWorkingHours;
     }
 
+    public int getNoOfWorkingHours() {
+        return noOfWorkingHours;
+    }
+
+    public void setBasePay(int basePay) {
+        this.basePay = basePay;
+    }
+
+    public int getBasePay() {
+        return basePay;
+    }
+
+    public int calculateSalary(){
+        return getNoOfWorkingHours()*getBasePay();
+    }
 }
 
 class Contractor extends Employee{
 
-    int hours;
-    int basePay = 3;
-
-    public int getHours() {
-        return hours;
+    @Override
+    public void setNoOfWorkingHours(int noOfWorkingHours) {
+        super.setNoOfWorkingHours(noOfWorkingHours);
     }
-    public void setHours(int hours){
-        this.hours = hours;
+
+    @Override
+    public void setBasePay(int basePay) {
+        super.setBasePay(basePay);
     }
 }
 
 class FullTimeEmployee extends Employee{
 
-    int hours = 8;
-    int basePay = 10;
+    private int noOfWorkingHoursPerDay = 8;
+
+    public void setNoOfWorkingDays(int noOfWorkingDays) {
+        super.setNoOfWorkingHours(noOfWorkingDays*noOfWorkingHoursPerDay);
+    }
+
+    @Override
+    public void setNoOfWorkingHours(int noOfWorkingHoursPerDay) {
+        this.noOfWorkingHoursPerDay = noOfWorkingHoursPerDay;
+    }
+
+    @Override
+    public void setBasePay(int basePay) {
+        super.setBasePay(basePay);
+    }
 }
 
 class PartTimeEmployee extends Employee{
 
-    int hours = 4;
-    int basePay = 5;
+    private int noOfWorkingHoursPerDay = 4;
+
+    public void setNoOfWorkingDays(int noOfWorkingDays) {
+        super.setNoOfWorkingHours(noOfWorkingDays*noOfWorkingHoursPerDay);
+    }
+
+    @Override
+    public void setNoOfWorkingHours(int noOfWorkingHoursPerDay) {
+        this.noOfWorkingHoursPerDay = noOfWorkingHoursPerDay;
+    }
+
+    @Override
+    public void setBasePay(int basePay) {
+        super.setBasePay(basePay);
+    }
 }
