@@ -1,10 +1,16 @@
 package in.co.nmsworks.week2.day4.sequence;
 
 public class SimpleMultiplier implements Sequence{
-    int multiplicationSeq = 1;
+    int StartingValue , multipleBy , currentValue ;
+
+    public SimpleMultiplier(int startingValue, int multipleBy) {
+        this.StartingValue = startingValue;
+        this.multipleBy = multipleBy;
+    }
+
     @Override
     public int next() {
-        this.multiplicationSeq *= 2;
-        return this.multiplicationSeq;
+        this.StartingValue *= multipleBy;
+        return this.StartingValue;
     }
 }
