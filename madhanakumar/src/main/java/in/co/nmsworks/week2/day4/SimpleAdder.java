@@ -12,6 +12,7 @@ public class SimpleAdder implements Sequence {
 
     @Override
     public int next() {
-        return startingNumber++;
+        startingNumber = startingNumber + step;
+        return startingNumber;
     }
 }
