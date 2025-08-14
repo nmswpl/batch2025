@@ -28,7 +28,9 @@ public class Teacher {
     }
 
     public Teacher()
-    {}
+    {
+        ;
+    }
 
     @Override
     public String toString() {

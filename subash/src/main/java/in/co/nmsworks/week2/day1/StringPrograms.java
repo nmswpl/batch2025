@@ -1,7 +1,5 @@
 package in.co.nmsworks.week2.day1;
 
-import java.util.Arrays;
-
 public class StringPrograms {
 
     public static void main(String[] args) {
