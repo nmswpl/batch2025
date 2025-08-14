@@ -6,7 +6,7 @@ public class SequenceGenerator {
         SimpleMultiplier m = new SimpleMultiplier(3,5);
         printSequence(s,5);
         System.out.println();
-        printSequence(m, 5);
+        printSequence(m, 6);
     }
 
     private static void printSequence(Sequence sq, int limit) {
