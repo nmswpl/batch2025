@@ -36,8 +36,6 @@ public class Movie implements Comparable<Movie>{
                 '}';
     }
 
-
-
     @Override
     public int compareTo(Movie o) {
         if (this.yearOfRelease < o.yearOfRelease){
