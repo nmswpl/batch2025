@@ -4,10 +4,7 @@ import in.co.nmsworks.week1.day3.Candidate;
 import in.co.nmsworks.week2.day1.Subject;
 import in.co.nmsworks.week2.day1.Teacher;
 import in.co.nmsworks.week2.day1.day2.EmployeeOver;
-import in.co.nmsworks.week2.day3.Rectangle;
-import in.co.nmsworks.week2.day3.Shape;
-import in.co.nmsworks.week2.day3.Square;
-import in.co.nmsworks.week2.day3.Triangle;
+import in.co.nmsworks.week2.day3.*;
 
 public class Runner {
 
@@ -40,7 +37,7 @@ public class Runner {
     }
 */
 
-
+/*
 
     public static void main(String[] args) {
         Rectangle r1 = new Rectangle(3, 4);
@@ -62,6 +59,11 @@ public class Runner {
         printPeremeter(t1);
         printNoOsSides(s1);
 
+        Candidate c = new Candidate(1,"name","abc@dc.com","dep");
+        c.setMyShape(s1);
+        c.setMyShape(new Square(3));
+        c.getMyShape();
+
 
     }
 /*
@@ -76,7 +78,7 @@ public class Runner {
     }
 
 }
-*/
+
 
     public static void printArea(Shape s) {
         System.out.println("area is " + s.area());
@@ -116,7 +118,35 @@ public class Runner {
         e1.work();
 
     }
-}
+} c.setMyShape(s1);
+        c.setMyShape(new Square(3));
+        c.getMyShape();
+
 
      */
 
+    public static void main(String[] args) {
+        CreditPayment c = new CreditPayment();
+        System.out.println("credit payment is :"+c.processPayment(10.0));
+        CryptoPayment cr = new CryptoPayment();
+        System.out.println("Crypto payment is :" +cr.processPayment(2));
+        UPIPayment u = new UPIPayment();
+        System.out.println("upi payment is :" +u.processPayment(4));
+
+       Person p1 = new Person();
+       Person p2 = new Person();
+       Person p3 = new Person();
+
+       p1.setProcessPayment(c);
+       p1.setProcessPayment(cr);
+       p1.setProcessPayment(u);
+
+
+
+       // System.out.println(p2.getProcessPayment(c));
+
+
+
+
+    }
+    }
