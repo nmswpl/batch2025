@@ -13,6 +13,10 @@ import in.co.nmsworks.week2.day3.payment.CreditCardPayment;
 import in.co.nmsworks.week2.day3.payment.CryptoPayment;
 import in.co.nmsworks.week2.day3.payment.Person;
 import in.co.nmsworks.week2.day3.payment.UPIPayment;
+import in.co.nmsworks.week2.day4.Adder;
+import in.co.nmsworks.week2.day4.Calculator;
+import in.co.nmsworks.week2.day4.Divider;
+import in.co.nmsworks.week2.day4.Multiplier;
 
 public class Runner {
     private static int age;
@@ -57,88 +61,10 @@ public class Runner {
 
     public static void main(String[] args) {
 
-//        Rectangle r1 = new Rectangle(3,4);
-////        System.out.println("Perimeter of Rectangle : " + r1.perimeter());
-////        System.out.println("Area of Square : " + r1.area());
-//
-//        Square s1 = new Square(6);
-////        System.out.println("Perimeter of Square : " + s1.perimeter());
-////        System.out.println("Area of Square : " + s1.area());
-//
-//        Triangle t1 = new Triangle(4,5);
-//
-//        System.out.println("--------------------");
-//
-//        printPerimeter(s1);
-//
-//        printPerimeter(r1);
-//
-//        printPerimeter(t1);
-//
-//        printArea(s1);
-//
-//        printArea(r1);
-//
-//        printArea(t1);
-//
-//        System.out.println("--------------------");
-//
-//        printNUmberOfSide(s1);
-//
-//        Candidate c = new Candidate(1,"name","abc@gmail.com","Dep");
-//        c.setMyShape(s1);
-//        c.setMyShape(new Square(3));
-//        System.out.println(c.getMyShape());
-//        System.out.println(c.getMyShape().area());
-//
-
-        CreditCardPayment creditCard = new CreditCardPayment();
-//        creditCard.processPayment(200.1);
-
-        UPIPayment upi = new UPIPayment();
-//        upi.processPayment(190.3);
-
-        CryptoPayment crypto = new CryptoPayment();
-//        crypto.processPayment(150.5);
-
-        Person p1 = new Person("p1",creditCard);
-        p1.makePayment(10);
-
-        Person p2 = new Person("p2",upi);
-        p2.makePayment(20);
-
-        Person p3 = new Person("p3", new CryptoPayment());
-        p3.makePayment(30);
-
-        System.out.println("--------------------------------");
-        Screen1 s1 = new Screen1();
-        s1.checkAvailability(8);
-        s1.bookTicket(4);
-        s1.bookTicket(3);
-        s1.checkAvailability(7);
-        s1.bookTicket(8);
-        s1.checkAvailability(2);
-
-        System.out.println("---------------------------------");
-
-        Screen2 s2 = new Screen2();
-        s2.checkAvailability(8);
-        s2.bookTicket(4);
-        s2.bookTicket(6);
-        s2.bookTicket(8);
-        s2.checkAvailability(2);
-
-        System.out.println("------------------------------------");
-        Screen3 s31 = new Screen3();
-        s31.checkAvailability(8);
-        s31.bookTicket(4);
-
-        System.out.println("--------------------------------");
-        Screen3 s32 = new Screen3();
-        s32.checkAvailability(4);
-        s32.bookTicket(4);
-        s32.bookTicket(8);
-        s32.checkAvailability(2);
+        Calculator calculate = new Calculator();
+        calculate.performCalculation(2,3,new Adder());
+        calculate.performCalculation(2,3,new Multiplier());
+        calculate.performCalculation(5,5,new Divider());
 
 
     }
