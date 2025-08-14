@@ -1,5 +1,6 @@
 package in.co.nmsworks.runner;
 
+import in.co.nmsworks.week2.day2.Dog;
 import in.co.nmsworks.week2.day3.*;
 
 public class Runner {
@@ -11,9 +12,12 @@ public class Runner {
 
         fullTime.calculateSalary();
         partTime.calculateSalary();
-        contractorEmp.calculateSalary();
+        contractorEmp.calculateSalary();*/
 
-        Dog a = new Dog();*/
+     Dog a = new Dog();
+        System.out.println(a.makeSound());
+
+        System.out.println();
 
 //        Rectangle r1 = new Rectangle(3,4);
 //        System.out.println("Area of Rectangle: " + r1.area());
