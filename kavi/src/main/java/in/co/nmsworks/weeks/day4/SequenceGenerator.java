@@ -10,8 +10,8 @@ public class SequenceGenerator
     }
     public static void main(String[] args) {
 
-        Sequence adderSequence = new SimpleAdder(1, 2);
-        Sequence multiplierSequence = new SimpleMultifier(2, 2);
+        Sequence adderSequence = new SimpleAdder(1, 5);
+        Sequence multiplierSequence = new SimpleMultifier(1, 4);
 
         System.out.print("SimpleAdder Sequence: ");
         printSequence(adderSequence, 5);
