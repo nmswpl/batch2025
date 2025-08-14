@@ -11,6 +11,7 @@ public class SimpleMultiplier implements Sequence{
 
         }
         System.out.println(store*number);
+        System.out.println(number);
         return store*number;
     }
 

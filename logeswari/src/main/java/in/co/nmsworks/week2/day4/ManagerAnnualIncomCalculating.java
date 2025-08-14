@@ -8,18 +8,20 @@ public class ManagerAnnualIncomCalculating {
 //        System.out.println("*******");
 //        printingAnnualSalar(manager,"anu",2000,12);
 
-
-
         Employee employee=new EmploeeF();
         System.out.println("Calculating the Annual Income for Employee: "+employee.salary(12,2000)+ " Name for Employee :"+manager.naming("Logeswari"));
         manager.naming("logeswari");
 
-
+//        printEmployeeSalary(employee.salary(12,3000));
 
     }
-
     public static void printingAnnualSalar(Employee emp){
         System.out.println("print : " +emp);
+
+    }
+    public static void printEmployeeSalary(EmploeeF salary){
+
+
 
     }
 }

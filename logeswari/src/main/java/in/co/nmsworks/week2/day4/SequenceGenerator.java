@@ -8,7 +8,7 @@ public class SequenceGenerator {
         printSequence(adder,2);
 
         Sequence multiply=new SimpleMultiplier();
-        multiply.sequence(5);
+        multiply.sequence(3);
         printSequence(multiply,3);
     }
 

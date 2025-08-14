@@ -12,7 +12,7 @@ public class Manager implements Employee{
     @Override
     public double salary(int month, double salary) {
         double totalSalaryOfManaer=bonus+(12 *salary);
-        return totalSalaryOfManaer;
+        return (totalSalaryOfManaer);
     }
 
 }
