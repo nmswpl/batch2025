@@ -1,6 +1,9 @@
 package in.co.nmsworks.runner;
 
+import in.co.nmsworks.week1.Cat;
+import in.co.nmsworks.week2.day2.Animal;
 import in.co.nmsworks.week2.day2.Dog;
+import in.co.nmsworks.week2.day2.Horse;
 import in.co.nmsworks.week2.day3.*;
 
 public class Runner {
@@ -15,7 +18,11 @@ public class Runner {
         contractorEmp.calculateSalary();*/
 
      Dog a = new Dog();
-        System.out.println(a.makeSound());
+     Cat c = new Cat();
+        Horse h = new Horse();
+     System.out.println(a.makeSound());
+     System.out.println(c.makeSound());
+//        System.out.println(h.makeSound());
 
         System.out.println();
 
@@ -88,6 +95,8 @@ public class Runner {
         s3.bookTicket(2);
         System.out.println(s3.checkAvailability(249));
 
+        Test te1 = new Test();
+        te1.printName("abc");
 
 
     }

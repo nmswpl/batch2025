@@ -30,5 +30,6 @@ public class Screen1 implements MultiPlex{
             return false;
         }
         return true;
+
     }
 }

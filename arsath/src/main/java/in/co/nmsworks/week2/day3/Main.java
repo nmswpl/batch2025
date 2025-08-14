@@ -1,17 +1,16 @@
 package in.co.nmsworks.week2.day3;
 
-interface Serializable {
-    // Marker Interface
+interface MarkerInterface {
+
 }
 
-// Define Person class that implements the marker interface
-class Member implements Serializable {
+
+class Member implements MarkerInterface {
     public Member() {
-        System.out.println("Person object created");
+        System.out.println("Member object created");
     }
 }
 
-// Define Animal class does not implement marker interface
 class Animal {
     public Animal() {
         System.out.println("Animal object created");
@@ -25,15 +24,15 @@ public class Main
         Member member = new Member();
         Animal animal = new Animal();
 
-        if (member instanceof Serializable)
-            System.out.println("Person is serializable");
+        if (member instanceof MarkerInterface)
+            System.out.println("Member is instance of marker interface");
         else
-            System.out.println("Person is not serializable");
+            System.out.println("Member is not an instance of marker interface");
 
 
-        if (animal instanceof Serializable)
-            System.out.println("Animal is serializable");
+        if (animal instanceof MarkerInterface)
+            System.out.println("Animal is instance of marker interface");
         else
-            System.out.println("Animal is not serializable");
+            System.out.println("Animal is not an instance of marker interface");
     }
 }
