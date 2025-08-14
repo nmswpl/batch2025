@@ -26,6 +26,6 @@ public class Manager extends Employee
 
     public double annualSalary()
     {
-        return (getSalaryPerMonth() * 12) + bonus;
+        return super.annualSalary() + bonus;
     }
 }
