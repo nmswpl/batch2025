@@ -5,14 +5,16 @@ public class SequenceGenerator {
 
         SimpleAdder add = new SimpleAdder();
         SimpleMultiplier multi = new SimpleMultiplier();
-        printSequence(add,5,3);
-        printSequence(multi,5,3);
+        printSequence(add,3);
+        printSequence(multi,5);
     }
-    public static void printSequence(Sequence s,int startnumber, int n){
-
+    public static void printSequence(Sequence s,int n){
+        int startnumber = 1;
+        System.out.println(startnumber);
         for(int i = 0 ; i < n; i++) {
-            System.out.println(s.next(startnumber,n));
-            startnumber = s.next(startnumber,n);
+            startnumber = s.next(startnumber,3);
+            System.out.println(startnumber);
+
         }
     }
 }
