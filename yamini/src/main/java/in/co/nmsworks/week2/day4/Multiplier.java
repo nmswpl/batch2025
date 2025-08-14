@@ -1,6 +1,4 @@
-package in.co.nmsworks.week2.day3;
-
-import in.co.nmsworks.week2.Computable;
+package in.co.nmsworks.week2.day4;
 
 public class Multiplier implements Computable {
     @Override
