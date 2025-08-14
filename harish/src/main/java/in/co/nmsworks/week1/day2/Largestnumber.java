@@ -4,9 +4,9 @@ package in.co.nmsworks.week1.day2;
 
 public class Largestnumber {
     public static void main(String[] args) {
-        lArgestNumber(1,0,0);
+        largestNumber(1,0,0);
     }
-    public static void lArgestNumber(int number1, int number2, int number3){
+    public static void largestNumber(int number1, int number2, int number3){
         if( number1 > number2 && number1 > number3  ){
 
                 System.out.println("The "+number1+"is the greatest number");

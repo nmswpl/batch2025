@@ -1,13 +1,26 @@
 package in.co.nmsworks.week1.day3.string.First;
 
+import in.co.nmsworks.week2.day3.Shape;
+
+import java.util.Objects;
+
 public class Candidate {
     private int id;
     private String name;
     private String email;
     private String department;
 
-    public Candidate(){
+    public Shape getMyShape() {
+        return myShape;
+    }
 
+    public void setMyShape(Shape myShape) {
+        this.myShape = myShape;
+    }
+
+    private Shape myShape;
+
+    public Candidate(){
     }
     public Candidate(int id,String name, String email,String department){
         this.id=id;
@@ -31,7 +44,6 @@ public class Candidate {
         return name;
 
     }
-
     public void setEmail(String email) {
         this.email = email;
     }

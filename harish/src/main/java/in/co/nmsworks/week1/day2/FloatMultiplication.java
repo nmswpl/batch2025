@@ -6,11 +6,11 @@ package in.co.nmsworks.week1.day2;
 public class FloatMultiplication {
     public static void main(String[] args) {
         float number1 = 3.0f, number2 = 1.0f;
-        mUltiplication(number1,number2);
+        multiplication(number1,number2);
     }
-    public static void mUltiplication(float number1,float number2){
-        float MultiplicationOfTwoNumbers;
-        MultiplicationOfTwoNumbers = number1 * number2;
-        System.out.println("The Multiplication two float number is "+MultiplicationOfTwoNumbers);
+    public static void multiplication(float number1,float number2){
+        float multiplicationOfTwoNumbers;
+        multiplicationOfTwoNumbers = number1 * number2;
+        System.out.println("The Multiplication two float number is "+multiplicationOfTwoNumbers);
     }
 }

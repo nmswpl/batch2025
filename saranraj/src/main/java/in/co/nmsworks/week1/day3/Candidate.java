@@ -1,16 +1,29 @@
 package in.co.nmsworks.week1.day3;
 
+import in.co.nmsworks.week2.day3.Shape;
+
+import java.util.Objects;
+
 public class Candidate {
     private int id;
     private String name;
     private String email;
     private String department;
+    private Shape myShape;
+
+    public Shape getMyShape() {
+        return myShape;
+    }
+
+    public void setMyShape(Shape myShape) {
+        this.myShape = myShape;
+    }
 
     public Candidate()
     {
 
     }
-    Candidate(int id,String name,String email,String department)
+    public Candidate(int id, String name, String email, String department)
     {
         this.id = id;
         this.name = name;
@@ -30,7 +43,7 @@ public class Candidate {
     {
         return name;
     }
-    public void setName(String name)
+    protected void setName(String name)
     {
         this.name = name;
     }
@@ -51,5 +64,27 @@ public class Candidate {
     {
         this.department = department;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Candidate candidate = (Candidate) o;
+        return id == candidate.id;
     }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", department='" + department + '\'' +
+                '}';
+    }
+}
 

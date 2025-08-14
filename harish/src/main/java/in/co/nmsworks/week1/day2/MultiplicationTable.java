@@ -9,12 +9,12 @@ package in.co.nmsworks.week1.day2;
 
 public class MultiplicationTable {
     public static void main(String[] args) {
-        int NoOfRows = 10, NoToMultiply = 7;
-        mUltiplicationTable(NoOfRows,NoToMultiply);
+        int noOfRows = 10, noToMultiply = 7;
+        multiplicationTable(noOfRows,noToMultiply);
     }
-    public static void mUltiplicationTable(int NoOfRows, int NoToMultiply){
-        for(int i = 1; i <= NoOfRows; i++){
-            System.out.println(NoToMultiply+" x "+i+" = "+(NoToMultiply*i));
+    public static void multiplicationTable(int noOfRows, int noToMultiply){
+        for(int i = 1; i <= noOfRows; i++){
+            System.out.println(noToMultiply+" x "+i+" = "+(noToMultiply*i));
         }
     }
 }

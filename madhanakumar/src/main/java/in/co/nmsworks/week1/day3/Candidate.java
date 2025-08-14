@@ -1,17 +1,33 @@
 package in.co.nmsworks.week1.day3;
 
+import in.co.nmsworks.week2.day3.Shape;
+
 public class Candidate {
-    private String name;
+
     private int id;
+    private String name;
     private String email;
     private String department;
+    private Shape myShape;
+
+    public Shape getMyShape() {
+        return myShape;
+    }
+
+    public void setMyShape(Shape myShape) {
+        this.myShape = myShape;
+    }
+
+    public Candidate(Shape myShape) {
+        this.myShape = myShape;
+    }
 
     public Candidate(){
     }
 
-    public Candidate(String name, int id, String email, String department){
-        this.name = name;
+    public Candidate(int id, String name, String email, String department){
         this.id = id;
+        this.name = name;
         this.email = email;
         this.department = department;
     }
@@ -46,5 +62,15 @@ public class Candidate {
 
     public String getDepartment(){
         return department;
+    }
+
+    @Override
+    public String toString() {
+        return "Candidate{" +
+                "department='" + department + '\'' +
+                ", id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
