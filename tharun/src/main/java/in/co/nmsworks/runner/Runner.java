@@ -17,6 +17,9 @@ import in.co.nmsworks.week2.day4.Adder;
 import in.co.nmsworks.week2.day4.Calculator;
 import in.co.nmsworks.week2.day4.Divider;
 import in.co.nmsworks.week2.day4.Multiplier;
+import in.co.nmsworks.week2.day4.sequence.SequenceGenerator;
+import in.co.nmsworks.week2.day4.sequence.SimpleAdder;
+import in.co.nmsworks.week2.day4.sequence.SimpleMultiplier;
 
 public class Runner {
     private static int age;
@@ -65,6 +68,10 @@ public class Runner {
         calculate.performCalculation(2,3,new Adder());
         calculate.performCalculation(2,3,new Multiplier());
         calculate.performCalculation(5,5,new Divider());
+
+        SequenceGenerator sequence = new SequenceGenerator();
+        sequence.printSequence(new SimpleAdder(), 4);
+        sequence.printSequence(new SimpleMultiplier(),6);
 
 
     }
