@@ -1,26 +1,50 @@
 package in.co.nmsworks.week2.day3;
 
 public class Screen1 implements Multiplex{
-    int s1Ticket=10;
+    int availableTicket;
+    int ticket=1;
 
-    @Override
-    public void bookTicket(int ticket) {
-        if(ticket < s1Ticket){
-            System.out.println("Ticket is booked");
-            s1Ticket--;
-        }
-        else
-        {
-            System.out.println("not booked");
-        }
+    public int getAvailableTicket() {
+        return availableTicket;
+    }
+
+    public void setAvailableTicket(int availableTicket) {
+        this.availableTicket = availableTicket;
+    }
+
+    public int getTicket() {
+        return ticket;
+    }
+
+    public void setTicket(int ticket) {
+        this.ticket = ticket;
     }
 
     @Override
-    public boolean  checkAvailability() {
-       if(s1Ticket>0)
-       {
-           return true;
-       }
-       return false;
+    public boolean checkAvailability() {
+        if(availableTicket >0)
+            return true;
+        return false;
+    }
+
+    @Override
+    public void bookTicket(int noOfTicket) {
+        if(checkAvailability())
+        {
+            if(availableTicket > noOfTicket)
+            {
+                availableTicket-=noOfTicket;
+                System.out.println("ticket is booked");
+            }
+            else
+            {
+                System.out.println("request disabled");
+            }
+        }
+        else
+        {
+            System.out.println("ticket not available");
+        }
+
     }
 }
