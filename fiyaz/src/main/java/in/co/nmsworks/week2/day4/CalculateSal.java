@@ -15,12 +15,9 @@ public class CalculateSal {
 
         calculateSal(m1);
 
-
     }
 
     public static void calculateSal(Employee emp) {
-        System.out.println(emp);
-        System.out.println("Name : " + emp.getName());
         System.out.println("Total Annual Salary : " + emp.annualSalary());
     }
 

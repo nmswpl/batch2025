@@ -12,16 +12,6 @@ public class Manager extends Employee{
         this.bonus = bonus;
     }
 
-    public Manager(String name, double salaryPerMonth, double bonus) {
-        super(name, salaryPerMonth);
-        this.bonus = bonus;
-    }
-
-    @Override
-    public String toString() {
-        String str = "Manager";
-        return str;
-    }
 
     public double getBonus() {
         return bonus;
@@ -34,8 +24,6 @@ public class Manager extends Employee{
     public double annualSalary() {
         return super.annualSalary() + bonus;
     }
-
-
 
 
 }
