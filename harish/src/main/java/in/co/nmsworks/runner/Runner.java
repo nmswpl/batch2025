@@ -5,9 +5,82 @@ import in.co.nmsworks.week2.day1.Subject;
 import in.co.nmsworks.week2.day1.Teacher;
 import in.co.nmsworks.week2.day2.*;
 import in.co.nmsworks.week2.day3.*;
+import in.co.nmsworks.week2.day4.*;
 
 public class Runner {
     public static void main(String[] args) {
+
+        SalesReport salesReport = new SalesReport();
+        salesReport.header("Sales Report");
+        salesReport.body("This is the sale report in this the sale are listed");
+        salesReport.footer("This is the sales report");
+        salesReport.generateReport();
+
+
+
+        InventoryReport inventoryReport = new InventoryReport();
+        inventoryReport.header("INVENTORY REPORT");
+        inventoryReport.body("WE HAVE AN MULTIPLE STOCK OF LAPTOPS");
+        inventoryReport.footer("FOOTER");
+        inventoryReport.generateReport();
+
+
+    /// //runnnwe
+
+
+
+
+
+
+        /// /runner
+//        NewEmployee employer1 = new NewEmployee("harish", 30000);
+//        employer1.annualSalary();
+//
+//        NewEmployee manager = new NewEmployee("Manager", 45000);
+//        manager.setBonus(25000);
+//        manager.annualSalary();
+
+
+//        NewEmployee e1 = new in.co.nmsworks.week2.day4.Manager();
+//        e1.setSalaryPerMonth(20);
+//        e1.setName("Harish");
+//        System.out.println(e1.getAnnualSalary());
+//
+//
+//        in.co.nmsworks.week2.day4.Manager m1 = new in.co.nmsworks.week2.day4.Manager();
+//        m1.setName("Manager");
+//        m1.setBonus(90);
+//        m1.setBonus(34);
+//        System.out.println("Salary :" + (m1.getAnnualSalary() + m1.getBonus()));
+//
+//        NewEmployee emp = new NewEmployee();
+//        emp.setSalaryPerMonth(20);
+//        emp.setName("Harish");
+//        System.out.println(emp.getAnnualSalary());
+//
+//
+//        NewEmployee emp1 = new NewEmployee();
+//        emp.setSalaryPerMonth(20);
+//        emp.setName("The Manager");
+//        in.co.nmsworks.week2.day4.Manager m1 = emp;
+//        emp.setBonus(90);
+//        System.out.println(emp.getAnnualSalary() + emp.getBonus());
+//
+
+       NewManager manager = new NewManager();
+       manager.setName("Harish");
+       manager.setBonus(20);
+       manager.setSalaryPerMonth(20);
+       System.out.println("The Manager salary is " + (manager.getAnnualSalary() + manager.getBonus()));
+
+       NewEmployee employee1 = new NewEmployee();
+       employee1.setName("Harish");
+       employee1.setSalaryPerMonth(20);
+       System.out.println("The employee salary is " + employee1.getAnnualSalary());
+
+
+
+
 
         /// runner
         Screen1 booking1 = new Screen1();
@@ -66,8 +139,8 @@ public class Runner {
 
 
         /// runner
-        Manager m1 = new Manager();
-        m1.work();
+        Manager m12 = new Manager();
+        m12.work();
 
         Developer d1 = new Developer();
         d1.work();
@@ -91,6 +164,7 @@ public class Runner {
 
         Shape s2 = new Square(23);
         System.out.println(s2.area());
+        s2.printClassName();
 
         printArea(s1);
         printArea(r1);
@@ -103,6 +177,9 @@ public class Runner {
         c1.setMyShape(new Square(3));
         System.out.println(c1.getMyShape());
     }
+
+
+
 
     public static void printNumberOfSides(Shape s1) {
 
