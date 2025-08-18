@@ -6,6 +6,10 @@ public class TestRunner
 
         String name = "this is java programming";
         firstLetterCaptial(name);
+
+        String[] name1 = {"kabil","harish","kavi","kumar"};
+        String[] department = {"developer" ,"Qa","developer", "qa"};
+        findIndexOfDepartment(name1 , department);
     }
     public  static void firstLetterCaptial(String givenString)
     {
@@ -19,4 +23,17 @@ public class TestRunner
         System.out.println("Before Captialized  :"+givenString );
         System.out.println("After Captialized : "+result);
     }
+
+
+    // 2nd program.
+    public  static void findIndexOfDepartment(String[] internName ,String[] interdepartment)
+    {
+        for (int i = 0; i < interdepartment.length; i++)
+        {
+
+
+        }
+
+    }
+
 }
