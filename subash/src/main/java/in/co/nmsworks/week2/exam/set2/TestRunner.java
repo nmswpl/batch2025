@@ -16,7 +16,11 @@ public class TestRunner {
         Intern intern3=new Intern("Madhan",20000);
         Intern internArray[]=new Intern[]{intern1,intern2,intern3};
         calculateAvg(internArray);
+
+        Wallet wallet=new Wallet();
+        wallet.deposit(200);
     }
+
 
     public static int[] positions(String paragraph)
     {
