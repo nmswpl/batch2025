@@ -3,6 +3,8 @@ package in.co.nmsworks.week1.day3;
 public class RunnerPlanet {
 
     public static void main(String[] args) {
+
+
         Planet planet1=new Planet();
         planet1.setPlanet("Mercury");
         planet1.setSize(3032);

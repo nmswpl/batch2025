@@ -60,7 +60,6 @@ public class EnumExample
         System.out.println(gen);
         }
 
-
        }
 
     }

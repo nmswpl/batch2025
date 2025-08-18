@@ -57,8 +57,15 @@ public class StringPrograms
         int num=123;
         convertIntToStr(num);
 
-    }
+        String name1 = "apple";
+        String name2 = "banana";
+        displayWithJoin(name1,name2);
 
+    }
+ public static void displayWithJoin(String getNmae1,String getNmae2)
+ {
+     System.out.println();
+ }
     public static void convertIntToStr(int datnum)
     {
         System.out.println(String.valueOf(datnum));
