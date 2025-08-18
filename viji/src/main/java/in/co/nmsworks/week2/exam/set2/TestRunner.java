@@ -7,6 +7,8 @@ and calculates the average salary of all the interns. */
 public class TestRunner {
     public static void main(String[] args) {
 
+
+
         Intern viji = new Intern("viji", 2000.00);
         Intern yamini = new Intern("yamini", 2000.00);
         Intern ashik = new Intern("ashik", 2000.00);
@@ -16,13 +18,23 @@ public class TestRunner {
         Intern[] interns = new Intern[]{viji, yamini, ashik, maha, kavi};
 
         Intern intern = new Intern();
-        calculateAverageSalary(interns);
+       TestRunner.calculateAverageSalary(interns);
     }
        public static void calculateAverageSalary(Intern[] interns){
            System.out.println(interns.getSalary() *12 );
 
+    }
+
+    String paragraph = "This is Vijayalakshmi from computer Science and engineering .";
+    public static void intArray(String paragraph){
+        String[] arr =paragraph.split(" ");
+        for(int i =0 ; i< arr.length ; i++){
+            System.out.println(arr+" ");
+        }
+        System.out.println("Total Number Of Letters : " + paragraph.length());
 
     }
+
 
 
     /* Question 3
@@ -33,4 +45,7 @@ information:
 • 2nd position: The total number of letters */
 
 
+
+
 }
+
