@@ -1,5 +1,5 @@
 package in.co.nmsworks.week1.day3;
-
+import in.co.nmsworks.week2.day3.Shape;
 import java.util.Objects;
 
 public class Candidate {
@@ -8,6 +8,15 @@ public class Candidate {
     private String name;
     private String email;
     private String department;
+    private Shape myShape;
+
+    public Shape getMyShape() {
+        return myShape;
+    }
+
+    public void setMyShape(Shape myShape) {
+        this.myShape = myShape;
+    }
 
     public Candidate() {
     }
