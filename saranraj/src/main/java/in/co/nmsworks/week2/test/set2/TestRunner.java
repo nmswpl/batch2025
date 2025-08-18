@@ -1,13 +1,51 @@
 package in.co.nmsworks.week2.test.set2;
 
-import javax.swing.*;
+
+/*
+
+Input 1:
+The quick brown fox jumped over the lazy dog. It was a sunny day. The dog barked loudly.
+Input 2:
+Alice went to the market to buy fresh apples. Bob followed her. They chatted along the way.
+
+ */
+
 
 public class TestRunner {
 
+
+
+
+
     public static void main(String[] args) {
 
-        printAndCalculateAverageSalaryOfIntern();
+        String sentence ="The quick brown fox jumped over the lazy dog. It was a sunny day. The dog barked loudly.";
 
+        printAndCalculateAverageSalaryOfIntern();
+       int[] Calculate = CalculateAndDisplayTheValueInArray(sentence);
+
+       for (int i : Calculate) {
+           System.out.println(i);
+       }
+
+
+    }
+
+    private static int[] CalculateAndDisplayTheValueInArray(String sentence) {
+        String[] noOfStatments = sentence.split("\\.");
+
+        String[] noOfWord =sentence.split(" ");
+
+        int noOfstatments=noOfStatments.length;
+        String sentences = sentence.replace(" ","");
+        int noOfWords =noOfWord.length;
+        int noOfLetter =0;
+        for (int i =0;i < sentences.length();i++) {
+            char ch = sentences.charAt(i);
+            noOfLetter++;
+        }
+
+      return new int[] {noOfstatments,noOfWords ,noOfLetter};
 
     }
 
