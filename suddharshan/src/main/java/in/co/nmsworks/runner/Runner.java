@@ -1,9 +1,22 @@
 package in.co.nmsworks.runner;
 
 import in.co.nmsworks.week2.day3.*;
+import in.co.nmsworks.week2.day4.*;
 
 public class Runner {
     public static void main(String[] args) {
+
+        Adder a = new Adder();
+        Multiplier m = new Multiplier();
+        Divider d = new Divider();
+
+        Calculator c = new Calculator();
+        
+        c.performCalculation(2,3,a);
+        c.performCalculation(6,8,m);
+        c.performCalculation(10,2,d);
+        c.performCalculation(10,0,d);
+        /*
         ScreenOne s1 = new ScreenOne(15);
         s1.checkAvailability();
         s1.bookTicket(3);
@@ -23,7 +36,6 @@ public class Runner {
         s3.checkAvailability();
         s3.bookTicket(5);
         s3.checkAvailability();
-        /*
         CreditCard c = new CreditCard();
         c.processPayment(12);
         UPI u = new UPI();
