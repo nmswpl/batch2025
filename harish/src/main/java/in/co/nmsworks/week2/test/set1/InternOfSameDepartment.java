@@ -8,20 +8,20 @@ public class InternOfSameDepartment {
         Intern intern3 = new Intern("Kabilan","Tester");
         Intern intern4 = new Intern("kabil","Developer");
 
-        Intern[] internArray = {intern1,intern2,intern3,intern4};
-        int[] internIndicies = sameDepartmentIntern(internArray,"Developer");
+        Intern[] interns = {intern1,intern2,intern3,intern4};
+        int[] internIndicies = sameDepartmentIntern(interns,"Developer");
         for (int internIndicy : internIndicies) {
             System.out.println("The indexes of same department are "  + internIndicy);
         }
 
     }
 
-    private static int[] sameDepartmentIntern(Intern[] internArray, String department) {
+    private static int[] sameDepartmentIntern(Intern[] interns, String department) {
         int[] indexValues =new int[5];
         int j = 0;
-        for (int i = 0 ; i < internArray.length ; i++) {
-            System.out.println(internArray[i].getDept());
-            if (internArray[i].getDept().equalsIgnoreCase(department)){
+        for (int i = 0 ; i < interns.length ; i++) {
+            System.out.println(interns[i].getDept());
+            if (interns[i].getDept().equalsIgnoreCase(department)){
                 indexValues[j] = i;
                 j++;
                 System.out.println(i);
