@@ -100,6 +100,10 @@ public class CollectionTraining {
         System.out.println(temp.get(index));
     }
 
+    private static void updateElement(List temp, String element, int index){
+        System.out.println(temp.set(index, element));
+    }
+
     public static void update(List org, List copy){
         org.addAll(copy);
     }
@@ -151,7 +155,7 @@ public class CollectionTraining {
         tempCopy.add("color1");
         tempCopy.add(("color2"));
 
-        update(list,tempCopy);
+        updateElement(list, "White", 1);
 
         removeThroughIndex(list, 5);
 
