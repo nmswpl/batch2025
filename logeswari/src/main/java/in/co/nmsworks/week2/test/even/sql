@@ -1,0 +1,2 @@
+alter table SOCIAL_MEDIA MODDIFY location VARCHAR(100);
+alter table SOCIAL_MEDIA add location VARCHAR(100);
