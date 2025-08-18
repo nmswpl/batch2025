@@ -8,8 +8,14 @@ public class TestRunner {
        int finalArr[]= positions(paragraph);
         for(int i=0;i<finalArr.length;i++)
         {
-            System.out.print(finalArr[i]+" ");
+//            System.out.print(finalArr[i]+" ");
         }
+
+        Intern intern1=new Intern("Subash",30000);
+        Intern intern2=new Intern("Mathi",40000);
+        Intern intern3=new Intern("Madhan",20000);
+        Intern internArray[]=new Intern[]{intern1,intern2,intern3};
+        calculateAvg(internArray);
     }
 
     public static int[] positions(String paragraph)
@@ -24,6 +30,16 @@ public class TestRunner {
         int finalArr[]=new int[]{zerothPosition,firstPosition,secondPosition};
         return finalArr;
 
+    }
+    public static void calculateAvg(Intern intern[])
+    {
+        int sum=0;
+        for(int i=0;i<intern.length;i++)
+        {
+            sum=sum+intern[i].getSalary();
+        }
+        int avg=sum/ intern.length;
+        System.out.println(avg);
     }
 
 
