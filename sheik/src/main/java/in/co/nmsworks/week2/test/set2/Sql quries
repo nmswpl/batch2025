@@ -1,0 +1,4 @@
+alter table SOCIAL_MEDIA Modify location varchar(100);
+alter table SOCIL_MEDIA add column is_verified boolean default false;
+select * from SOCIAL_MEDIA where (location ="Hyderbad" or location = "Kolkata") and followers_count<1000;
+select * from SOCIAL_MEDIA where gender="Female" and (followers_count>10000 or post_count>1000);
