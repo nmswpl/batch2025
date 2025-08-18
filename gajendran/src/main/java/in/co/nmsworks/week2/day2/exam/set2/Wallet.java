@@ -3,30 +3,34 @@ package in.co.nmsworks.week2.day2.exam.set2;
 public class Wallet implements Account{
 
 
-    int initialBalance;
-    int LimitForWithdrawalsAndDeposits;
+    int balance;
+    int limitForWithdrawalsAndDeposits;
     int withdrawAmount;
     int depositAmount;
 
     public Wallet(int initialBalance, int getLimitForWithdrawals, int withdrawAmount, int depositAmount) {
-        this.initialBalance = initialBalance;
-        this.LimitForWithdrawalsAndDeposits = getLimitForWithdrawals;
+        this.balance = initialBalance;
+        this.limitForWithdrawalsAndDeposits = getLimitForWithdrawals;
         this.withdrawAmount = withdrawAmount;
         this.depositAmount = depositAmount;
     }
 
     @Override
     public int limit() {
-        return LimitForWithdrawalsAndDeposits;
+        return limitForWithdrawalsAndDeposits;
     }
 
     @Override
     public int withdraw(int amount) {
-        return 0;
+        
+        balance -= amount;
+        return balance;
     }
 
     @Override
     public int deposit(int amount) {
-        return 0;
+
+        balance += amount;
+        return balance;
     }
 }
