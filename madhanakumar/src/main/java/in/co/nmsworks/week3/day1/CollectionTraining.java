@@ -108,9 +108,7 @@ public class CollectionTraining {
 //        System.out.println(list2.subList(0,7));
 //        System.out.println(list2.lastIndexOf("Franky"));
 //        System.out.println(list2.toArray(new String[0]));
-//
 //        Set <String> set1 = new HashSet<>();
-//
 //        list1.addAll(set1);
 
         //1st Question
