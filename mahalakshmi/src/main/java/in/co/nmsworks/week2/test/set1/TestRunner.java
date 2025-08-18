@@ -11,7 +11,7 @@ public class TestRunner {
         return res;
     }
     public static void main(String[] args) {
-        String str = "This class should represent a drone device.";
-        System.out.println(convertTitleCase(str));
+        String str1 = "This class should represent a drone device.";
+        System.out.println(convertTitleCase(str1));
     }
 }
