@@ -42,6 +42,7 @@ public class CollectionTrainee {
     private static void joinTwoList(List<String> colors, List<String> color2) {
         color2.addAll(colors);
         System.out.println(color2);
+
     }
 
     private static void compareTwoArryalist(List<String> colors, List<String> colorCopy) {
