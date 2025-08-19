@@ -13,9 +13,6 @@ public class TitleLetter {
             System.out.println("word : "+w.toString());
             input.charAt(0);
         }
-
-
-
         }
 
     public static void main(String[] args) {

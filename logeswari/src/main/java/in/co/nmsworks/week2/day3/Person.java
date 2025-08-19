@@ -26,4 +26,9 @@ public class Person implements PaymentGateWay{
         return amount;
     }
 
+    public void printName()
+    {
+
+    }
+
 }
