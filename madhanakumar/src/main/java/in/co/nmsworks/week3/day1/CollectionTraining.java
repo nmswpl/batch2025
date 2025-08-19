@@ -7,6 +7,7 @@ public class CollectionTraining {
 
         List <String> colors = new ArrayList<>();
         List <String> colors2 = new ArrayList<>();
+        colors2.retainAll(colors);
         colors2.addAll(colors);
         colors.add("Blue");
         colors.add("Red");
