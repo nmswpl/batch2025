@@ -2,6 +2,9 @@ package in.co.nmsworks.week3.test.set1;
 
 public class Phone implements BatteryPowered {
 
+    private int batteryPercentage =100;
+    private float hours;
+
     public float getHours() {
         return hours;
     }
@@ -10,7 +13,6 @@ public class Phone implements BatteryPowered {
         this.hours = hours;
     }
 
-    private float hours;
 
     private int batteryUsagePerHour;
 
@@ -23,13 +25,18 @@ public class Phone implements BatteryPowered {
     }
 
 
+
     @Override
     public int batteryUsagePerHour() {
-        return batteryUsagePerHour;
+        return 10;
     }
 
     @Override
     public int batteryAfterUse(float hours) {
-        return (int) (batteryUsagePerHour * hours);
+        int usage= (int) (batteryUsagePerHour() * hours);
+        batteryPercentage -=usage;
+        if (batteryPercentage <0) return 0;
+
+        return batteryPercentage;
     }
 }

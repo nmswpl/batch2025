@@ -19,6 +19,19 @@ public class RunnerTest {
 
         String str ="Alice went to the market to buy fresh apples. Bob followed her. They chatted along the way.";
         displayFirstCharacterAsCaptial(str);
+        convertDecimalToBinaryAndDisplay(25);
+        convertBinaryToDecimalAndDisplay("11001");
+
+    }
+
+    private static void convertBinaryToDecimalAndDisplay(String binary) {
+        int decimal =Integer.parseInt(binary,2);
+        System.out.println("The Decimal : "+decimal);
+    }
+
+    private static void convertDecimalToBinaryAndDisplay(int decimal) {
+        String binary =Integer.toBinaryString(decimal);
+        System.out.println("The Binary : "+binary);
     }
 
     private static void displayFirstCharacterAsCaptial(String str) {
@@ -43,6 +56,10 @@ public class RunnerTest {
                   indices[index++]=i;
               }
           }
-         return indices;
+          int[] result = new int[index];
+        for (int i = 0; i < index; i++) {
+            result[i]=indices[i];
+        }
+         return result;
     }
 }
