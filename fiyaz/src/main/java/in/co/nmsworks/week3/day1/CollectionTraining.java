@@ -15,17 +15,17 @@ public class CollectionTraining {
         colorList.add("White");
         colorList.add("Orange");
 
-        printTheColor(colorList);
-        iterateTheColor(colorList);
-        addTheElementInFirst(colorList);
-        retrieveTheElement(colorList,2);
-        updateArray(colorList, "Road");
-        removeThirdElement(colorList,2);
-        searchElement(colorList,"Orange");
-        copyTheArrayList(colorList, copyList );
-        reverseArrayList(colorList);
-        compareTwoArrayList(colorList,copyList);
-        joinTwoArrayList(colorList,copyList);
+        printTheColor(colorList); // 1
+        iterateTheColor(colorList); // 2
+        addTheElementInFirst(colorList); // 3
+        retrieveTheElement(colorList,2); // 4
+        updateArray(colorList, "Road"); // 5
+        removeThirdElement(colorList,2); // 6
+        searchElement(colorList,"Orange"); // 7
+        copyTheArrayList(colorList, copyList );  // 8
+        reverseArrayList(colorList); // 9
+        compareTwoArrayList(colorList,copyList); // 10
+        joinTwoArrayList(colorList,copyList); // 11
 
 
     }
@@ -49,6 +49,8 @@ public class CollectionTraining {
 
     private static void reverseArrayList(List<String> colorList) {
         String[] str = colorList.toArray(new String[0]);
+
+        System.out.println(colorList.reversed());
 
         for (int i=str.length-1; i>=0; i--) {
             System.out.print(str[i] + " ");
