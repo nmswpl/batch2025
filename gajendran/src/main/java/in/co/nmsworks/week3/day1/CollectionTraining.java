@@ -167,6 +167,7 @@ public class CollectionTraining {
         System.out.println("copy list");
         System.out.println(copy);
 
+
         System.out.println("reverse elements");
         printReverseOfElements(list);
 
