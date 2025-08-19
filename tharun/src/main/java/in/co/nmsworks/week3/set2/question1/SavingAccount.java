@@ -1,10 +1,10 @@
 package in.co.nmsworks.week3.set2.question1;
 
-public class Wallet implements Account{
+public class SavingAccount implements Account{
     private int balance;
     private int limit;
 
-    public Wallet(int balance, int limit) {
+    public SavingAccount(int balance, int limit) {
         this.balance = balance;
         this.limit = limit;
     }
@@ -28,10 +28,10 @@ public class Wallet implements Account{
 
     @Override
     public int deposit(int amount) {
-        if (amount <= this.limit() ){
-            this.balance +=  amount;
+        if (amount <= limit() ){
+            this.balance += amount;
             return this.balance;
         }
-        return this.balance;
+        return 0;
     }
 }
