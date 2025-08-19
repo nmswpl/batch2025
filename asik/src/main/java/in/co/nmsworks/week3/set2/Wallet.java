@@ -42,6 +42,17 @@ public class Wallet implements Account
         this.totalAmount = totalAmount;
     }
 
+    public int getInitialAmount()
+    {
+        return initialAmount;
+    }
+
+    public void setInitialAmount(int initialAmount)
+    {
+        this.initialAmount = initialAmount;
+        totalAmount = initialAmount;
+    }
+
     @Override
     public int withdraw(int amount) {
         if (amount <= limit())
