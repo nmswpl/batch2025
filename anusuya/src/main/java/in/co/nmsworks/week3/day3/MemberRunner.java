@@ -52,6 +52,5 @@ public class MemberRunner {
         catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }
