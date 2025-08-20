@@ -142,8 +142,19 @@ public class CollectionPractice {
 
     private void printReverseLinkedList() {
 
-        List<Integer> list1 = Arrays.asList(1,2,3,4,5);
-        LinkedList<Integer> linkedlist1 = new LinkedList<>(list1);
+        System.out.println("-----------------------------");
+
+        LinkedList<Integer> sortedArray = new LinkedList<>(Arrays.asList(1,2,3,4,5));
+        Integer indexFromLeft = 0 , indexFrommRight = sortedArray.size()-1;
+        while (indexFromLeft < indexFrommRight){
+            int temp = sortedArray.get(indexFromLeft);
+            sortedArray.set(indexFromLeft,sortedArray.get(indexFrommRight));
+            sortedArray.set(indexFrommRight,temp);
+
+            indexFromLeft++;
+            indexFrommRight--;
+        }
+        System.out.println("Reversed Linked List : "+sortedArray);
 
     }
 
