@@ -25,13 +25,13 @@ public class JdbcPractice
 
             jdbcPractice.copyDbMembersToMembersListAndPrint(stmt, selectQuery);
 
-            jdbcPractice.insertIntoDb(stmt, insertQuery1);
+            /*jdbcPractice.insertIntoDb(stmt, insertQuery1);
 
             jdbcPractice.insertIntoDb(stmt, insertQuery2);
 
             jdbcPractice.insertIntoDb(stmt, insertQuery3);
 
-            jdbcPractice.insertIntoDb(stmt, insertQuery4);
+            jdbcPractice.insertIntoDb(stmt, insertQuery4);*/
 
         }
         catch (SQLException e)
@@ -41,7 +41,7 @@ public class JdbcPractice
 
     }
 
-    private void  insertIntoDb(Statement stmt, String query)
+    private void insertIntoDb(Statement stmt, String query)
     {
         try
         {
