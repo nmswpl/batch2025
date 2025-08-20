@@ -1,9 +1,6 @@
 package in.co.nmsworks.week3.day3;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,11 +13,11 @@ public class CarPersister
         CarPersister jdbcCarRunner = new CarPersister();
 
         try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
-            Statement stmt = con.createStatement() )
+            PreparedStatement pstmt = con.prepareStatement("insert into cars values (?, ?, ?, ?)") )
         {
             jdbcCarRunner.createCarObjectsInCarsSet();
 
-            jdbcCarRunner.saveToDb(stmt, jdbcCarRunner.cars);
+            jdbcCarRunner.saveToDb(pstmt, jdbcCarRunner.cars);
         }
         catch (SQLException e)
         {
@@ -37,11 +34,11 @@ public class CarPersister
             Car thar = new Car(3, "Mahindra", "xi9, thar", 2018);
             Car maruti = new Car(4, "Maruti", "i20, maruti", 2013);
             Car aventador = new Car(5, "Lamborghini", "wx7, aventador", 2023);
-            Car competition = new Car(6, "i9", "m3, competition", 2015);
-            Car mercedes = new Car(7, "S-Class", "s3, mercedes", 2018);
-            Car dodge = new Car(8, "Red Vampire", "r9, vampire", 2014);
-            Car audi = new Car(9, "XW9", "rw6, audi", 2020);
-            Car volvo = new Car(10, "Volvo", "vw3, ford", 2009);
+            Car competition = new Car(6, "BMW", "m3, competition", 2015);
+            Car mercedes = new Car(7, "Mercedes", "s3, mercedes", 2018);
+            Car dodge = new Car(8, "Dodge", "r9, vampire", 2014);
+            Car audi = new Car(9, "Audi", "rw6, audi", 2020);
+            Car volvo = new Car(10, "Ford", "vw3, volvo", 2009);
 
             cars.add(swift);
             cars.add(innova);
@@ -56,13 +53,16 @@ public class CarPersister
 
     }
 
-    public void saveToDb(Statement stmt, Set<Car> cars)
+    public void saveToDb(PreparedStatement pstmt, Set<Car> cars)
     {
         for (Car car : cars)
         {
             try {
-                int rowsAffected = stmt.executeUpdate("insert into cars values (" + car.getId() + ", '" + car.getManufacturer() +
-                        "', '" + car.getModel() + "', " + car.getYearOfMake() + ")");
+                pstmt.setInt(1, car.getId());
+                pstmt.setString(2, car.getManufacturer());
+                pstmt.setString(3, car.getModel());
+                pstmt.setInt(4, car.getYearOfMake());
+                int rowsAffected = pstmt.executeUpdate();
                 System.out.println(rowsAffected > 0 ? "Insertion of Car ID : " + car.getId() + " Successfull" : "Insertion of Car ID : " + car.getId() + " Failed" );
             }
             catch (SQLException e)
