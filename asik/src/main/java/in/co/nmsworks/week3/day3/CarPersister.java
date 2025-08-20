@@ -67,7 +67,7 @@ public class CarPersister
             }
             catch (SQLException e)
             {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         }
     }
