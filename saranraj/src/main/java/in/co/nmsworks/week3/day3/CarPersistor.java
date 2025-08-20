@@ -34,7 +34,9 @@ public class CarPersistor {
         cars.add(c10);
 
         CarPersistor cp = new CarPersistor();
-        cp.saveToDb(cars);
+        int rowCount= cp.saveToDb(cars);
+
+        System.out.println("rows inserted : "+rowCount);
     }
 
     public int saveToDb(Set<Car> cars) {
@@ -49,7 +51,7 @@ public class CarPersistor {
 
             try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
                  Statement stmt = conn.createStatement()) {
-                stmt.executeUpdate("insert into cars(id,manufacturer,model,yearOfModel) values " + "(" + id + ",'" + manufacturer + "','" + model + "','" + yearOfModel + "');");
+               count +=  stmt.executeUpdate("insert into cars(id,manufacturer,model,yearOfModel) values " + "(" + id + ",'" + manufacturer + "','" + model + "','" + yearOfModel + "');");
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
