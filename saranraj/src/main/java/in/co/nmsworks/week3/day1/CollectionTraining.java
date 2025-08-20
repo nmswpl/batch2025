@@ -9,10 +9,12 @@ public class CollectionTraining {
     public static void main(String[] args) {
 
 //        CollectionTraining collectionTraining = new CollectionTraining();
-////        collectionTraining.listMethod();
+//        collectionTraining.listMethod();
 //      collectionTraining.listExample();
+
         List<String> color = new ArrayList<>();
         List<String> color1 = new ArrayList<>();
+
         listExample(color);
         printIterationOfColors(color);
         printAndDisplayElemntAddAtFirst(0,color);
