@@ -278,14 +278,52 @@ public class MapPractice {
         }
         System.out.println("After removing Duplicates: " + colorSet);
 
+        int i =0;
         for (String c :colorSet){
-            colorMap.put(c, colorMap.getOrDefault(c,0)+1);
+            colorMap.put(c, colorMap.getOrDefault(c,0)+ i++);
         }
 
         System.out.println("Unique elements of list: " + colorMap);
-
-
     }
 
+    public void setIntersection(){
+        Set<String> colors = new HashSet<>();
+        Set<String> colors1 = new HashSet<>();
+
+        colors.add("Red");
+        colors.add("Green");
+        colors.add("Blue");
+        colors.add("Yellow");
+
+        colors1.add("Violet");
+        colors1.add("Yellow");
+        colors1.add("Turquoise");
+        colors1.add("Green");
+
+        System.out.println("Set 1: " + colors);
+        System.out.println("Set 2: " + colors1);
+
+        colors.retainAll(colors1);
+        System.out.println("Intersection of set 1 and set 2: " + colors);
+    }
+
+    public void mapCreationFromAMap(){
+        Map<String,Integer> students = new HashMap<>();
+        Map<String,Integer> stringDetails = new HashMap<>();
+
+        students.put("Arsath",19);
+        students.put("Ahamed",20);
+        students.put("Viswanathan" ,20);
+        students.put("Malala",19);
+
+        for (String student:students.keySet()){
+           if (!stringDetails.containsKey(student)){
+               stringDetails.put(student, student.length());
+           }
+        }
+
+        System.out.println(stringDetails);
+
+    }
 
 }

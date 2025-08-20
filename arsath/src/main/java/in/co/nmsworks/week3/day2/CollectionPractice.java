@@ -32,5 +32,11 @@ public class CollectionPractice {
         System.out.println();
 
         mp.conversionBetweenCollections();
+        System.out.println();
+
+        mp.setIntersection();
+        System.out.println();
+
+        mp.mapCreationFromAMap();
     }
 }
