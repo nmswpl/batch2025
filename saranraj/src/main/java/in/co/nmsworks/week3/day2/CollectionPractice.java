@@ -131,14 +131,23 @@ public class CollectionPractice  {
     }
 
     private void reverseAllElementAndDisplay() {
-        List<String> colors = new LinkedList<>(Arrays.asList("Red", "Green", "Blue"));
+        LinkedList<String> colors = new LinkedList<>(Arrays.asList("Red", "Green", "Blue"));
 
-//        System.out.println("The Reversed List are : " +colors.reversed());
-        colors=colors.reversed();
-        System.out.println(colors);
+        reverseColor(colors);
 
+        System.out.println("The reverse Order of linkedList : "+colors);
 
+    }
 
+    private void reverseColor(LinkedList<String> colors) {
+        int i=0; int j=colors.size()-1;
+        while(i<j) {
+            String temp = colors.get(i);
+            colors.set(i,colors.get(j));
+            colors.set(j,temp);
+            i++;
+            j--;
+        }
     }
 
     private void mergeAndDisplayTwoList() {
