@@ -2,7 +2,7 @@ package in.co.nmsworks.week3.set1;
 
 import in.co.nmsworks.week3.set1.InternNew;
 
-public class TestRunner {
+/*public class TestRunner {
 
 
     public static void main(String[] args) {
@@ -22,4 +22,4 @@ public class TestRunner {
     }
 
 
-}
+}*/
