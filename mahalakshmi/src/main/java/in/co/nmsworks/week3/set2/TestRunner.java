@@ -16,6 +16,11 @@ public class TestRunner {
         System.out.println("The number of statements in the paragraph: " + res[0]);
         System.out.println("The total number of words in the paragraph: " + res[1]);
         System.out.println("The total number of letters: " + res[2]);
+
+        int number = 405;
+        String binaryString = convertToBinary(number);
+        System.out.println("Binary Equivalent for " + number +" : " + binaryString);
+        System.out.println("Decimal Equivalent for " + binaryString + " : " + convertToDecimal(binaryString));
     }
 
 
@@ -37,4 +42,27 @@ public class TestRunner {
         res[2] = letters.length();
         return res;
     }
+
+    public static String convertToBinary(int num) {
+        String binary = "";
+        while(num > 0) {
+            int unit = num % 2;
+            binary = unit + binary;
+            num /= 2;
+        }
+        return binary;
+    }
+
+    public static int convertToDecimal(String binary) {
+        int decimal = 0;
+        int bin = Integer.parseInt(binary);
+        int i = 0;
+        while(bin > 0) {
+            int digit = bin % 10;
+            decimal += (int) (digit * Math.pow(2,i++));
+            bin /= 10;
+        }
+        return decimal;
+    }
+
 }
