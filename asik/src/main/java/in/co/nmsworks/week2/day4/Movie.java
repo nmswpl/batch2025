@@ -10,6 +10,7 @@ public class Movie implements Comparable<Movie>
     private String movieName;
     private int year;
     private Genre genre;
+    private String genre1;
 
     public Movie()
     {}
@@ -19,6 +20,13 @@ public class Movie implements Comparable<Movie>
         this.movieName = movieName;
         this.year = year;
         this.genre = genre;
+    }
+
+    public Movie(String movieName, int year, String genre1)
+    {
+        this.movieName = movieName;
+        this.year = year;
+        this.genre1 = genre1;
     }
 
     public String getMovieName()
@@ -51,13 +59,23 @@ public class Movie implements Comparable<Movie>
         this.genre = genre;
     }
 
+    public String getGenre1()
+    {
+        return genre1;
+    }
+
+    public void setGenre1(String genre1)
+    {
+        this.genre1 = genre1;
+    }
+
     @Override
     public String toString()
     {
         return "Movie { " +
                 "movieName = '" + movieName + '\'' +
                 ", year = " + year +
-                ", genre = " + genre +
+                ", genre = " + genre1 +
                 " }" ;
     }
 
