@@ -4,13 +4,13 @@ public class Car {
     private int id;
     private String manufacturer;
     private String model;
-    private int yearOfModel;
+    private int yearOfMake;
 
-    public Car(int id, String manufacturer, String model, int yearOfModel) {
+    public Car(int id, String manufacturer, String model, int yearOfMake) {
         this.id = id;
         this.manufacturer = manufacturer;
         this.model = model;
-        this.yearOfModel = yearOfModel;
+        this.yearOfMake = yearOfMake;
     }
 
     public int getId() {
@@ -37,12 +37,12 @@ public class Car {
         this.model = model;
     }
 
-    public int getYearOfModel() {
-        return yearOfModel;
+    public int getYearOfMake() {
+        return yearOfMake;
     }
 
-    public void setYearOfModel(int yearOfModel) {
-        this.yearOfModel = yearOfModel;
+    public void setYearOfMake(int yearOfMake) {
+        this.yearOfMake = yearOfMake;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Car {
                 "id=" + id +
                 ", manufacturer='" + manufacturer + '\'' +
                 ", model='" + model + '\'' +
-                ", yearOfModel=" + yearOfModel +
+                ", yearOfModel=" + yearOfMake +
                 '}';
     }
 }

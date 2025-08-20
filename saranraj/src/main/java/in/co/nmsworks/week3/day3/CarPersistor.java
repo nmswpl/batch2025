@@ -46,12 +46,12 @@ public class CarPersistor {
             int id = car.getId();
             String manufacturer = car.getManufacturer();
             String model = car.getModel();
-            int yearOfModel = car.getYearOfModel();
+            int yearOfMake = car.getYearOfMake();
 
 
             try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
                  Statement stmt = conn.createStatement()) {
-                count += stmt.executeUpdate("insert into cars(id,manufacturer,model,yearOfModel) values " + "(" + id + ",'" + manufacturer + "','" + model + "','" + yearOfModel + "');");
+                count += stmt.executeUpdate("insert into cars(id,manufacturer,model,yearOfMake) values " + "(" + id + ",'" + manufacturer + "','" + model + "','" + yearOfMake + "');");
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
