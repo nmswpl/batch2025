@@ -5,6 +5,7 @@ public abstract class Report {
     public abstract void body(String body);
     public abstract void footer(String footer);
     public  abstract void generateReport();
+    }
 
 //
 //    public String getHeader() {
@@ -41,4 +42,4 @@ public abstract class Report {
 //        System.out.println(getBody());
 //        System.out.println(getFooter());
 //    }
-}
+//}
