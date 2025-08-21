@@ -22,23 +22,22 @@ public class FileReadWriteExample {
     private void writeToFile(String filename, String text) {
         try (FileWriter fw = new FileWriter(filename, true)) { // true = append mode
             fw.write(text);
-            System.out.println("Written to file (normal): " + text.trim());
+            System.out.println("Written to file " + text.trim());
         } catch (IOException e) {
-            System.out.println("Error writing to file (normal): " + e.getMessage());
+            System.out.println("Error writing to file  " + e.getMessage());
         }
     }
 
-    // ✅ Read from file using FileReader (no buffer)
     private void readFromFile(String filename) {
-        System.out.println("Reading from file (normal):");
+        System.out.println("Reading from file ");
         try (FileReader fr = new FileReader(filename)) {
             int ch;
             while ((ch = fr.read()) != -1) {
-                System.out.print((char) ch); // Reads character by character
+                System.out.print((char) ch);
             }
-            System.out.println(); // new line after reading
+            System.out.println();
         } catch (IOException e) {
-            System.out.println("Error reading from file (normal): " + e.getMessage());
+            System.out.println("Error reading from file" + e.getMessage());
         }
     }
 
