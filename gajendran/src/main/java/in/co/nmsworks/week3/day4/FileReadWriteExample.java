@@ -42,7 +42,7 @@ public class FileReadWriteExample
 
     private void writeToFile(String fileName, String text)
     {
-        try (FileWriter writer = new FileWriter(fileName, true))
+        try (FileWriter writer = new FileWriter(fileName, false))
         {
             writer.write(text);
         } catch (IOException e) {
