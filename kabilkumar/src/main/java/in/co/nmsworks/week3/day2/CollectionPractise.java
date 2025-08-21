@@ -82,24 +82,42 @@ public class CollectionPractise
         numbers.add(6);
         numbers.add(7);
         removeEvenNumbers(numbers);
+
+        List<String> names = new ArrayList<>();
+        names.add("harish");
+        names.add("kabil");
+        names.add("Kumar");
+        names.add("harish");
+        names.add("Kumar");
+        names.add("KK");
+
+        Set<String> copyNames = new HashSet<>();
+        copyNames.add("harish");
+        copyNames.add("kabil");
+        copyNames.add("kumar");
+        positionValue(names);
         
+    }
+    public  static void  positionValue(List<String> names)
+    {
+        Map<String, Integer> positionValue = new HashMap<>();
+
+        for (String name : names) {
+            positionValue.put(name,names.indexOf(name));
+        }
+        System.out.println(positionValue);
     }
     public  static  void  removeEvenNumbers(List<Integer> numbers)
     {
         List<Integer> addNonEvens = new ArrayList<>();
         for (int i = 0; i < numbers.size(); i++)
         {
-            if (numbers.get(i) %2 == 0)
+            if (numbers.get(i) %2 != 0)
             {
-
+                    addNonEvens.add(numbers.get(i));
             }
-            else
-            {
-                addNonEvens = numbers.get(i);
-
-            }
-            
         }
+        System.out.println("non even numbers :"+addNonEvens);
     }
 
     public  static  void  arrayList1(List<String> arrList1 , List<String> arrList2)
