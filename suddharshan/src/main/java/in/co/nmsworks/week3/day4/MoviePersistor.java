@@ -13,11 +13,15 @@ import java.util.Set;
 public class MoviePersistor {
     public static void main(String[] args) {
         MoviePersistor mp = new MoviePersistor();
-        List <Movie> movieArr = mp.getMoviesFromFile("/home/nms-training/Downloads/MovieName.txt");
+        //List <Movie> movieArr = mp.getMoviesFromFile("/home/nms-training/Downloads/MovieName.txt");
         //mp.saveMovieToDb(movieArr);
-        Set <Movie> movieSet = mp.getAllMovieFromDb();
-        System.out.println(movieSet.size());
-        mp.writeAllMovieToFile(movieSet,"/tmp/movieList.txt");
+        //Set <Movie> movieSet = mp.getAllMovieFromDb();
+        //System.out.println(movieSet.size());
+        //mp.writeAllMovieToFile(movieSet,"/tmp/movieList.txt");
+        List <Movie> movieLst = mp.getListOfMovies("/home/nms-training/Downloads/DBMovieName.txt");
+        for (Movie movie : movieLst) {
+            System.out.println(movie.toString());
+        }
     }
     public List<Movie> getMoviesFromFile(String fileName){
         List <Movie> movieArr = new ArrayList<>();
@@ -80,5 +84,26 @@ public class MoviePersistor {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+    public List<Movie> getListOfMovies (String fileName){
+        List <Movie> movies = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(fileName))){
+            String res = "", data;
+            while((data = br.readLine()) != null){
+                res = res + (data + "\n");
+            }
+            String [] rowList = res.split("\n");
+            for (int i = 0; i < rowList.length; i++) {
+                String [] movie = rowList[i].split(",");
+                movie[1] = movie[1].substring(2,movie[1].length()-1);
+                movie[2] = movie[2].substring(2,movie[2].length()-1);
+                movie[3] = movie[3].substring(2,movie[3].length()-1);
+                Movie mov = new Movie(movie[1],Integer.parseInt(movie[2]),movie[3]);
+                movies.add(mov);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return movies;
     }
 }
