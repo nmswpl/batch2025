@@ -5,53 +5,8 @@ import java.util.*;
 
 public class MovieRunner {
 
-    public static class Movie {
-        private String name;
-        private int yearOfRelease;
-        private String genre;
-
-        public Movie(String name, int yearOfRelease, String genre) {
-            this.name = name;
-            this.yearOfRelease = yearOfRelease;
-            this.genre = genre;
-        }
-
-        public String getName() {
-            return name;
-        }
-
-        public int getYearOfRelease() {
-            return yearOfRelease;
-        }
-
-        public String getGenre() {
-            return genre;
-        }
-
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (!(o instanceof Movie)) return false;
-            Movie movie = (Movie) o;
-            return yearOfRelease == movie.yearOfRelease &&
-                    Objects.equals(name, movie.name) &&
-                    Objects.equals(genre, movie.genre);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(name, yearOfRelease, genre);
-        }
-
-        @Override
-        public String toString() {
-            return "Movie{name='" + name + "', year=" + yearOfRelease + ", genre='" + genre + "'}";
-        }
-    }
-
     public List<String[]> getData() {
         List<String[]> movies = new ArrayList<>();
-
         movies.add(new String[]{"Enthiran", "2010", "Sci-Fi"});
         movies.add(new String[]{"Kabali", "2016", "Action"});
         movies.add(new String[]{"Superstar", "2002", "Drama"});
@@ -62,7 +17,6 @@ public class MovieRunner {
         movies.add(new String[]{"Thalapathi", "1991", "Drama"});
         movies.add(new String[]{"Shivaji", "2007", "Action"});
         movies.add(new String[]{"Kaala", "2018", "Drama"});
-
         return movies;
     }
 
@@ -70,8 +24,8 @@ public class MovieRunner {
         String url = "jdbc:mysql://localhost:3306/training";
         String user = "nms-training";
         String password = "nms-training";
-
         String query = "INSERT INTO movies (name, year_of_release, genre) VALUES (?, ?, ?)";
+
         try (Connection conn = DriverManager.getConnection(url, user, password);
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
@@ -81,10 +35,8 @@ public class MovieRunner {
                 stmt.setString(3, movie[2]);
                 stmt.addBatch();
             }
-
             int[] results = stmt.executeBatch();
             System.out.println(results.length + " records inserted");
-
         } catch (SQLException e) {
             System.out.println("Database error: " + e.getMessage());
         }
@@ -95,7 +47,6 @@ public class MovieRunner {
         String url = "jdbc:mysql://localhost:3306/training";
         String user = "nms-training";
         String password = "nms-training";
-
         String query = "SELECT name FROM movies WHERE year_of_release = ?";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
@@ -111,21 +62,19 @@ public class MovieRunner {
                     movieMap.put(year, movies);
                 }
             }
-
         } catch (SQLException e) {
-            System.out.println("DB Error: " + e.getMessage());
+            System.out.println("DB Error" + e.getMessage());
         }
-
         return movieMap;
     }
 
-    public Set<Movie> getMovieForGenre(String genre) {
-        Set<Movie> movieSet = new HashSet<>();
+
+    public Set<String> getMovieForGenre(String genre) {
+        Set<String> movieSet = new HashSet<>();
         String url = "jdbc:mysql://localhost:3306/training";
         String user = "nms-training";
         String password = "nms-training";
-
-        String query = "SELECT name, year_of_release, genre FROM movies WHERE genre = ?";
+        String query = "SELECT name FROM movies WHERE genre = ?";
 
         try (Connection conn = DriverManager.getConnection(url, user, password);
              PreparedStatement ps = conn.prepareStatement(query)) {
@@ -134,17 +83,12 @@ public class MovieRunner {
 
             try (ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    String name = rs.getString("name");
-                    int year = rs.getInt("year_of_release");
-                    String genreValue = rs.getString("genre");
-
-                    Movie movie = new Movie(name, year, genreValue);
-                    movieSet.add(movie);
+                    movieSet.add(rs.getString("name"));
                 }
             }
 
         } catch (SQLException e) {
-            System.out.println("DB Error in getMovieForGenre: " + e.getMessage());
+            System.out.println("DB Error" + e.getMessage());
         }
 
         return movieSet;
@@ -152,6 +96,8 @@ public class MovieRunner {
 
     public static void main(String[] args) {
         MovieRunner mr = new MovieRunner();
+
+
         List<String[]> movieList = mr.getData();
         mr.saveToDb(movieList);
 
@@ -164,8 +110,7 @@ public class MovieRunner {
             List<String> movies = results.get(year);
             if (movies.isEmpty()) {
                 System.out.println("No movies found");
-            }
-            else {
+            } else {
                 for (String movie : movies) {
                     System.out.println(movie);
                 }
@@ -173,10 +118,10 @@ public class MovieRunner {
         }
 
 
-        System.out.println("\n--- Movies for Genre: Action ---");
-        Set<Movie> actionMovies = mr.getMovieForGenre("Action");
-        for (Movie m : actionMovies) {
-            System.out.println(m);
+        System.out.println("\n Movies in genre: Action");
+        Set<String> actionMovies = mr.getMovieForGenre("Action");
+        for (String movie : actionMovies) {
+            System.out.println(movie);
         }
     }
 }
