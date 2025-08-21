@@ -49,11 +49,9 @@ public class FileReadWriteExample {
         try (FileReader fr = new FileReader(fileName)) {
             int ch;
             while ((ch = fr.read()) != -1) {
-                System.out.println((char) ch);
+                System.out.print((char) ch);
             }
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (IOException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 
@@ -61,10 +59,9 @@ public class FileReadWriteExample {
 
     private void writeToFile(String fileName, String text) {
 
-        try {
-            FileWriter fw = new FileWriter(fileName);
+
+        try (FileWriter fw = new FileWriter(fileName)) {
             fw.write(text);
-            fw.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
