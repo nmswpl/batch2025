@@ -1,6 +1,5 @@
 package in.co.nmsworks.week3.day4;
 
-import com.mysql.cj.jdbc.CallableStatementWrapper;
 import in.co.nmsworks.week2.day4.Movie;
 
 import java.io.*;
@@ -26,6 +25,9 @@ public class MoviePersistor {
         System.out.println(movieSet);
 
         mp.writeAllMoviesToFile(movieSet);
+
+        List<Movie> movieListWithoutQuotation = mp.getMoviesFromFileWithoutQuotation();
+        System.out.println(movieListWithoutQuotation.size());
     }
 
     private List<Movie> getMoviesFromFile(String filename) {
@@ -96,6 +98,27 @@ public class MoviePersistor {
                 bw.newLine();
                 sno++;
             }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private List<Movie> getMoviesFromFileWithoutQuotation() {
+
+        try(BufferedReader br = new BufferedReader(new FileReader("/home/nms-training/Downloads/DBMovieName.txt"))){
+
+            List<Movie> tempmovieList = new ArrayList<>();
+            String line;
+            while((line = br.readLine()) != null){
+                String[] splittedLine = line.split(",");
+                tempmovieList.add(new Movie((splittedLine[1].replace('\"',' ').trim()),Integer.parseInt(splittedLine[2].replace('\"',' ').trim()),splittedLine[3].replace('\"',' ').trim()));
+            }
+            return tempmovieList;
+        }
+
+        catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
         }
         catch (IOException e) {
             throw new RuntimeException(e);
