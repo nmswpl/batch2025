@@ -11,34 +11,17 @@ public class MoviePresenter
 {
 
 
-    public static void main(String[] args)
-    {
-        MoviePresenter moviePresenter = new MoviePresenter();
-        List<Movie> movies = new ArrayList<>();
-        String fileName = "/home/nms-training/Documents/MovieName.txt";
-        movies = moviePresenter.getMoviesFromFile(fileName);
-
-        System.out.println("File to object");
-        System.out.println(movies);
-
-        //moviePresenter.saveMovieToDB(movies);
-
-        Set<Movie> movieInSet = moviePresenter.getAllMoviesFromDB();
-
-        moviePresenter.writeAllMoviesToFile(movieInSet,"/home/nms-training/Documents/Movies_Saves_from_DB.txt");
-
-    }
 
     private void writeAllMoviesToFile(Set<Movie> movieInSet, String fileName)
     {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, true)))
         {
-                writer.write("Movie,Year,Genre");
-                writer.newLine();
-                int i = 1;
+            writer.write("Movie,Year,Genre");
+            writer.newLine();
+            int i = 1;
             for (Movie movie : movieInSet)
             {
-               writer.write(i+" - "+movie.getMovieName()+","+movie.getYearOfRelease()+","+movie.getGenre_());
+                writer.write(i+" - "+movie.getMovieName()+","+movie.getYearOfRelease()+","+movie.getGenre_());
                 i++;
                 writer.flush();
                 writer.newLine();
@@ -88,7 +71,7 @@ public class MoviePresenter
                 pS.setString(3,movie.getGenre_());
                 pS.executeUpdate();
             }
-            } catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -118,4 +101,63 @@ public class MoviePresenter
 
         return movies;
     }
+
+
+
+    private List<Movie> getMoviesFromCsvFile(String fileName) {
+
+        List<Movie> movies = new ArrayList<>();
+        StringBuffer content = new StringBuffer();
+
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName)))
+        {
+            String s;
+            while((s = br.readLine()) != null){
+                content.append(s.replace("\"",""));
+                String[] movieData = s.replace("\"","").split(",");
+                movies.add(new Movie(movieData[1].trim(),Integer.parseInt(movieData[2].trim()),movieData[3].trim()));
+            }
+
+        } catch (FileNotFoundException e)
+        {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return movies;
+
+    }
+
+
+    public static void main(String[] args)
+    {
+        MoviePresenter moviePresenter = new MoviePresenter();
+        List<Movie> movies = new ArrayList<>();
+        String fileName = "/home/nms-training/Documents/MovieName.txt";
+        movies = moviePresenter.getMoviesFromFile(fileName);
+
+        System.out.println("File to object");
+        System.out.println(movies);
+
+        //moviePresenter.saveMovieToDB(movies);
+
+        Set<Movie> movieInSet = moviePresenter.getAllMoviesFromDB();
+
+        moviePresenter.writeAllMoviesToFile(movieInSet,"/home/nms-training/Documents/Movies_Saves_from_DB.txt");
+        List<Movie> listOfMoviesFromCSV = new ArrayList<>();
+        fileName = "/home/nms-training/Downloads/DBMovieName.txt";
+        listOfMoviesFromCSV = moviePresenter.getMoviesFromCsvFile(fileName);
+
+        int i = 1;
+        for (Movie movie : listOfMoviesFromCSV) {
+            System.out.print(i+ " - ");
+            i++;
+            System.out.println(movie.toString());
+        }
+
+
+
+    }
+
 }
