@@ -31,3 +31,9 @@
 
 3) SELECT gender from SOCIAL_MEDIA where gender = female (SELECT followers_count,post_count from SOCIAL_MEDIA
  where followers_count < 10000 || post_count < 1000);
+
+4) SELECT location, followers_count from SOCIAL_MEDIA where location = (("Hyderabad" || "Kolkata") &&
+followers_count > 1000);
+
+5) SELECT location, gender, like_count lc from SOCIAL_MEDIA
+ORDER BY lc;

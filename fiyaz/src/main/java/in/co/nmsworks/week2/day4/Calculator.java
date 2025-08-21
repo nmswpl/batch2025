@@ -11,6 +11,7 @@ public class Calculator {
 
         Divider d = new Divider();
         performCalculator(10,10,d);
+        performCalculator(10,0,d);
     }
 
 

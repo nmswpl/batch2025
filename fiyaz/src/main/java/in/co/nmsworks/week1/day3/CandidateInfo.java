@@ -94,11 +94,11 @@ public class CandidateInfo {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         CandidateInfo that = (CandidateInfo) o;
-        return id == that.id && Objects.equals(name, that.name) && Objects.equals(email, that.email) && Objects.equals(department, that.department);
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(email, that.email) && Objects.equals(department, that.department) && Objects.equals(myShape, that.myShape);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, email, department);
+        return Objects.hash(id, name, email, department, myShape);
     }
 }
