@@ -7,10 +7,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class MovieRunner
 {
@@ -20,24 +17,25 @@ public class MovieRunner
 
         List<String[]> movieData = mr.getData();
 
-        //mr.saveToDb(movieData);
+        /*mr.saveToDb(movieData);*/
 
         System.out.println();
 
-        List<String> movieNames = mr.getMoviesFromDbForYear(new int[]{1995, 2007});
+        Map<Integer, List<String>> movieNames = mr.getMoviesFromDbForYear(new int[]{1995, 2007});
 
-        System.out.println("Movie Names for Given Years :");
-
-        for (String name : movieNames)
+        for (Map.Entry<Integer, List<String>> movieName : movieNames.entrySet())
         {
-            System.out.println(name);
+            System.out.println("Movies In The Year " + movieName.getKey() + " : " + movieName.getValue());
+
         }
 
         System.out.println();
 
-        Set<Movie> movies = mr.getMoviesForGenre("Action");
+        String genre = "Action";
 
-        System.out.println("Movies of Action Genre :");
+        Set<Movie> movies = mr.getMoviesForGenre(genre);
+
+        System.out.println("Movies of Genre " + genre + " Are");
 
         for (Movie movie : movies)
         {
@@ -77,11 +75,12 @@ public class MovieRunner
         return movies;
     }
 
-    private List<String> getMoviesFromDbForYear(int[] year)
+    private Map<Integer, List<String>> getMoviesFromDbForYear(int[] year)
     {
-        List<String> movieNames = new ArrayList<>();
+        Map<Integer, List<String>> movieNames = new HashMap<>();
 
         try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
+
             PreparedStatement pstmt = con.prepareStatement("select name from movie_data where year = (?)"))
         {
 
@@ -89,17 +88,22 @@ public class MovieRunner
             {
                 pstmt.setInt(1, i);
 
-               try(ResultSet rs = pstmt.executeQuery())
-               {
-                   while (rs.next())
-                   {
-                       movieNames.add(rs.getString(1));
-                   }
-               }
-               catch (SQLException e)
-               {
-                   e.printStackTrace();
-               }
+                try(ResultSet rs = pstmt.executeQuery())
+                {
+                    while (rs.next())
+                    {
+                        String name = rs.getString(1);
+                        if (!movieNames.containsKey(i))
+                        {
+                            movieNames.put(i, new ArrayList<>());
+                        }
+                        movieNames.get(i).add(name);
+                    }
+                }
+                catch (SQLException e)
+                {
+                    e.printStackTrace();
+                }
 
             }
         }
