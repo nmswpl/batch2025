@@ -38,5 +38,8 @@ public class CollectionPractice {
         System.out.println();
 
         mp.mapCreationFromAMap();
+        System.out.println();
+
+        mp.replaceNullValues();
     }
 }

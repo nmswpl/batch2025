@@ -326,4 +326,19 @@ public class MapPractice {
 
     }
 
+    public void replaceNullValues(){
+        Map<String,String> students = new HashMap<>();
+        Map<String,String> stringDetails = new HashMap<>();
+        students.put("Arsath",null);
+        students.put("Ahamed",null);
+        students.put("Viswanathan" ,null);
+        students.put("Malala",null);
+
+        for (String s : students.keySet()) {
+            stringDetails.put(s, students.getOrDefault("Unknown","Unknown"));
+        }
+
+        System.out.println(stringDetails);
+    }
+
 }
