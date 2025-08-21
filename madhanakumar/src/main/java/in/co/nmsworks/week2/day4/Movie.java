@@ -30,10 +30,10 @@ public class Movie implements Comparable<Movie>{
 
     @Override
     public String toString() {
-        return "Movie{" +
-                "genere='" + genere + '\'' +
-                ", movieName='" + movieName + '\'' +
+        return "Movie { " +
+                "movieName='" + movieName + '\'' +
                 ", yearOfRelease=" + yearOfRelease +
+                "genere='" + genere + '\'' +
                 '}';
     }
 
