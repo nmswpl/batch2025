@@ -37,5 +37,20 @@ public class NewTestRunner
         for (int i : indexOfDevIntern) {
             System.out.println(i);
         }
+        runner.toTitleCase("gajeNdran iS deV.");
+
+    }
+
+    private void toTitleCase(String content)
+    {
+        String[] contentArray= content.toLowerCase().split(" ");
+        for (String str : contentArray)
+        {
+            char c = str.charAt(0);
+
+            System.out.print(Character.toTitleCase(str.charAt(0))+str.substring(1)+" ");
+
+
+        }
     }
 }
