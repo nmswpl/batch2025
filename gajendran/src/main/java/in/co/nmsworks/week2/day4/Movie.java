@@ -12,6 +12,10 @@ public class Movie implements Comparable<Movie>{
     public Movie() {
     }
 
+    public String getGenre_() {
+        return genre_;
+    }
+
     public Movie(String movieName, int yearOfRelease, String genre) {
         this.genre_ = genre;
         this.yearOfRelease = yearOfRelease;
