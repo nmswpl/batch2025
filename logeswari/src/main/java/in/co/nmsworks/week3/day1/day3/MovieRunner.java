@@ -50,9 +50,6 @@ public class MovieRunner{
         list.add(ob9);
         list.add(ob10);
 
-
-
-
         return list;
     }
     public List<String[]> savetoDatabase(List<String[]> movie){
@@ -104,7 +101,7 @@ public class MovieRunner{
         try(Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
 
             PreparedStatement ps=  connection.prepareStatement(sql)){
-            ps.setInt(1, Integer.parseInt((genre)));
+            ps.setInt(1, Integer.parseInt(String.valueOf((genre))));
             try {
                 ResultSet rs;
                 ResultSet resultSet = rs = ps.executeQuery();
@@ -119,7 +116,9 @@ public class MovieRunner{
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+
         }
+        out.println("genre");
         return result.toArray(new String[0]);
     }
 
