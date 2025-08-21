@@ -8,7 +8,8 @@ public class TitleCaseConverter {
 
             for (String word : words) {
                 if (word.length() > 0) {
-                    result += word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
+                    result += word.substring(0, 1).toUpperCase() +
+                            word.substring(1).toLowerCase();
                 }
             }
             return result.trim();

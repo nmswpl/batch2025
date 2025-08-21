@@ -1,0 +1,26 @@
+-- 1.Add a new column email of type VARCHAR(100) to the SOCIAL_MEDIA table. After
+   that, update the email column for all rows with a dummy email like
+   username@example.com where the username is taken from the username column.
+
+      ALTER TABLE SOCIAL_MEDIA ADD email VARCHAR(100);
+
+--2.Change the location column’s data type to VARCHAR(50) to allow longer city names.
+
+      UPDATE SOCIAL_MEDIA SET email = CONCAT(username, '@example.com');
+
+--3.Retrieve all users from the SOCIAL_MEDIA table where the followers_count is
+  greater than 50000 and the location is either 'Mumbai' or 'Delhi'.
+
+       ALTER TABLE SOCIAL_MEDIA MODIFY location VARCHAR(50);
+
+--4.Retrieve the users from the SOCIAL_MEDIA table who have either more than 10000
+  followers or are following more than 5000 accounts, and who are located in either
+  'Bangalore' or 'Chennai'.
+
+       SELECT * FROM SOCIAL_MEDIA WHERE (followers_count > 10000 OR following_count > 5000) AND location IN ('Bangalore', 'Chennai');
+
+--5.Find the location and gender wise average number of followers in the SOCIAL_MEDIA
+  table. Sort by Location.
+
+      SELECT location, gender, AVG(followers_count) AS avg_followers FROM SOCIAL_MEDIA GROUP BY location, gender ORDER BY location;
+
