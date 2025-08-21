@@ -7,7 +7,7 @@ public class Movie implements Comparable<Movie>{
 
     Movie(){}
 
-    Movie(String name, int yearOfRelease, String genre){
+    public Movie(String name, int yearOfRelease, String genre){
         this.name = name;
         this.yearOfRelease = yearOfRelease;
         this.genre = genre;
