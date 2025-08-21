@@ -1,4 +1,4 @@
-package in.co.nmsworks.week3.day4;
+package in.co.nmsworks.week3.day3;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

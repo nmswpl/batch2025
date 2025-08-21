@@ -1,4 +1,4 @@
-package in.co.nmsworks.week3.day4;
+package in.co.nmsworks.week3.day3;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
