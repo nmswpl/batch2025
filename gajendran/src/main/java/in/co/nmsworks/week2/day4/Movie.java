@@ -7,8 +7,15 @@ public class Movie implements Comparable<Movie>{
     public enum Genre{
         SCIENCE_FICTION, ACTION, DRAMA;
     }
+    private String genre_;
 
     public Movie() {
+    }
+
+    public Movie(String movieName, int yearOfRelease, String genre) {
+        this.genre_ = genre;
+        this.yearOfRelease = yearOfRelease;
+        this.movieName = movieName;
     }
 
     @Override
@@ -57,9 +64,10 @@ public class Movie implements Comparable<Movie>{
         return "Movie{" +
                 "movieName='" + movieName + '\'' +
                 ", yearOfRelease=" + yearOfRelease +
-                ", genre=" + genre +
+                ", genre_='" + genre_ + '\'' +
                 '}';
     }
+
 
     public String getMovieName() {
         return movieName;
