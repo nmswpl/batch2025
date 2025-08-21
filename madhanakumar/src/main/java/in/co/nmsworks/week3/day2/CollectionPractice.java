@@ -1,5 +1,8 @@
 package in.co.nmsworks.week3.day2;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class CollectionPractice {
     public static void main(String[] args) {
         MapPractice mp = new MapPractice();
@@ -14,7 +17,10 @@ public class CollectionPractice {
         mp.removeEvenNumberWithSorting();
         mp.removeDuplicateName();
         mp.setIntersection();
-        mp.mapValueLengthStoring();
+        System.out.println(mp.printNamesNoOfLetters());
+        System.out.println(mp.replaceNullValue());
+
+
 
     }
 }

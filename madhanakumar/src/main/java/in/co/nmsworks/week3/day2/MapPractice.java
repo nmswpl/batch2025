@@ -239,16 +239,28 @@ public class MapPractice {
         System.out.println(set1);
     }
 
-//    public void mapValueLengthStoring(){
-//        Map<String , Integer> name1 = new HashMap<>();
-//        Map<String , Integer> name2 = new HashMap<>();
-//
-//        name1.put("Lucifer" , 32);
-//        name1.put("Ronaldo" , 40);
-//        name1.put("Dhoni" , 41);
-//
-//
-//
-//    }
 
+
+    public Map<String,Integer> printNamesNoOfLetters() {
+        Map<String , Integer> map = new HashMap<>();
+        map.put("Madhan",7);
+        map.put("Inosuke",2);
+        Map<String,Integer> nameAndLetters = new HashMap<>();
+        for (Map.Entry<String, Integer> stringIntegerEntry : map.entrySet()) {
+            nameAndLetters.put(stringIntegerEntry.getKey(),stringIntegerEntry.getKey().length());
+        }
+        return nameAndLetters;
+    }
+
+    public Map<String , String> replaceNullValue(){
+        Map<String, String> map = new HashMap<>();
+        map.put("Madhan","One");
+        map.put("Beckam",null);
+        for (Map.Entry<String , String> entry : map.entrySet()){
+            map.replace(entry.getKey(), null,"Unknown");
+        }
+
+        return map;
+    }
 }
+
