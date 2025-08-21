@@ -1,4 +1,4 @@
-package in.co.nmsworks.weel3.day2;
+package in.co.nmsworks.week3.day2;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,6 +1,4 @@
-package in.co.nmsworks.weel3.day2;
-
-import in.co.nmsworks.week2.day2.Vehicle;
+package in.co.nmsworks.week3.day2;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package in.co.nmsworks.weel3.day3;
+package in.co.nmsworks.week3.day3;
 
 public class Car {
     private int id = 1;

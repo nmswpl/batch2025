@@ -1,9 +1,5 @@
-package in.co.nmsworks.weel3.day1;
+package in.co.nmsworks.week3.day1;
 
-import com.sun.security.jgss.GSSUtil;
-import in.co.nmsworks.week1.day3.Candidate;
-
-import javax.swing.plaf.ListUI;
 import java.util.*;
 
 public class CollectionTrainee {

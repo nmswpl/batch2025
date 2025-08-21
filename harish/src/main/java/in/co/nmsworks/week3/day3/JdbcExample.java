@@ -1,10 +1,8 @@
-package in.co.nmsworks.weel3.day3;
+package in.co.nmsworks.week3.day3;
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.ListResourceBundle;
 
 public class JdbcExample {
     public static void main(String[] args) {
