@@ -81,9 +81,7 @@ public class MovieRunner {
     //                    System.out.println(rs.getString(1));
                 	movies.add(rs.getString(1));
                 }
-                if(!movies.isEmpty()) {
                 	groupByYear.put(year[i], movies);
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
