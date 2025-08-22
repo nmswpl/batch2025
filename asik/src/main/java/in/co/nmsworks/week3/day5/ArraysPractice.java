@@ -10,7 +10,7 @@ public class ArraysPractice
         ArraysPractice ap = new ArraysPractice();
 
         int[][] arr = new int[][] {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
-        int sum = ap.sumOf2DArray(arr);
+        /*int sum = ap.sumOf2DArray(arr);
         System.out.println("Sum Of The 2D Array is " + sum);
 
         Student john = new Student("John", new int[] {85, 90, 88});
@@ -29,11 +29,11 @@ public class ArraysPractice
         int target = 5;
         int[] index = ap.getIndexOfTargetElement(arrList, target);
         System.out.println("The Index of Element " + target + " is Found At Index " + "(" + index[0] + ", " + index[1] + ")");
-
+*/
         List<Integer> list = ap.convertSpiralToList(arr);
         System.out.println(list);
 
-        ap.printGroupAnagram(new String[] {"eat", "tea", "tan", "ate", "nat", "bat"});
+        /*ap.printGroupAnagram(new String[] {"eat", "tea", "tan", "ate", "nat", "bat"});
 
         List<List<Integer>> arrListWithRepeatedValues = new ArrayList<>();
         arrListWithRepeatedValues.add(new ArrayList<>(Arrays.asList(1, 2, 3)));
@@ -55,7 +55,7 @@ public class ArraysPractice
         Employee[] empArr = {johnEmp, aliceEmp, bobEmp};
         Employee maxWorkedEmployee = ap.getMaxWorkedEmployee(empArr);
         System.out.println(maxWorkedEmployee.getName() + " worked the most hours: " + maxWorkedEmployee.getTotalWorkedHours() + " hours");
-
+*/
     }
 
     private Employee getMaxWorkedEmployee(Employee[] empArr)
@@ -150,21 +150,36 @@ public class ArraysPractice
     private List<Integer> convertSpiralToList(int[][] arr)
     {
         List<Integer> list = new ArrayList<>();
-        for (int i = 0; i < arr.length; i++)
+
+        int top = 0, left = 0, right = arr.length - 1, bottom = arr.length - 1;
+
+        while(top <= bottom && left <= right)
         {
-            if (i % 2 == 0)
+            for (int i = left; i <= right; i++)
             {
-                for (int j = 0; j < arr[i].length; j++)
-                {
-                    list.add(arr[i][j]);
-                }
+                list.add(arr[top][i]);
             }
-            else
+            top++;
+            for (int i = top; i <= bottom; i++)
             {
-                for (int j = arr[i].length - 1; j >= 0; j--)
+                list.add(arr[i][right]);
+            }
+            right--;
+            if(top <= bottom)
+            {
+                for (int i = right; i >= left; i--)
                 {
-                    list.add(arr[i][j]);
+                    list.add(arr[bottom][i]);
                 }
+                bottom--;
+            }
+            if(left <= right)
+            {
+                for (int i = bottom; i >= top; i--)
+                {
+                    list.add(arr[i][left]);
+                }
+                left++;
             }
         }
         return list;
