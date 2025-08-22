@@ -51,6 +51,7 @@ public class Day5Practice {
     private void medianFinder(int[] arr)
     {
         int mid=0;
+        Arrays.sort(arr);
         int length = arr.length;
         if(length%2!=0) {
             mid = length / 2;
@@ -61,6 +62,7 @@ public class Day5Practice {
             mid = length/2;
             int sum = arr[mid]+arr[mid-1];
             int avg = sum/2;
+            System.out.println(Arrays.toString(arr));
             System.out.println(avg);
         }
     }
@@ -79,6 +81,9 @@ public class Day5Practice {
 
     private void gcdFinder(int a, int b)
     {
+        int c,d;
+        c=a;
+        d=b;
         if(a>b) {
             int r = 0;
             while (true)
@@ -89,7 +94,7 @@ public class Day5Practice {
                 if(b<=0)
                     break;
             }
-            System.out.println(a);
+            System.out.println("The GCD of "+c+" and "+d+" is "+a);
         }
         else
             System.out.println("Number 1 is Smaller than Number 2");
@@ -108,7 +113,7 @@ public class Day5Practice {
                 String arr[] = line.split(" ");
                 length+= arr.length;
             }
-            System.out.println(length);
+            System.out.println("Count of Words in the Paragraph is : "+length);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {
@@ -130,7 +135,7 @@ public class Day5Practice {
             if(arr[i]>secondMax && arr[i]!=firstMax )
                 secondMax=arr[i];
         }
-        System.out.println(secondMax);
+        System.out.println("Second Largest Element is : "+secondMax);
     }
 
     private void findMinandMax(int[] arr)
@@ -153,6 +158,8 @@ public class Day5Practice {
 
     private void findSumOfDigits(int number)
     {
+        int temp;
+        temp=number;
         int sum=0;
         while (number>0)
         {
@@ -160,7 +167,7 @@ public class Day5Practice {
             sum=sum+rem;
             number=number/10;
         }
-        System.out.println(sum);
+        System.out.println("sum of Digits in "+temp+" is "+sum);
     }
 
 
