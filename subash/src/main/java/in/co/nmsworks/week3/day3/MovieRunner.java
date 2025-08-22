@@ -11,10 +11,10 @@ public class MovieRunner {
 
         MovieRunner mr = new MovieRunner();
 
-//        List<String[]> setOfMovies= mr.getData();
+        List<String[]> setOfMovies= mr.getData();
 
         try {
-//            mr.saveToDB(setOfMovies);
+            mr.saveToDB(setOfMovies);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -22,9 +22,9 @@ public class MovieRunner {
         mr.getMoviesByYear(arr);
 
         Set<Movie> mov=new LinkedHashSet<>();
-//        mov=mr.getMovByGenre("Action");
+        mov=mr.getMovByGenre("Action");
         for (Movie movie : mov) {
-//            System.out.println(movie.getMovName());
+            System.out.println(movie.getMovName());
         }
 
     }
@@ -40,7 +40,6 @@ public class MovieRunner {
             rs = ps.executeQuery();
             while (rs.next()) {
                 String movie_name = rs.getString(1);
-//                System.out.println(movie_name);
                 mov.add(new Movie(movie_name));
             }
 
@@ -56,7 +55,7 @@ public class MovieRunner {
     {
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
-            PreparedStatement ps = con.prepareStatement("Select yearOfRelease,movie_name from Movie where yearOfRelease=?");
+            PreparedStatement ps = con.prepareStatement("Select yearOfRelease,movie_name from Movie where yearOfRelease=? group by yearOfRelease,movie_name");
             ResultSet rs;
             Map<Integer,List<String>> yearAndMovie=new HashMap<>();
             List<String> movies = new ArrayList<>();
@@ -68,10 +67,7 @@ public class MovieRunner {
                 {
                     int yearOfRelease = rs.getInt(1);
                     String movie_name = rs.getString(2);
-                    if(!(movies.contains(movie_name))) {
-                        movies.add(movie_name);
-                        yearAndMovie.put(yearOfRelease, movies);
-                    }
+                    yearAndMovie.computeIfAbsent(yearOfRelease, k -> new ArrayList<>()).add(movie_name);
                 }
 
             }
