@@ -2,9 +2,17 @@ package in.co.nmsworks.week2.day1.day4;
 
 public class Movie implements Comparable<Movie> {
 
+    private int serialNo;
     private String movName;
     private int yearOfRelease;
     private String genre;
+
+    public Movie(int serialNo, String movName, int yearOfRelease, String genre) {
+        this.serialNo = serialNo;
+        this.movName = movName;
+        this.yearOfRelease = yearOfRelease;
+        this.genre = genre;
+    }
 
     public Movie(String movName, int yearOfRelease, String genre) {
         this.movName = movName;
@@ -12,7 +20,19 @@ public class Movie implements Comparable<Movie> {
         this.genre = genre;
     }
 
+    public int getSerialNo() {
+        return serialNo;
+    }
+
+    public void setSerialNo(int serialNo) {
+        this.serialNo = serialNo;
+    }
+
     public Movie() {
+    }
+
+    public Movie(String movieName) {
+        this.movName=movieName;
     }
 
     public String getGenre() {
@@ -43,11 +63,10 @@ public class Movie implements Comparable<Movie> {
     public String toString() {
         return "Movie{" +
                 "movName='" + movName + '\'' +
-                ", year=" + yearOfRelease +
+                ", yearOfRelease=" + yearOfRelease +
                 ", genre='" + genre + '\'' +
                 '}';
     }
-
 
     @Override
     public int compareTo(Movie o) {
