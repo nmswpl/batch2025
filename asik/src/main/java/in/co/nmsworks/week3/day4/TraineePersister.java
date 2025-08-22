@@ -48,6 +48,19 @@ public class TraineePersister implements Comparable<TraineePersister>
         this.dept = dept;
     }
 
+    @Override
+    public boolean equals(Object o)
+    {
+        if (o == null || getClass() != o.getClass()) return false;
+        TraineePersister that = (TraineePersister) o;
+        return id == that.id && Objects.equals(name, that.name) && Objects.equals(dept, that.dept);
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(id, name, dept);
+    }
 
     @Override
     public String toString()

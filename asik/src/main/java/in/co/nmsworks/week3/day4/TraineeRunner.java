@@ -12,41 +12,38 @@ public class TraineeRunner
         TraineeRunner tr = new TraineeRunner();
 
         Set<TraineePersister> trainees = tr.getFromFile();
+
         List<TraineePersister> traineesList = new ArrayList<>(trainees);
 
-        TraineeFileWriter tfw = new TraineeFileWriter();
-        tfw.setFileName("/home/nms-training/Downloads/Trainee.txt");
-        tr.save(tfw, traineesList);
-
-        /*tr.sortAndSave(traineesList);*/
+        tr.sortAndSave(traineesList);
     }
 
     private void sortAndSave(List<TraineePersister> traineesList)
     {
         Collections.sort(traineesList);
-        List<TraineePersister> odd = new ArrayList<>();
-        List<TraineePersister> even = new ArrayList<>();
+        List<TraineePersister> oddTraineeList = new ArrayList<>();
+        List<TraineePersister> evenTraineeList = new ArrayList<>();
 
         for (TraineePersister trainee : traineesList)
         {
             if (trainee.getId() % 2 == 0)
             {
-                even.add(trainee);
+                evenTraineeList.add(trainee);
             }
             else
             {
-                odd.add(trainee);
+                oddTraineeList.add(trainee);
             }
         }
 
         DbWriter dbw = new DbWriter();
         dbw.open();
-        dbw.write(odd);
+        dbw.write(oddTraineeList);
         dbw.close();
 
         TraineeFileWriter tfwe = new TraineeFileWriter();
         tfwe.setFileName("/home/nms-training/Downloads/TraineeEven.txt");
-        save(tfwe, even);
+        save(tfwe, evenTraineeList);
     }
 
     private void save(TraineeFileWriter tfw, List<TraineePersister> traineesList)

@@ -33,7 +33,7 @@ public class DbWriter implements Writer
             {
                 pstmt.setInt(1, trainee.getId());
                 pstmt.setString(2, trainee.getName());
-                pstmt.setString(2, trainee.getDept());
+                pstmt.setString(3, trainee.getDept());
                 pstmt.executeUpdate();
             }
             catch (SQLException e) {
