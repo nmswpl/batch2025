@@ -17,6 +17,7 @@ public class PracticeProblemsSet2 {
 
         ps2.printSpiralOreder();
         System.out.println();
+        System.out.println();
 
         ps2.anagram();
         System.out.println();
@@ -165,10 +166,7 @@ public class PracticeProblemsSet2 {
                 }
             }
         }
-
-        if(exp.length()>3){
             exp = exp.deleteCharAt(exp.length()-2);
-        }
 
         System.out.println("Sum of Cube of Diagonals: " + exp + "= " + sum);
     }
