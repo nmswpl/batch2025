@@ -1,0 +1,9 @@
+Hello, world! This is a test paragraph. It contains various punctuation marks: commas, periods, exclamation points, and question marks. How many words will be counted? Let's find out!
+
+In addition to punctuation, this paragraph also includes some numbers: 123, 456.7, and special characters like @, #, and $.
+
+The quick brown fox jumps over the lazy dog. This is a classic sentence used to display all the letters of the alphabet. It’s often used in typewriters and computer fonts to showcase typefaces.
+
+Programming languages such as Python, Java, and C++ are used to create software. Each language has its own syntax and rules, but they all serve the purpose of making computers perform tasks.
+
+Testing edge cases is important: consider phrases like "hello-world," "it's a test," and "one-two-three." These examples help ensure the word count algorithm works correctly under various conditions.
