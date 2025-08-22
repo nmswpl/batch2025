@@ -15,11 +15,34 @@ public class TraineePersistor {
         for (Trainee trainee : trainees) {
             System.out.println(trainee);
         }
-        //tp.sortAndSave(trainees);
+        tp.sortAndSave(trainees);
     }
 
-    private void sortAndSave(List<Trainee> trainees) {
-        List<Trainee> trainees1;
+    private void sortAndSave(Set<Trainee> trainees) {
+
+        List<Trainee> fileTrainees = new ArrayList<>();
+        List<Trainee> dbTrainees = new ArrayList<>();
+
+        for (Trainee trainee : trainees) {
+            if (trainee.getId() % 2 ==0){
+                fileTrainees.add(trainee);
+            }
+            else {
+                dbTrainees.add(trainee);
+            }
+        }
+
+        try{
+            WriterInterface fWriter = new TFileWriter();
+            save(fWriter,fileTrainees);
+
+            WriterInterface dbWriter = new TDbWriter();
+            save(dbWriter,dbTrainees);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     private void save(WriterInterface writer, List<Trainee> trainees) throws Exception {

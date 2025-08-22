@@ -11,7 +11,7 @@ public class TDbWriter implements WriterInterface{
     ResultSet rs = null;
     @Override
     public void open() throws Exception {
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training");
+        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training","nms-training","nms-training");
         ps = con.prepareStatement(query);
     }
 
