@@ -94,15 +94,20 @@ public class ArraysPractice
     private int getDiagonalCubeSum(int[][] arr)
     {
         int diagonalCubeSum = 0;
-        for (int i = 0; i < arr.length; i++)
+        int i = 0, k = 0, j = arr.length - 1;
+
+        while (i < arr.length)
         {
-            for (int j = 0; j < arr[i].length; j++)
-            {
-                if( i == j || (i == 0 && j == arr[i].length -1) || (i == arr[j].length -1) && j == 0 )
-                {
-                    diagonalCubeSum += Math.pow(arr[i][j], 3);
-                }
-            }
+            diagonalCubeSum += Math.pow(arr[i][i], 3);
+            i++;
+        }
+
+        while((j != k) && (j >= 0) && (k < arr.length - 1))
+        {
+            diagonalCubeSum += Math.pow(arr[k][j], 3);
+            diagonalCubeSum += Math.pow(arr[j][k], 3);
+            j--;
+            k++;
         }
         return diagonalCubeSum;
     }
