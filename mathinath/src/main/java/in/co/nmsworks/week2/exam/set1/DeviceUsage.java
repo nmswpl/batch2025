@@ -8,7 +8,7 @@ public class DeviceUsage {
     void printBatteryInfoAfterXHrsForDevice(BatteryPowered device, int
             noOfHrs) {
 
-        System.out.println("battery percentage : "+);
+        System.out.println("battery percentage : ");
         System.out.println("Remaining hours: ");
     }
 }

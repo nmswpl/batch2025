@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class ComplexCollection {
+
     static Map<String,List<Float[]>> cityToTempList = new HashMap<>();
     public static void main(String[] args) {
 

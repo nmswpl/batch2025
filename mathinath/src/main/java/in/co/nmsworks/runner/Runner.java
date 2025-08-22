@@ -53,10 +53,10 @@ public class Runner {
 //        Person p3=new Person();
 
 
-        Screen1 sc1 = new Screen1();
-        sc1.setAvailableTicket(20);
-        System.out.println(sc1.checkAvailability());
-        System.out.println(sc1.bookTicket(10));
+//        Screen1 sc1 = new Screen1();
+//        sc1.setAvailableTicket(20);
+//        System.out.println(sc1.checkAvailability());
+//        System.out.println(sc1.bookTicket(10));
 
 //        Screen2 sc2=new Screen2();
 //        sc2.bookTicket(3);

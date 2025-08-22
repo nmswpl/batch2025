@@ -12,13 +12,11 @@ public class Movie implements Comparable<Movie> {
         this.genre = genre;
     }
 
-
     @Override
     public String toString() {
         return "Movie{" +
                 "MovieName='" + movieName + '\'' +
-                ", YearOfRelease=" + yearOfRelease +
-                ", Genre='" + genre + '\'' +
+                ", YearOfRelease=" + yearOfRelease +",Gnere"+genre+
                 '}';
     }
 

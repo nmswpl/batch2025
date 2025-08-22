@@ -34,7 +34,6 @@ public class TestRunner {
         Intern[] intern = new Intern[] {i1,i2,i3};
         for(int i=0;i<intern.length;i++)
         {
-            System.out.println(i);
         }
 
 
