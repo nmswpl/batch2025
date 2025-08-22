@@ -3,6 +3,7 @@ package in.co.nmsworks.week3.day5;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,15 +45,7 @@ public class Practice
         Map<Integer, Integer> frequency = new HashMap<>();
         for (int element : arr)
         {
-            if(frequency.containsKey(element))
-            {
-                int currFreq = frequency.get(element);
-                frequency.put(element, currFreq+1);
-            }
-            else
-            {
-                frequency.put(element, 1);
-            }
+            frequency.put(element, frequency.getOrDefault(element, 0) + 1);
         }
         for (Map.Entry<Integer, Integer> freq : frequency.entrySet())
         {
@@ -68,6 +61,7 @@ public class Practice
     private double findMedianOfTheArray(int[] arr)
     {
         int median;
+        Arrays.sort(arr);
         if (arr.length % 2 != 0)
         {
             median = arr[arr.length/2];
