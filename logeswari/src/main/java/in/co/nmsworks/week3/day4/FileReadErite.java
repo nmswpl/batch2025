@@ -6,15 +6,16 @@ public class FileReadErite {
     public static void main(String[] args) throws IOException {
 
         FileReadErite frw=new FileReadErite();
-        frw.writetoFile("/tmp/myinfo.txt","i am logeswari");
+        frw.writetoFile("/tmp/myinfo.txt","i am logeswari.");
         frw.readFromFile("/tmp/myinfo.txt");
-        frw.writetoFile("/tmp/myinfo.txt","i from ariyalur");
+        frw.writetoFile("/tmp/myinfo.txt"," i from ariyalur");
         frw.readFromFile("/tmp/myinfo.txt");
 
-        frw.writetoFile("/tmp/myinfo.txt","i am logeswari");
+        frw.writetoFile("/tmp/myinfo.txt","currently completed IT");
         frw.readFrombufferFile("/tmp/myinfo.txt");
         frw.writetoFile("/tmp/myinfo.txt","i from ariyalur");
         frw.readFrombufferFile("/tmp/myinfo.txt");
+        frw.writetobufferFile("/tmp/myinfo.txt","world");
 
     }
 
@@ -30,8 +31,8 @@ public class FileReadErite {
         }
     }
 
-    public void writetobufferFile(String filename) {
-        try(BufferedWriter bw= new BufferedWriter(new FileWriter(filename))){
+    public void writetobufferFile(String filename,String text) {
+        try(BufferedWriter bw= new BufferedWriter(new FileWriter(filename,true))){
             bw.write("hello ");
 
             } catch (IOException e) {
@@ -58,7 +59,7 @@ public class FileReadErite {
     }
 
     private void writetoFile(String filename, String text) throws IOException {
-        FileWriter fw=new FileWriter(filename,true);
+        FileWriter fw=new FileWriter(filename,false);
         fw.write(text);
         fw.close();
     }
