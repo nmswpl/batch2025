@@ -10,7 +10,7 @@ public class ArraysPractice
         ArraysPractice ap = new ArraysPractice();
 
         int[][] arr = new int[][] {{1, 2, 3},{4, 5, 6},{7, 8, 9}};
-        /*int sum = ap.sumOf2DArray(arr);
+        int sum = ap.sumOf2DArray(arr);
         System.out.println("Sum Of The 2D Array is " + sum);
 
         Student john = new Student("John", new int[] {85, 90, 88});
@@ -29,11 +29,10 @@ public class ArraysPractice
         int target = 5;
         int[] index = ap.getIndexOfTargetElement(arrList, target);
         System.out.println("The Index of Element " + target + " is Found At Index " + "(" + index[0] + ", " + index[1] + ")");
-*/
         List<Integer> list = ap.convertSpiralToList(arr);
         System.out.println(list);
 
-        /*ap.printGroupAnagram(new String[] {"eat", "tea", "tan", "ate", "nat", "bat"});
+        ap.printGroupAnagram(new String[] {"eat", "tea", "tan", "ate", "nat", "bat"});
 
         List<List<Integer>> arrListWithRepeatedValues = new ArrayList<>();
         arrListWithRepeatedValues.add(new ArrayList<>(Arrays.asList(1, 2, 3)));
@@ -55,7 +54,6 @@ public class ArraysPractice
         Employee[] empArr = {johnEmp, aliceEmp, bobEmp};
         Employee maxWorkedEmployee = ap.getMaxWorkedEmployee(empArr);
         System.out.println(maxWorkedEmployee.getName() + " worked the most hours: " + maxWorkedEmployee.getTotalWorkedHours() + " hours");
-*/
     }
 
     private Employee getMaxWorkedEmployee(Employee[] empArr)
