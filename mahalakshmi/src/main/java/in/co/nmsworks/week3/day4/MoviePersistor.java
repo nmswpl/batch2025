@@ -12,12 +12,31 @@ import java.util.Set;
 public class MoviePersistor {
     public static void main(String[] args) throws IOException, SQLException {
         MoviePersistor mp = new MoviePersistor();
-        String fileName = "/home/nms-training/Downloads/MovieName.txt";
-        List<Movie> movieList = mp.getMoviesFromFile(fileName);
-        mp.saveMemoriesToDb(movieList);
-        Set<Movie> movieSet = mp.getAllMoviesFromDb();
-        System.out.println(movieSet);
-        mp.writeAllMoviesToFile(movieSet);
+        String fileName = "/home/nms-training/Downloads/DBMovieName.txt";
+        List<Movie> mList = mp.getAllMoviesStringFromDb(fileName);
+        for (Movie movie : mList) {
+            System.out.println(movie);
+        }
+
+//        String fileName = "/home/nms-training/Downloads/MovieName.txt";
+//        List<Movie> movieList = mp.getMoviesFromFile(fileName);
+//        mp.saveMoviesToDb(movieList);
+//        Set<Movie> movieSet = mp.getAllMoviesFromDb();
+//        System.out.println(movieSet);
+//        mp.writeAllMoviesToFile(movieSet);
+
+    }
+
+    private List<Movie> getAllMoviesStringFromDb(String fileName) throws IOException, SQLException {
+        List<Movie> moviesList = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] strArr = line.split(",".trim());
+                moviesList.add(new Movie(strArr[1].substring(2,strArr[1].length()-1),Integer.parseInt(strArr[2].substring(2,strArr[2].length()-1)),strArr[3].substring(2,strArr[3].length()-1)));
+            }
+        }
+        return moviesList;
     }
 
     private void writeAllMoviesToFile(Set<Movie> movieSet) throws IOException {
@@ -44,7 +63,7 @@ public class MoviePersistor {
         return movieSet;
     }
 
-    private void saveMemoriesToDb(List<Movie> movieList) throws SQLException {
+    private void saveMoviesToDb(List<Movie> movieList) throws SQLException {
         Connection con = DriverManager.getConnection("jdbc:mysql://localHost:3306/training","nms-training","nms-training");
         try (PreparedStatement ps = con.prepareStatement("insert into Movie (name,yearOfRelease,genre) values(?,?,?)")) {
             for (Movie movie : movieList) {
