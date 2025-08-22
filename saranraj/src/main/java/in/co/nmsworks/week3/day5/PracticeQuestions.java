@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,6 +27,7 @@ public class PracticeQuestions {
 
     private void findModeInArray() {
         int[] arr={4,7,7,7,1,1,8};
+
          Map<Integer,Integer> findFrequency = new HashMap<>();
 
           for (int i:arr) {
@@ -53,6 +55,7 @@ public class PracticeQuestions {
 
     private void findMedianInArray() {
         int[] arr = {1, 2, 3, 4, 5, 6};
+        Arrays.sort(arr);
         int n=arr.length;
 
         if (n%2==0) {
@@ -66,6 +69,7 @@ public class PracticeQuestions {
 
     private void findMeanInArray() {
         int[] arr = {1,2,3,4,5};
+        Arrays.sort(arr);
         int sum=0;
         for (int i: arr) {
             sum+=i;
