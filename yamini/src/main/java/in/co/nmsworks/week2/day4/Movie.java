@@ -4,6 +4,10 @@ public class Movie  implements Comparable<Movie> {
     private String movieName;
     private int year;
     private String genre;
+    private String movieId;
+
+    public Movie(String result) {
+    }
 
     public String getMovieName() {
         return movieName;
@@ -49,6 +53,14 @@ public class Movie  implements Comparable<Movie> {
                 '}';
     }
 
+    public String getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
+    }
+
     @Override
     public int compareTo(Movie mv) {
         //return this.year-mv.getYear();
@@ -60,4 +72,5 @@ public class Movie  implements Comparable<Movie> {
         }
        return 0;
     }
+
 }
