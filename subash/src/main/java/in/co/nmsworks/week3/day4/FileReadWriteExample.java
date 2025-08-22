@@ -21,8 +21,6 @@ public class FileReadWriteExample {
 
        frwe.readUsingBuffer(filename);
 
-
-
     }
 
     private void readUsingBuffer(String filename)
@@ -40,9 +38,6 @@ public class FileReadWriteExample {
             throw new RuntimeException(e);
         }
 
-
-
-
     }
 
     private void writeUsingBuffer(String filename,String text,String text1)
@@ -57,8 +52,6 @@ public class FileReadWriteExample {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 
     private void toWrite(String filename, String text)
@@ -90,9 +83,5 @@ public class FileReadWriteExample {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
-
-
-
 }

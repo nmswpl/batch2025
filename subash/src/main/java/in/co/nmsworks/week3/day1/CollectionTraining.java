@@ -21,12 +21,13 @@ public class CollectionTraining {
 
 
        iterationList(l1);
+       addElement(l1);
        updateElement(l1);
        getElement(l1);
        removeThirdElement(l1);
        searchElement(l1);
 
-       List<String> l2= new ArrayList<>();
+       List l2= new ArrayList<>();
        l2.add("Subash");
        l2.add("Mathi");
        l2.add("fiyas");
@@ -35,11 +36,11 @@ public class CollectionTraining {
 
        List<String> l3=new ArrayList<>();
 
-
        copyArray(l1,l3);
        reverseElement(l1);
        compareArrayList(l1,l2);
        joinTwoArray(l1,l2);
+       Collections.reverseOrder();
     }
     public static void listExample(List<String> l1) {
         System.out.println(l1);
@@ -53,7 +54,7 @@ public class CollectionTraining {
     }
     public static void addElement(List<String> l1)
     {
-        l1.add(0,"mejantha");
+        l1.add(1,"mejantha");
         System.out.println(l1);
     }
     public static void getElement(List<String> l1)
