@@ -1,5 +1,7 @@
 package in.co.nmsworks.week3.day3;
 
+import in.co.nmsworks.week2.day4.Movie;
+
 import java.sql.*;
 import java.util.*;
 
@@ -11,6 +13,7 @@ public class MovieRunner {
 //        mr.savetoDb(movies);
         int[] years = {1995,2007};
         mr.getMoviesForYear(years);
+        System.out.println(mr.getGenreWiseMovies("Action"));
 
     }
 
@@ -83,16 +86,33 @@ public class MovieRunner {
         }
     }
 
-    public Set<String> getGenreWiseMovies(String genre){
-        Set<String> genreWiseMovies = new HashSet<>();
-        String sql = "SELECT name ";
+    public Set<Movie> getGenreWiseMovies(String genre){
+        Set<Movie> movies = new HashSet<>();
+        try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "nms-training", "nms-training");
+            PreparedStatement pstmt = con.prepareStatement("SELECT * from Movie where genre = (?)"))
+        {
+            pstmt.setString(1, genre);
+            try(ResultSet rs = pstmt.executeQuery())
+            {
+                while (rs.next())
+                {
+                    Movie movie = new Movie();
+                    movie.setName(rs.getString(1));
+                    movie.setYearOfRelease(rs.getInt(2));
+                    movie.setGenre(rs.getString(3));
+                    movies.add(movie);
+                }
+            }
+            catch (SQLException e)
+            {
+                e.printStackTrace();
+            }
 
-        try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training")) {
-            PreparedStatement ps = con.prepareStatement("");
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
-
-        return genreWiseMovies;
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+        return movies;
     }
 }
