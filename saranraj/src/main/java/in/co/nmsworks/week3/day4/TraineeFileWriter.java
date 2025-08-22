@@ -1,45 +1,50 @@
 package in.co.nmsworks.week3.day4;
 
-import java.io.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
-public class TraineeFileWriter implements Writer {
-    BufferedWriter bf;
+    public class TraineeFileWriter implements Writer {
 
-    @Override
-    public void open() {
-       try{
-           bf =new BufferedWriter(new FileWriter("/home/nms-training/Downloads/employee.txt"));
-
-       } catch (IOException e) {
-           throw new RuntimeException(e);
-       }
-    }
-
-    @Override
-    public void write(List<Trainee> listOfTrainee) {
-          try{
-              for(Trainee value:listOfTrainee){
-                  String sentence =value.getId()+","+value.getName()+","+value.getDepartment();
-                  bf.write(sentence);
-              }
-
-          }catch (Exception e){
-              e.printStackTrace();
-          }
-
-    }
+        private BufferedWriter bufferedWriter;
+        private FileWriter fileWriter;
 
 
-    @Override
-    public void close() {
-        try {
-            bf.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        @Override
+        public void open() {
+            try {
+                fileWriter = new FileWriter("/home/nms-training/Downloads/NewEmployees.csv");
+                bufferedWriter = new BufferedWriter(fileWriter);
+
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
         }
 
+        @Override
+        public void write(List<Trainee> listOfTrainee) throws IOException {
+
+            for (Trainee trainee : listOfTrainee) {
+                String traineeList = trainee.getId() + "," + trainee.getName() + "," + trainee.getDepartment();
+                bufferedWriter.write(traineeList);
+                bufferedWriter.newLine();
+                bufferedWriter.flush();
+
+            }
+
+
+        }
+
+        @Override
+        public void close() {
+            try {
+                fileWriter.close();
+                bufferedWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
     }
-}

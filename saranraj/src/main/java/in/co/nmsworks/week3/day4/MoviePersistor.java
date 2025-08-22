@@ -14,10 +14,10 @@ public class MoviePersistor {
         MoviePersistor mp = new MoviePersistor();
         List<Movie> listOfMovies = getAllMoviesFromFile();
         System.out.println(listOfMovies);
-        mp.saveMoviesToDb(listOfMovies);
-        Set<Movie> movieSet = mp.getAllMovies();
-        mp.writeIntoNewMovie(movieSet);
-          mp.getAllMovieFromFile1();
+//        mp.saveMoviesToDb(listOfMovies);
+//        Set<Movie> movieSet = mp.getAllMovies();
+//        mp.writeIntoNewMovie(movieSet);
+        mp.getAllMovieFromFile1();
 
 
     }
@@ -102,32 +102,24 @@ public class MoviePersistor {
         return listOfMovies;
     }
 
-    private static void getAllMovieFromFile1() {
+    private static List<Movie> getAllMovieFromFile1() {
         List<Movie> listOfMovies = new ArrayList<>();
         try (BufferedReader bf = new BufferedReader(new FileReader("/home/nms-training/Downloads/MovieName.txt"))) {
+            String line;
+            bf.readLine();
+            while ((line = bf.readLine()) != null) {
 
-
-            String line = "";
-            while ((line = bf.readLine()) != null){
                 String[] lineSeparator = line.split(",");
-                for (int i = 0; i < lineSeparator.length; i++) {
-                    lineSeparator[i]=lineSeparator[i].replace('"',' ').trim();
-                }
-
-                if (lineSeparator[1].equals("Movie")){
-                    continue;
-                }
-                int year = Integer.parseInt(lineSeparator[2]);
-                Movie movieObject = new Movie(lineSeparator[1],year,lineSeparator[3]);
+                String movieName=lineSeparator[0].trim();
+                int year = Integer.parseInt(lineSeparator[1].trim());
+                Movie movieObject = new Movie(movieName, year, lineSeparator[2]);
                 listOfMovies.add(movieObject);
             }
-
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-//        return listOfMovies;
+        return listOfMovies;
     }
+
 
 }
