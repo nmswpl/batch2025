@@ -4,7 +4,9 @@ import in.co.nmsworks.week2.day4.Movie;
 import in.co.nmsworks.week3.day3.Member;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -16,13 +18,14 @@ public class MoviePersistor {
         MoviePersistor mp = new MoviePersistor();
 
         String filename = "/home/nms-training/Downloads/MovieName.txt";
+        String filename1 = "/home/nms-training/Downloads/DBMovis.txt";
 
 //        List<Movie> result = mp.getAllMoviesFromFile(filename);
 //        System.out.println(result);
 //
 //        mp.saveMoviesToDb(result);
-        mp.getMoviesFromDb();
-//        mp.writeAllMoviesToAFile();
+        Set<Movie> movieSet = mp.getMoviesFromDb();
+        mp.writeAllMoviesToAFile(movieSet,filename1);
     }
 
     private List<Movie> getAllMoviesFromFile(String filename) {
@@ -74,12 +77,8 @@ public class MoviePersistor {
                 int yearOfRelease = rs.getInt(2);
                 String genre = rs.getString(3);
 
-                for (Movie movie : movieSet) {
-                    movie.setName(name);
-                    movie.setYearOfRelease(yearOfRelease);
-                    movie.setGenre(genre);
-                    movieSet.add(movie);
-                }
+                movieSet.add(new Movie(name,yearOfRelease,genre));
+
             }
             System.out.println(movieSet);
         } catch (Exception e) {
@@ -88,7 +87,17 @@ public class MoviePersistor {
         return movieSet;
     }
 
-    private void writeAllMoviesToAFile() {
-
+    private void writeAllMoviesToAFile(Set<Movie> movieSet,String filename1) {
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter(filename1))){
+            int i = 0;
+            for(Movie m : movieSet){
+                i=i+1;
+                bw.write(i+","+m.getName()+","+m.getYearOfRelease()+","+m.getGenre());
+                bw.newLine();
+                bw.flush();
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

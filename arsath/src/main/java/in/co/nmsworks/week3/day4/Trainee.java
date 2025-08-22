@@ -1,6 +1,8 @@
 package in.co.nmsworks.week3.day4;
 
 
+import java.util.Objects;
+
 public class Trainee {
     private int id;
     private String name;
@@ -46,5 +48,17 @@ public class Trainee {
                 ", name='" + name + '\'' +
                 ", dept='" + dept + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Trainee trainee = (Trainee) o;
+        return id == trainee.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(id);
     }
 }
