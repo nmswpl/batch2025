@@ -53,7 +53,6 @@ public class TraineeFileWriter implements Writer
             {
                 bw.write(line);
                 bw.newLine();
-                bw.flush();
             }
             catch (IOException e)
             {
@@ -67,6 +66,7 @@ public class TraineeFileWriter implements Writer
     {
         try
         {
+            bw.flush();
             fw.close();
             bw.close();
         }
