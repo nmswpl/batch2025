@@ -9,7 +9,6 @@ public class FindWordDetails
     }
     public static void printWordDetails(String sentence , String word)
     {
-
         System.out.println("Word found at index : " + sentence.indexOf(word.toLowerCase()));
         System.out.println("First Char Of Word: " + sentence.charAt(sentence.indexOf(word.toLowerCase())));
         int i = sentence.indexOf(word.toLowerCase());
@@ -18,7 +17,5 @@ public class FindWordDetails
         }
         i=i-1;
         System.out.println("Last Char of Word :" + sentence.charAt(i));
-
-
     }
 }

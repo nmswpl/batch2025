@@ -26,4 +26,9 @@ public class Square implements Shape
     public void stringGetDescription(){
         System.out.println("this is square");
     }
+
+    @Override
+    public String toString() {
+        return getClass().getSimpleName();
+    }
 }

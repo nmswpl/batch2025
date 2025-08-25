@@ -1,4 +1,6 @@
-package in.co.nmsworks.week2.test.set2;
+package in.co.nmsworks.week3.day1.test.set2;
+
+import java.util.Arrays;
 
 public class TestRunner
 {
@@ -22,9 +24,9 @@ public class TestRunner
     }
 
     public static double averageSalary(TestRunner[] intern){
-        int sum =0 ;
+        double sum =0 ;
         for(int i=0;i<intern.length;i++){
-            sum = sum + intern.getSalary();
+            sum = sum + intern[i].getSalary();
         }
         return sum/intern.length;
     }
@@ -42,9 +44,10 @@ public class TestRunner
 
 
         String para = "Java is programming language.C language was developed first.But java is popular language.";
-        System.out.println(paraInfo(para));
-        int [] info = paraInfo(para);
-        System.out.println(info);
+        //System.out.println(paraInfo(para));
+
+        int[] info = paraInfo(para);
+        System.out.println(Arrays.toString(info));
 
 
     }
@@ -53,17 +56,17 @@ public class TestRunner
 
     public static int[] paraInfo(String para){
         int[] arr = new int[3];
-        String[] statement = para.split(".");
+        String[] statement = para.split("\\.");
         arr[0] = statement.length;
         String[] words =para.split(" ");
         arr[1]= words.length;
         int count =0 ;
         for(int i=0;i<para.length();i++){
-            if(para.charAt(i)<='a' || para.charAt(i)>='z'){
+            if(para.charAt(i)>='a' || para.charAt(i)<='z'){
                 count++;
             }
         }
-        arr[2] = count;;
+        arr[2] = count;
         return arr;
 
     }

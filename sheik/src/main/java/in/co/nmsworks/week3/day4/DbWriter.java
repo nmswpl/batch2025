@@ -24,7 +24,6 @@ public class DbWriter implements Writer{
             ps.setString(2,trainee1.getName());
             ps.setString(3,trainee1.getDept());
 
-
             ps.executeUpdate();
         }
 

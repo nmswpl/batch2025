@@ -1,9 +1,14 @@
 package in.co.nmsworks.week2.day2;
 
 import in.co.nmsworks.week1.day2.string.Candidate;
+import in.co.nmsworks.week2.day3.Shape;
 
 public class CandidateArray
 {
+
+
+
+
     public static void main(String[] args) {
         printCandidate();
     }

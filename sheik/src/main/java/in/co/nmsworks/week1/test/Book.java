@@ -42,7 +42,7 @@ public class Book
     }
     public int getPublicationyear(){
 
-        return publicationyear;
+        return publicationYear;
     }
 
     public void setCopies(int copies){

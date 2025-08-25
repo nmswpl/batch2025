@@ -7,19 +7,20 @@ public class Runner
         Book drama = new Book("Hunter" , "Author2" , 2010 , 2);
         Book horror = new Book("Jungles" , "Author3" , 1909 , 0);
 
-        checkOut(comic);
+        checkOut(horror);
     }
 
     public static void checkOut(Book book)
     {
-        if(book.getCopies()>0){
+        if(book.getCopies()>0)
+        {
+
             System.out.println("Book Title :" + book.getTitle()
-                    + "No of Copies Availabale : " + book.getCopies());
+                    + " No.of Copies Availabale : " + book.getCopies());
         }
-        else{
+        else
+        {
             System.out.println("The Book is Not available");
         }
-
-
     }
 }

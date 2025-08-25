@@ -23,7 +23,7 @@ public class TestRunnerSetOne
     public static int[] printIndices(TestRunnerSetOne[] intern){
         int arr [] = new int[3];
         int index =0;
-        for(int i=0;i<5;i++){
+        for(int i=0;i< intern.length;i++){
             if((intern[i].getDept()).equals("DEV")){
                 arr[index] = i;
                 index++;

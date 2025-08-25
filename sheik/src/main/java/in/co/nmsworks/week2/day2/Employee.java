@@ -1,15 +1,16 @@
 package in.co.nmsworks.week2.day2;
 
-public class Employee
-{
+public class Employee {
     private int days;
     private int hrs;
     private int basePay;
-    private int salary;
 
-    public int PrintCalculatedSalary(){
-        int salary = hrs * basePay;
-        return salary;
+    public int getDays() {
+        return days;
+    }
+
+    public void setDays(int days) {
+        this.days = days;
     }
 
     public int getBasePay() {
@@ -27,29 +28,37 @@ public class Employee
     public void setHrs(int hrs) {
         this.hrs = hrs;
     }
-}
 
-public class Contractor extends Employee
+
+    public int PrintCalculatesSalary(){
+        int salary = hrs * basePay;
+        return salary;
+    }
+
+}
+class PartTime extends Employee
 {
-    @Override
-    public int PrintCalculatesSalary(int hrs , int basePay){
-       salary = hrs * basePay;
-        System.out.println(salary);
+
+    public int PrintCalculatesSalary(){
+      return super.PrintCalculatesSalary() * getDays();
+
     }
 }
 
 
-public class FullTime extends Employee
+class FullTime extends Employee
 {
-    public void PrintCalculatesSalary(int hrs , int basePay,int days){
-        salary = days * hrs * basePay;
+
+    public int PrintCalculatesSalary(){
+        return super.PrintCalculatesSalary() * getDays();
 
     }
 }
-public class PartTime extends Employee
-{
-    public void PrintCalculatesSalary(int hrs , int basePay,int days){
-        salary = days * hrs * basePay;
+class Contractor extends Employee {
 
+    public int PrintCalculatesSalary() {
+        return super.PrintCalculatesSalary();
+
+    }
 }
 

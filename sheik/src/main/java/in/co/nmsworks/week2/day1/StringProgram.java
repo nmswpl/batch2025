@@ -20,6 +20,7 @@ public class StringProgram
         charToLowerCase("Java Programming");
         charToUpperCase("welcome to java");
         intToString(1234);
+        joinString();
     }
 
     public static void charAtIndex(String str , int index)
@@ -104,7 +105,7 @@ public class StringProgram
     }
 
     public static void findChartFromIndex(String str17 , int from){
-        System.out.println(str17.indexOf('t',10));
+        System.out.println(str17.indexOf("the",from));
     }
 
     public static void charToLowerCase(String str18){
@@ -117,6 +118,10 @@ public class StringProgram
 
     public static void intToString(int num){
         System.out.println(String.valueOf(num));
+    }
+
+    public static void joinString(){
+        System.out.println(String.join("-" , "apple" , "banana" , "orange"));
     }
 
 }
