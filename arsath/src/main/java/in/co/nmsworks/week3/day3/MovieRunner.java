@@ -71,13 +71,10 @@ public class MovieRunner {
                 while(rs.next()){
                     int year = rs.getInt(2);
                     String movieName = rs.getString(1);
-                    List<String> movies = yearWiseMovies.get(year);
-                    if (movies == null) {
-                        movies = new ArrayList<>();
-                        yearWiseMovies.put(year, movies);
+                    if (!yearWiseMovies.containsKey(year)) {
+                        yearWiseMovies.put(year, new ArrayList<>());
                     }
-                    movies.add(movieName);
-                    yearWiseMovies.put(year, movies);
+                    yearWiseMovies.get(year).add(movieName);
                 }
             System.out.println(yearWiseMovies);
 
