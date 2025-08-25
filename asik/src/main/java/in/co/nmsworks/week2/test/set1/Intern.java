@@ -4,6 +4,7 @@ public class Intern
 {
     private String name;
     private String dept;
+    private int salary;
 
     public Intern()
     {}
@@ -12,6 +13,12 @@ public class Intern
     {
         this.name = name;
         this.dept = dept;
+    }
+
+    public Intern(String name, String dept, int salary) {
+        this.name = name;
+        this.dept = dept;
+        this.salary = salary;
     }
 
     public String getName()
@@ -32,5 +39,15 @@ public class Intern
     public void setDept(String dept)
     {
         this.dept = dept;
+    }
+
+    public int getSalary()
+    {
+        return salary;
+    }
+
+    public void setSalary(int salary)
+    {
+        this.salary = salary;
     }
 }

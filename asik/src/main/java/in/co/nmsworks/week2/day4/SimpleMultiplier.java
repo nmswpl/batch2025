@@ -4,6 +4,7 @@ public class SimpleMultiplier implements Sequence
 {
     private int startingNumber;
     private int ratio;
+    private int next;
 
     SimpleMultiplier()
     {}
@@ -12,6 +13,7 @@ public class SimpleMultiplier implements Sequence
     {
         this.startingNumber = startingNumber;
         this.ratio = ratio;
+        next = startingNumber;
     }
 
     public int getStartingNumber()
@@ -37,10 +39,11 @@ public class SimpleMultiplier implements Sequence
     @Override
     public int next()
     {
-        int next;
+        int res;
+        res = next;
         next = startingNumber * ratio;
         startingNumber = next;
-        return next;
+        return res;
     }
 
 }

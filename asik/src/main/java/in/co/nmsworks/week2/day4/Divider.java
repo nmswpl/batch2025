@@ -9,8 +9,8 @@ public class Divider implements Computable
     {
         if ( b != 0)
         {
+            errorCode = 0;
             return a / b;
-
         }
         errorCode = 1;
         return -1;

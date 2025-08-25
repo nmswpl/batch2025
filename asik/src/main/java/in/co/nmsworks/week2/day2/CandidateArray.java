@@ -11,7 +11,6 @@ public class CandidateArray
 
     private static void arrayTest()
     {
-
         Candidate[] candidates = new Candidate[] {
                 new Candidate(21, "Arunkumar M","gajendrans@nmsworks.co.in","QA"),
                 new Candidate(22, "Vasanth S","gajendrans@nmsworks.co.in","Dev"),

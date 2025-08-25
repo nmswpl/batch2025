@@ -1,5 +1,7 @@
 package in.co.nmsworks.week1.day3;
 
+import in.co.nmsworks.week2.day3.Shape;
+
 import java.util.Objects;
 
 public class Candidate
@@ -8,6 +10,7 @@ public class Candidate
     private String name;
     private String email;
     private String dept;
+    private Shape myShape;
 
     public Candidate()
     {}
@@ -60,6 +63,14 @@ public class Candidate
         return this.dept;
     }
 
+    public Shape getMyShape() {
+        return myShape;
+    }
+
+    public void setMyShape(Shape myShape) {
+        this.myShape = myShape;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
@@ -68,7 +79,8 @@ public class Candidate
     }
 
     @Override
-    public int hashCode() {
+    public int hashCode()
+    {
         return Objects.hashCode(id);
     }
 

@@ -17,16 +17,17 @@ public class MoviesArr
         Movie thalapathi = new Movie("Thalapathi", 1991, Movie.Genre.DRAMA);
         Movie shivaji = new Movie("Shivaji", 2007, Movie.Genre.ACTION);
         Movie kaala = new Movie("Kaala", 2018, Movie.Genre.DRAMA);
-        Movie[] Movies = { ethiran, kabali, superstar, baasha, muthu, sivaji, petta, thalapathi, shivaji, kaala};
+        Movie[] movies = { ethiran, kabali, superstar, baasha, muthu, sivaji, petta, thalapathi, shivaji, kaala};
 
-        System.out.println("Length Of Movie Array : " + Movies.length);
-        System.out.println("First Element in the Movie Array : " + Movies[0]);
-        System.out.println("Last Element in the Movie Array : " + Movies[Movies.length-1]);
-        printMovieBefore2000(Movies);
+        System.out.println("Length Of Movie Array : " + movies.length);
+        System.out.println("First Element in the Movie Array : " + movies[0]);
+        System.out.println("Last Element in the Movie Array : " + movies[movies.length-1]);
+        printMovieBefore2000(movies);
 
-        System.out.println("Unsorted Movies Array : " + Arrays.toString(Movies));
-        Arrays.sort(Movies);
-        System.out.println("Sorted Movies Array : " + Arrays.toString(Movies));
+        System.out.println("Unsorted Movies Array : " + Arrays.toString(movies));
+        Arrays.sort(movies);
+        System.out.println("Sorted Movies Array : " + Arrays.toString(movies));
+
     }
 
     public static void printMovieBefore2000(Movie[] Movie)

@@ -10,7 +10,9 @@ public class Calculator
 
         System.out.println(performCalculation(5, 5, add));
         System.out.println(performCalculation(10, 5, mul));
-        int d = performCalculation(-1, 1, div);
+        int d = performCalculation(6, 0, div);
+        System.out.println(div.errorCode == 1 ? "Division Error" : d);
+        d = performCalculation(6, -1, div);
         System.out.println(div.errorCode == 1 ? "Division Error" : d);
     }
 

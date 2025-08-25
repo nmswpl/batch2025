@@ -4,7 +4,7 @@ public class SimpleAdder implements Sequence
 {
     private int startingNumber;
     private int step;
-
+    private int next;
     SimpleAdder()
     {}
 
@@ -12,6 +12,7 @@ public class SimpleAdder implements Sequence
     {
         this.startingNumber = startingNumber;
         this.step = step;
+        next = startingNumber;
     }
 
     public int getStartingNumber()
@@ -37,9 +38,10 @@ public class SimpleAdder implements Sequence
     @Override
     public int next()
     {
-        int next;
+        int res;
+        res = next;
         next = startingNumber + step;
         startingNumber = next;
-        return next;
+        return res;
     }
 }

@@ -1,4 +1,5 @@
 1) Alter table SOCIAL_MEDIA ADD email varchar(100);
+   Update SOCIAL_MEDIA set email = concat(username, "@example.com");
 
 2) Alter table SOCIAL_MEDIA MODIFY location varchar(50);
 
@@ -6,5 +7,6 @@
 
 4) select * from SOCIAL_MEDIA where (location = "Bangalore" or "Chennai") and (followers_count > 10000) or (following_count > 5000);
 
+5) select location, gender, avg(followers_count) as average_followers_count from SOCIAL_MEDIA group by location, gender order by location;
 
 

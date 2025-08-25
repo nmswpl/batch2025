@@ -23,7 +23,7 @@ public class Square implements Shape
 
     @Override
     public void printClassName() {
-        System.out.println(getClass().getName());;
+        System.out.println(getClass().getName());
     }
 
 
