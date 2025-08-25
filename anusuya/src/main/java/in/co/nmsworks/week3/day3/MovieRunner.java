@@ -16,6 +16,7 @@ public class MovieRunner {
 
         int[] movieYears = new int[]{1995,2008};
         Map<Integer,List<String>> movies = mr.getMoviesFromDbForYear(movieYears);
+
         for (Map.Entry<Integer, List<String>> movie : movies.entrySet()) {
             System.out.println(movie.getKey() + " Movies : " + movie.getValue());
         }
