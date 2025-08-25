@@ -18,43 +18,43 @@ import java.util.Set;
 public class MoviePersistor {
     public static void main(String[] args) {
         MoviePersistor moviePersistor = new MoviePersistor();
-//        List<Movie> movieList = moviePersistor.getMoviesFromFile("/tmp/MovieName.txt");
+        List<Movie> movieList = moviePersistor.getMoviesFromFile("/tmp/DBMovieName.txt");
 //        moviePersistor.saveMovieToDB(movieList);
-        Set<Movie> movieSet = moviePersistor.getAllMovies();
-//        for (Movie movie : movieSet) {
-//            System.out.println(movie);
+//        Set<Movie> movieSet = moviePersistor.getAllMovies();
+////        for (Movie movie : movieSet) {
+////            System.out.println(movie);
+////        }
+//        moviePersistor.writeMoviesIntoFile(movieSet,"/tmp/MovieNameUpdated.txt");
+    }
+
+//    private void writeMoviesIntoFile(Set<Movie> movieSet, String filename) {
+//        try (BufferedWriter br = new BufferedWriter(new FileWriter(filename))){
+//            int i = 0;
+//            for (Movie movie : movieSet) {
+//                i++;
+//                String line = movie.getMovieName()+","+movie.getYearOfRelease()+","+movie.getGenere();
+//                br.write(i+","+line);
+//                br.newLine();
+//            }
+//        }catch (Exception e){
+//            e.printStackTrace();
 //        }
-        moviePersistor.writeMoviesIntoFile(movieSet,"/tmp/MovieNameUpdated.txt");
-    }
-
-    private void writeMoviesIntoFile(Set<Movie> movieSet, String filename) {
-        try (BufferedWriter br = new BufferedWriter(new FileWriter(filename))){
-            int i = 0;
-            for (Movie movie : movieSet) {
-                i++;
-                String line = movie.getMovieName()+","+movie.getYearOfRelease()+","+movie.getGenere();
-                br.write(i+","+line);
-                br.newLine();
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-
-    private Set<Movie> getAllMovies() {
-        Set<Movie> movieSet = new HashSet<>();
-        try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training","nms-training","nms-training");
-        PreparedStatement ps = con.prepareStatement("Select * from Movies")){
-            ResultSet rs = ps.executeQuery();
-            while (rs.next()){
-                movieSet.add(new Movie(rs.getString(1),rs.getInt(2),rs.getString(3)));
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return movieSet;
-    }
-
+//    }
+//
+//    private Set<Movie> getAllMovies() {
+//        Set<Movie> movieSet = new HashSet<>();
+//        try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training","nms-training","nms-training");
+//        PreparedStatement ps = con.prepareStatement("Select * from Movies")){
+//            ResultSet rs = ps.executeQuery();
+//            while (rs.next()){
+//                movieSet.add(new Movie(rs.getString(1),rs.getInt(2),rs.getString(3)));
+//            }
+//        } catch (Exception e){
+//            e.printStackTrace();
+//        }
+//        return movieSet;
+//    }
+//
 //    private void saveMovieToDB(List<Movie> movieList) {
 //        try(Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/training","nms-training","nms-training");
 //            PreparedStatement ps = con.prepareStatement("INSERT INTO Movies VALUES (?,?,?)")) {
@@ -69,24 +69,24 @@ public class MoviePersistor {
 //        }
 //    }
 
-//    private List<Movie> getMoviesFromFile(String filename) {
-//        List<Movie> movies = new ArrayList<>();
-//        try(BufferedReader br = new BufferedReader(new FileReader(filename))) {
-//            String line = br.readLine();
-//            while ((line = br.readLine()) != null){
-//                String[] movieString = line.split(",");
-//               if(movieString.length >= 3){
-//                   String movieName = movieString[0];
-//                   int yearOfRelease = Integer.parseInt(movieString[1]);
-//                   String genere = movieString[2];
-//                   movies.add(new Movie(movieName,yearOfRelease,genere));
-//               }
-//            }
-//        } catch (Exception e){
-//            e.printStackTrace();
-//        }
-//        return movies;
-//    }
-    
-    
+    private List<Movie> getMoviesFromFile(String filename) {
+        List<Movie> movies = new ArrayList<>();
+        try(BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line = br.readLine();
+            while ((line = br.readLine()) != null){
+                String[] movieString = line.split(",");
+               if(movieString.length >= 3){
+                   String movieName = movieString[1];
+                   int yearOfRelease = Integer.parseInt(movieString[2]);
+                   String genere = movieString[3];
+                   movies.add(new Movie(movieName,yearOfRelease,genere));
+               }
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+        return movies;
+    }
+
+
 }
