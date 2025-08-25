@@ -3,10 +3,20 @@ package in.co.nmsworks.week2.day3;
 public class Theatre1 implements MultiplexSystem {
     int total;
     int seatCounts;
+    int noOfSeats;
+
+    public int getNoOfSeats() {
+        return noOfSeats;
+    }
+
+    public void setNoOfSeats(int noOfSeats) {
+        this.noOfSeats = noOfSeats;
+    }
 
     public Theatre1(int total){
         this.total=total;
     }
+
 
     @Override
     public void bookTicket() {

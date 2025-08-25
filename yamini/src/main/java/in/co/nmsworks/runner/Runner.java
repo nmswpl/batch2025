@@ -1,18 +1,46 @@
 package in.co.nmsworks.runner;
 
+import in.co.nmsworks.week2.day4.*;
+
+import javax.swing.*;
+
+import java.lang.management.MonitorInfo;
+
+import static in.co.nmsworks.week2.day4.Report.generate;
+
 public class Runner {
-
-    private static int age=7;
-    final float PI=3.14f;
     public static void main(String[] args) {
-        Sample s1=new Sample();
-        age++;
+
+        Movie movie1= new Movie("Enthiran",2010,"Sci-Fi");
+        Movie movie2=new Movie("Kabali",2016,"Action");
+        Movie movie3=new Movie("Superstar",2002,"Drama");
+        Movie movie4=new Movie("Bassha",1995,"Action");
+        Movie movie5=new Movie("Muthu",1995,"Drama");
+        Movie movie6=new Movie("Sivaji:The Boss",2007,"Action");
+        Movie movie7=new Movie("Petta",2019,"Action");
+        Movie movie8=new Movie("Thalapthi",1991,"Drama");
+        Movie movie9=new Movie("Shivaji",2007,"Action");
+        Movie movie10=new Movie("Kaala",2018,"Drama");
+
+        Movie []movies={movie1,movie2,movie3,movie4,movie5,movie6,movie7,movie8,movie9,movie10};
+        System.out.println(movies.length);
+        System.out.println("First: "+movies[0].toString()+" Last: "+movies[movies.length-1].toString());
+        for (int i=0;i<movies.length;i++){
+            System.out.println(movies[i].toString());
+        }
+
+        /*SalesReport salesReport=new SalesReport();
+        InventoryReport inventoryReport=new InventoryReport();
+        generate(salesReport);
+        generate(inventoryReport);*?
+       /* Employee emp=new Employee("name");
+
+        Employee manager =new Manager("Manager",2000);
+
+        System.out.println("Salary of Employee: "+emp.annualSalary(3000.00));
+        System.out.println("Salary of Manager: "+manager.annualSalary(3000.00));*/
 
     }
 
-    public void test1(){
-       final String name="Yamini";
-       Double d=23.45d;
 
-    }
 }
