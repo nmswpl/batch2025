@@ -7,8 +7,8 @@ public class FileReadWriteExample {
 
         FileReadWriteExample frwe = new FileReadWriteExample();
 
-        frwe.writeToFile("/tmp/myInfo.txt","My name is Vijayalakshmi. I am from Kallakurichi. " );
-        frwe.readFromFile("/tmp/myInfo.txt");
+       frwe.writeToFile("/tmp/myInfo.txt","My name is Vijayalakshmi. I am from Kallakurichi. " );
+       frwe.readFromFile("/tmp/myInfo.txt");
 
         frwe.writeToFile( "/tmp/myInfo.txt","I Studied  at University college of Engineering villupuram");
         frwe.readFromFile("/tmp/myInfo.txt");
@@ -19,10 +19,7 @@ public class FileReadWriteExample {
         frwe.writeToFileBuffered( "/tmp/myInfo.txt","I Like to play carrom.");
         frwe.readFromFileBuffered("/tmp/myInfo.txt");
 
-
-
     }
-
 
     public void readFromFile(String fileName) {
          try(FileReader fr = new FileReader(fileName)){
@@ -39,7 +36,7 @@ public class FileReadWriteExample {
 
     public  void writeToFile(String fileName ,String  text ) {
 
-          try( FileWriter fw = new FileWriter(fileName , true)) {
+          try( FileWriter fw = new FileWriter(fileName)) {
               fw.write(text);
           }
           catch (IOException e) {
@@ -51,7 +48,7 @@ public class FileReadWriteExample {
 
     public void writeToFileBuffered(String fileName , String text){
 
-        try( BufferedWriter bw = new BufferedWriter(new FileWriter(fileName,true ))){
+        try( BufferedWriter bw = new BufferedWriter(new FileWriter(fileName,false ))){
             bw.write(text);
             bw.newLine();
             bw.flush();

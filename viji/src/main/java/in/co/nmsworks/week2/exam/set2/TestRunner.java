@@ -1,8 +1,10 @@
-package in.co.nmsworks.week2.exam.set2;
+/* package in.co.nmsworks.week2.exam.set2;
 
-/* Question 2
+ Question 2
 Write a method that takes an array of Intern[] (where each intern has a name and a salary)
-and calculates the average salary of all the interns. */
+and calculates the average salary of all the interns.
+
+import in.co.nmsworks.week2.exam.set2.Intern;
 
 public class TestRunner {
     public static void main(String[] args) {
@@ -18,10 +20,10 @@ public class TestRunner {
         Intern[] interns = new Intern[]{viji, yamini, ashik, maha, kavi};
 
         Intern intern = new Intern();
-       TestRunner.calculateAverageSalary(interns);
+        TestRunner.calculateAverageSalary(interns);
     }
-       public static void calculateAverageSalary(Intern[] interns){
-           System.out.println(interns.getSalary() *12 );
+    public static void calculateAverageSalary(Intern[] interns){
+        System.out.println(interns.getSalary() *12 );
 
     }
 
@@ -47,5 +49,5 @@ information:
 
 
 
-}
+
 

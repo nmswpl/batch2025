@@ -76,13 +76,5 @@ public class Candidate {
         return Objects.hashCode(id);
     }
 
-    @Override
-    public String toString() {
-        return "Candidate{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", department='" + department + '\'' +
-                '}';
-    }
 
 }

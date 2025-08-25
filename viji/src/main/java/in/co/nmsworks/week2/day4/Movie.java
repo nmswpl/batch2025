@@ -4,8 +4,21 @@ public class Movie implements Comparable<Movie>{
     private String movieName ;
     private int yearOfRelease ;
     private String Genre ;
+    public Movie(){
 
+    }
 
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    public void setYearOfRelease(int yearOfRelease) {
+        this.yearOfRelease = yearOfRelease;
+    }
+
+    public void setGenre(String genre) {
+        Genre = genre;
+    }
 
     public Movie(String movieName, int yearOfRelease, String genre) {
         this.movieName = movieName;
