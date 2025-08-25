@@ -1,6 +1,7 @@
 package in.co.nmsworks.week3.day4;
 
 import java.io.*;
+import java.util.List;
 
 public class FileReadWriteExample
 {
@@ -66,5 +67,13 @@ public class FileReadWriteExample
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static interface Writter
+    {
+        void open();
+        void  write( List<Trainee> trainees);
+        void close();
+
     }
 }
