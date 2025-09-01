@@ -71,16 +71,15 @@ public class DeckSimulation
         List<Card> deck = new ArrayList<>();
         String[] shapes = new String[] {"Heart", "Spade", "Clover", "Diamond"};
 
-        for (String shape : shapes) {
-            for (int i = 1; i < 14; i++) {
+        for (String shape : shapes)
+        {
+            for (int i = 1; i < 14; i++)
+            {
                 deck.add(new Card(shape, i));
             }
-
         }
 
-
         Collections.shuffle(deck);
-        System.out.println(deck);
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter No Of Players : ");
@@ -98,7 +97,6 @@ public class DeckSimulation
         {
             int index = i % noOfPlayers;
             playersCard.get(index).add(deck.get(i));
-
         }
         int playerNo = 1;
         for (List<Card> player : playersCard)
