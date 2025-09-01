@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 public class PracticeRunner
 {
+
+    static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args)
     {
         PracticeRunner practiceRunner = new PracticeRunner();
         practiceRunner.printSumOfGivenInLoop();
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the Value for A and B : ");
         long a = scanner.nextLong();//525
         long b = scanner.nextLong();//315
@@ -17,7 +19,23 @@ public class PracticeRunner
         System.out.print("\nEnter the value for N :");
 
         practiceRunner.fibonacciSeries(scanner.nextInt());
+        practiceRunner.printAlphabetDiagonally();
+    }
 
+    private void printAlphabetDiagonally()
+    {
+        System.out.print("Enter a value for count : ");
+        long countN = scanner.nextLong();
+        char character = 'a';
+        for (long i = 0; i < countN; i ++)
+        {
+            for (long j = 0; j < i; j++)
+            {
+                System.out.print("  ");
+            }
+            System.out.println(character);
+            character += 1;
+        }
     }
 
 
@@ -81,7 +99,6 @@ public class PracticeRunner
     {
         long sum = 0;
         long input;
-        Scanner scanner = new Scanner(System.in);
         do
         {
             System.out.print("Enter a element : ");
