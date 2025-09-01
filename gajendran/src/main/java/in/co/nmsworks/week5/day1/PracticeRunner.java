@@ -26,10 +26,15 @@ public class PracticeRunner
 
     private void fibonacciSeries(int i)
     {
-        i -= 2;
-        System.out.print(0+" "+ 1+" ");
         int temp1 = 0;
         int temp2 = 1;
+        if (i == 1)
+        {
+            System.out.println("0");
+            return;
+        }
+        System.out.print("0 1 ");
+        i -= 2;
         while (i > 0)
         {
             int temp3 = temp1 + temp2;
