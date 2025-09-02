@@ -59,28 +59,40 @@ public class AddressBook {
             System.out.println("Data added!");
         }
     }
-    public void removeAddress(){
+    public void removeAddress() {
         System.out.println("Enter Name to remove: ");
         String name = sc.next();
-        String firstLetter = name.substring(0,1).toUpperCase();
-        if(!addressList.containsKey(firstLetter)){
+        String firstLetter = name.substring(0, 1).toUpperCase();
+
+        if (!addressList.containsKey(firstLetter)) {
             System.out.println("No Data Found!");
+            return;
         }
-        else{
-            List <Contact> addressData = addressList.get(firstLetter);
-            int flag = 0;
-            for (Contact addressDatum : addressData) {
-                if(addressDatum.getName().equalsIgnoreCase(name)){
-                    addressData.remove(addressDatum);
-                    System.out.println("Data Removed!");
-                    flag = 1;
-                }
+
+        List<Contact> addressData = addressList.get(firstLetter);
+        List<Contact> toRemove = new ArrayList<>();
+        boolean found = false;
+
+        for (Contact contact : addressData) {
+            if (contact.getName().equalsIgnoreCase(name)) {
+                toRemove.add(contact);
+                found = true;
             }
-            if(flag == 0){
-                System.out.println("Data not found!");
-            }
+        }
+
+        addressData.removeAll(toRemove);
+
+        if (addressData.isEmpty()) {
+            addressList.remove(firstLetter);
+        }
+
+        if (found) {
+            System.out.println("Data Removed!");
+        } else {
+            System.out.println("Data not found!");
         }
     }
+
     public void updateAddress(){
         System.out.println("Enter which name to be updated: ");
         String name = sc.next();
