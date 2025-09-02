@@ -26,24 +26,35 @@ public class AddressBookRunner {
             case 3:
                 addressBook.updateContact();
             case 4:
-                addressBook.fetchContact();
-        }
-        System.out.println("\n----- Current Address Book Data -----");
-        if (data.isEmpty()) {
-            System.out.println("Address book is empty.");
-        } else {
-            for (Map.Entry<String, List<Contact>> entry : data.entrySet()) {
-                String key = entry.getKey();
-                List<Contact> contactList = entry.getValue();
-                System.out.println("Group [" + key + "]:");
-                for (Contact contact : contactList) {
-                    System.out.println("  " + contact);
-                }
-            }
+                System.out.println("Enter the Contact Name : ");
+                scan.nextLine();
+                String peiyar1 = scan.nextLine();
+                addressBook.fetchContact(peiyar1);
+
         }
     }
 
-    private void fetchContact() {
+    private void fetchContact(String peiyar1) {
+        String key = peiyar1.substring(0,1).toUpperCase();
+        if (!data.containsKey(key)){
+            System.out.println("Contact Not available in the Address book.");
+        }
+
+        List<Contact> contacts = data.get(key);
+        boolean found = false;
+
+        for (Contact contact : contacts) {
+            if (contact.getName().equalsIgnoreCase(peiyar1)){
+                System.out.println("Contact Found");
+                System.out.println(contact);
+                found = true;
+                break;
+            }
+        }
+
+        if(!found){
+            System.out.println("Contact Not found in the list");
+        }
 
     }
 
