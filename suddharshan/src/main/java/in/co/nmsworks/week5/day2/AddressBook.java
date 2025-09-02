@@ -12,19 +12,19 @@ public class AddressBook {
             System.out.print("Enter your choice: \n 1. Add Data \n 2. Remove Data \n 3. Update Data \n 4. Search Datum \n 5. Display Data (with first letter) \n 6. Display Address Book \n 7. Exit: ");
             int choice = sc.nextInt();
             if(choice == 1){
-                addressBook.addBook();
+                addressBook.addAddress();
             }
             else if (choice == 2) {
-                addressBook.removeBook();
+                addressBook.removeAddress();
             }
             else if(choice == 3){
-                addressBook.updateBook();
+                addressBook.updateAddress();
             }
             else if(choice == 4){
-                addressBook.searchBook();
+                addressBook.searchAddress();
             }
             else if(choice == 5){
-                addressBook.displayBooks();
+                addressBook.displayAddressesWithStartLetter();
             }
             else if(choice == 6){
                 addressBook.printAddressBook();
@@ -37,7 +37,7 @@ public class AddressBook {
             }
         }
     }
-    public void addBook(){
+    public void addAddress(){
         System.out.println("Enter Name to add: ");
         String name = sc.next();
         System.out.println("Enter Mobile No to add: ");
@@ -59,7 +59,7 @@ public class AddressBook {
             System.out.println("Data added!");
         }
     }
-    public void removeBook(){
+    public void removeAddress(){
         System.out.println("Enter Name to remove: ");
         String name = sc.next();
         String firstLetter = name.substring(0,1).toUpperCase();
@@ -81,7 +81,7 @@ public class AddressBook {
             }
         }
     }
-    public void updateBook(){
+    public void updateAddress(){
         System.out.println("Enter which name to be updated: ");
         String name = sc.next();
         String firstLetter = name.substring(0,1).toUpperCase();
@@ -150,7 +150,7 @@ public class AddressBook {
             }
         }
     }
-    public void searchBook(){
+    public void searchAddress(){
         System.out.println("Enter name to be searched: ");
         String name = sc.next();
         int flag = 0;
@@ -172,7 +172,7 @@ public class AddressBook {
             }
         }
     }
-    public void displayBooks(){
+    public void displayAddressesWithStartLetter(){
         System.out.println("Enter Start Letter of Name to be displayed: ");
         String firstLetter = sc.next();
         List <Contact> addressData = addressList.get(firstLetter.toUpperCase());
