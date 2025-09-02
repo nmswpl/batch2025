@@ -30,7 +30,6 @@ public class AddressBookRunner {
                 scan.nextLine();
                 String peiyar1 = scan.nextLine();
                 addressBook.fetchContact(peiyar1);
-
         }
     }
 
